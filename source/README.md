@@ -1,2 +1,2 @@
-This project is my own personal website. 
-It showcases and contains links to various projects that I've worked on.
+This is where the main code for the website is contained. 
+This is my first real project, so I'm unsure how everything should be organized.
