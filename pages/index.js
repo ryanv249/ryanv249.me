@@ -1,7 +1,5 @@
 import { useState } from "react"
 
-<div id="app"></div>
-
 function Header({ title }) {
     return <h1>{title ? title : "Default title"}</h1>
 }
