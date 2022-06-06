@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Link from "next/link"
+import Head from "next/Head"
 
 function Header({ title }) {
     return <h1>{title ? title : "Default title"}</h1>
@@ -18,6 +19,11 @@ function NavList(){
                     <a>Go to school projects</a>
                 </Link>
             </p>
+            <p>
+                <Link href = "/aboutMe">
+                    <a>About Me</a>
+                </Link>
+            </p>
 
         </>
     );
@@ -34,6 +40,10 @@ export default function HomePage() {
 
     return (
         <div>
+        <Head>
+            <title>Ryandotcom</title>
+            <link rel="icon" href="/favicon.ico"/>
+        </Head>
         <NavList>hello </NavList>
         <Header title="Develop. Preview. Ship. 🚀" />
         <ul>
