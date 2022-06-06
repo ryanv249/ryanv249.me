@@ -9,8 +9,8 @@ export default function SchoolList(){
             </Head>
             <h1>School Projects:</h1>
             <h2>
-                <Link href= "/school_projects/test2">
-                    <a>School Project 1</a>
+                <Link href= "/school_projects/ChefDoe">
+                    <a>ChefDoe</a>
                 </Link>
             </h2>
             <p>

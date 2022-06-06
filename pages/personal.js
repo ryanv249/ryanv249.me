@@ -9,8 +9,8 @@ export default function PersonalList(){
             </Head>
             <h1>Personal Projects:</h1>
             <h2>
-                <Link href= "/personal_projects/test1">
-                    <a>Project 1</a>
+                <Link href= "/personal_projects/RyanDotCom">
+                    <a>RyanDotCom</a>
                 </Link>
             </h2>
             <p>
