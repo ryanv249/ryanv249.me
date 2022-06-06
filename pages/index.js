@@ -41,7 +41,7 @@ export default function HomePage() {
     return (
         <div>
         <Head>
-            <title>Ryandotcom</title>
+            <title>Ryan Velez Portfolio</title>
             <link rel="icon" href="/favicon.ico"/>
         </Head>
         <NavList>hello </NavList>

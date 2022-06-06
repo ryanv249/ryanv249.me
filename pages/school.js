@@ -1,8 +1,12 @@
 import Link from "next/link"
+import Head from "next/Head"
 
 export default function SchoolList(){
     return(
         <>
+            <Head>
+                <title>My School Projects</title>
+            </Head>
             <h1>School Projects:</h1>
             <h2>
                 <Link href= "/school_projects/test2">
