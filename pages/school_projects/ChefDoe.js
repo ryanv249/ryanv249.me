@@ -1,4 +1,4 @@
-import SchoolProject from "./school_template";
+import {SchoolProject} from "../../components/school_template";
 
 export default function ChefDoe(){
     return(

@@ -1,4 +1,4 @@
-import PersonalProject from "./personal_template";
+import {PersonalProject} from "../../components/layout"
 
 export default function RyanDotCom(){
     return(
@@ -6,6 +6,30 @@ export default function RyanDotCom(){
             title = "RyanDotCom"
             briefSum = "This Website!"
             fullDesc = "FULL DESCRIPTION HERE"
+            codeLink = "https://github.com/ryanv249/personal-site"
+            images = 
+            {
+                [
+                {
+                    original: "/images/the_man_himself.jpg",
+                    thumbnail: "/images/the_man_himself.jpg",
+                },
+                {
+                    original: "/images/cards_gamer.jpg",
+                    thumbnail: "/images/cards_gamer.jpg",
+                },
+                {
+                    original: "/images/the_man_himself.jpg",
+                    thumbnail: "/images/the_man_himself.jpg",
+                },
+                {
+                    original: "/images/cards_gamer.jpg",
+                    thumbnail: "/images/cards_gamer.jpg",
+                }
+                
+                ]
+            }
+
         />
     );
 }

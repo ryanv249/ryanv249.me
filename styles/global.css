@@ -1,3 +1,5 @@
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
 html,
 body {
   padding: 0;
@@ -25,3 +27,78 @@ img {
   max-width: 100%;
   display: block;
 }
+
+/* CSS overrides to make the picture gallery fit on page better */
+
+.image-gallery{
+    height: 100%;
+}
+
+.image-gallery-content{
+    height: 100%;
+}
+
+.image-gallery-slide-wrapper{
+    height: 100%;
+}
+
+.image-gallery-swipe{
+    height: 100%;
+}
+
+.image-gallery-slides{
+    height: 100%;
+}
+
+.image-gallery-slide{
+    height: 100%;
+}
+
+.image-gallery-image{
+    height: 100%;
+}
+
+.image-gallery-svg{
+    height: 50px !important;
+}
+
+.image-gallery-thumbnails-wrapper{
+    height: 100%;
+}
+
+.image-gallery-thumbnails{
+    height: 100%;
+}
+
+/* has to be changed specifically, for some reason */
+.image-gallery-thumbnails-container{
+    height: 100px;
+}
+
+.image-gallery-thumbnail{
+    height: 100%;
+    width: auto;
+}
+
+.image-gallery-thumbnail-inner{
+    height: 100%;
+    width: auto;
+}
+
+.image-gallery-thumbnail-image{
+    height: 100%;
+    width: auto !important;
+    max-width: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
