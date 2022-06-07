@@ -1,8 +1,9 @@
-import {PersonalProject} from "../../components/layout"
+import {Project} from "../../components/layout"
 
 export default function RyanDotCom(){
     return(
-        <PersonalProject
+        <Project
+            type = "p"
             title = "RyanDotCom"
             briefSum = "This Website!"
             fullDesc = "FULL DESCRIPTION HERE"

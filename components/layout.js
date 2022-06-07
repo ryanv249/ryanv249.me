@@ -17,7 +17,7 @@ import Link from 'next/link';
 //     return <div className = {styles.about}>{children}</div>;
 // }
 
-export function PersonalProject({title, briefSum, fullDesc, codeLink, images}){
+export function Project({type, title, briefSum, fullDesc, codeLink, images}){
     return(
         <>
             <Head>
@@ -26,8 +26,8 @@ export function PersonalProject({title, briefSum, fullDesc, codeLink, images}){
             </Head>
 
             <h2>
-                <Link href= "/personal">
-                    <a>Back to Personal Projects</a>
+                <Link href= {type == "p" ? "/personal" : "/school"}>
+                    <a>Back to {type == "p" ? "Personal" : "School"} Projects</a>
                 </Link>
             </h2>
 
@@ -37,6 +37,13 @@ export function PersonalProject({title, briefSum, fullDesc, codeLink, images}){
             <h1 className={styles.header}>{title}</h1>
 
             <h2>{briefSum}</h2>
+
+            <h3>
+                View this project's repo on Github:
+                <div className ={styles.codeLinkWrapper}>
+                    <a href={codeLink}>Link</a>
+                </div>
+            </h3>
 
             <p>{fullDesc}</p>
 

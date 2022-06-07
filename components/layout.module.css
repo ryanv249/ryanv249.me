@@ -12,6 +12,14 @@
     background-color: rgb(8, 1, 7);
 }
 
+/* height override for react-image-gallery, enforced in global.css */
 .gallery{
     height: 300px;
+}
+
+.codeLinkWrapper{
+    padding: 0px 5px 0px 4px;
+    width: fit-content;
+    background-color: green;
+    color:blueviolet;
 }

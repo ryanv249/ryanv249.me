@@ -32,12 +32,14 @@ img {
     CSS overrides to react-image-gallery
     height of entire gallery now depends on .gallery in layout.module.css
     certain things are specifically sized; otherwise inherit height from parent 
+
+    note: image-gallery-thumbnails inherits 200px from image-gallery-thumbnails-wrapper 
 */
 
 .image-gallery, .image-gallery-content, .image-gallery-slide-wrapper, 
 .image-gallery-swipe, .image-gallery-slides, .image-gallery-slide,
-.image-gallery-image, .image-gallery-thumbnails-wrapper, .image-gallery-thumbnails,
-.image-gallery-thumbnail, .image-gallery-thumbnail-inner, .image-gallery-thumbnail-image
+.image-gallery-image, .image-gallery-thumbnails,
+.image-gallery-thumbnail-inner, .image-gallery-thumbnail-image
 {
     height: 100%;
 }
@@ -48,13 +50,32 @@ img {
 }
 
 /* 
+    there was alot of blank space at the bottom of the page because of .gallery
+    this should fix that 
+*/
+.image-gallery-thumbnails-wrapper{
+    height: 200px;
+}
+
+/* 
     translation disabled because it broke with differently sized thumbnails
-    also, needs specific height separate from .gallery size, 100px seems to be fine 
+    overflow required for projects with many images and smaller screens 
+    
+    note: height determined by content and scrollbar 
 */
 .image-gallery-thumbnails-container{
-    height: 100px;
     transform: translate3d(0px, 0px, 0px) !important;
+    overflow-x: auto;
 }
+
+/* 
+    needed to size thumbnails themselves to prevent resizing issue on overflow 
+    120px seems correct
+*/
+.image-gallery-thumbnail{
+    height: 120px;
+}
+
 
 /* width overrides to allow for differently sized thumbnails */
 .image-gallery-thumbnail, .image-gallery-thumbnail-inner, .image-gallery-thumbnail-image{
