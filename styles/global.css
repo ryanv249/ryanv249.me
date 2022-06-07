@@ -28,67 +28,37 @@ img {
   display: block;
 }
 
-/* CSS overrides to make the picture gallery fit on page better */
+/* 
+    CSS overrides to react-image-gallery
+    height of entire gallery now depends on .gallery in layout.module.css
+    certain things are specifically sized; otherwise inherit height from parent 
+*/
 
-.image-gallery{
+.image-gallery, .image-gallery-content, .image-gallery-slide-wrapper, 
+.image-gallery-swipe, .image-gallery-slides, .image-gallery-slide,
+.image-gallery-image, .image-gallery-thumbnails-wrapper, .image-gallery-thumbnails,
+.image-gallery-thumbnail, .image-gallery-thumbnail-inner, .image-gallery-thumbnail-image
+{
     height: 100%;
 }
 
-.image-gallery-content{
-    height: 100%;
-}
-
-.image-gallery-slide-wrapper{
-    height: 100%;
-}
-
-.image-gallery-swipe{
-    height: 100%;
-}
-
-.image-gallery-slides{
-    height: 100%;
-}
-
-.image-gallery-slide{
-    height: 100%;
-}
-
-.image-gallery-image{
-    height: 100%;
-}
-
+/* button height, needed to be changed specifically*/
 .image-gallery-svg{
     height: 50px !important;
 }
 
-.image-gallery-thumbnails-wrapper{
-    height: 100%;
-}
-
-.image-gallery-thumbnails{
-    height: 100%;
-}
-
-/* has to be changed specifically, for some reason */
+/* 
+    translation disabled because it broke with differently sized thumbnails
+    also, needs specific height separate from .gallery size, 100px seems to be fine 
+*/
 .image-gallery-thumbnails-container{
     height: 100px;
+    transform: translate3d(0px, 0px, 0px) !important;
 }
 
-.image-gallery-thumbnail{
-    height: 100%;
+/* width overrides to allow for differently sized thumbnails */
+.image-gallery-thumbnail, .image-gallery-thumbnail-inner, .image-gallery-thumbnail-image{
     width: auto;
-}
-
-.image-gallery-thumbnail-inner{
-    height: 100%;
-    width: auto;
-}
-
-.image-gallery-thumbnail-image{
-    height: 100%;
-    width: auto !important;
-    max-width: none;
 }
 
 
