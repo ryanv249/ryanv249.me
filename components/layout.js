@@ -31,7 +31,7 @@ export function Project({type, title, briefSum, fullDesc, codeLink, images}){
                 </Link>
             </h2>
 
-            {/* place navbar here */}
+            {/* place navbar here ? */}
 
 
             <h1 className={styles.header}>{title}</h1>
@@ -58,27 +58,6 @@ export function Project({type, title, briefSum, fullDesc, codeLink, images}){
     );
 }
 
-export function SchoolProject({title, briefSum, fullDesc}){
-    return(
-        <>
-            <h2>
-                <Link href= "/school">
-                    <a>Back to School Projects</a>
-                </Link>
-            </h2>
-            <Head>
-                <link rel="icon" href="/favicon.ico" />
-                <title>{title}</title>
-            </Head>
-            <h2>{briefSum}</h2>
-            <p>
-                {fullDesc}
-            </p>
-
-        </>
-
-    );
-}
 
 
 
