@@ -1,8 +1,8 @@
-import {Project} from "../../components/layout";
+import {ProjectPage} from "../../components/layout";
 
 export default function ChefDoe(){
     return(
-        <Project
+        <ProjectPage
             type = "s"
             title = "ChefDoe"
             briefSum = "Website used to order ingredients needed for specific recipes"

@@ -1,5 +1,9 @@
 import Link from "next/link"
-import Head from "next/Head"
+import Head from "next/head"
+
+//generalize this and school into a layout ? 
+// can have a for each child call within the h2
+// yes future ryan do this actually 
 
 export default function PersonalList(){
     return(

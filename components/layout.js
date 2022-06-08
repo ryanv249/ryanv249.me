@@ -17,7 +17,7 @@ import Link from 'next/link';
 //     return <div className = {styles.about}>{children}</div>;
 // }
 
-export function Project({type, title, briefSum, fullDesc, codeLink, images}){
+export function ProjectPage({type, title, briefSum, fullDesc, codeLink, images}){
     return(
         <>
             <Head>
@@ -58,7 +58,10 @@ export function Project({type, title, briefSum, fullDesc, codeLink, images}){
     );
 }
 
+// generalize layout for personal and school 
+export function ListPage(){
 
+}
 
 
 
