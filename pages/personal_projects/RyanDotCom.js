@@ -4,11 +4,11 @@ export default function RyanDotCom(){
     return(
         <ProjectPage
             type = "p"
-            title = "RyanDotCom"
+            name = "RyanDotCom"
             briefSum = "This Website!"
             fullDesc = "FULL DESCRIPTION HERE"
             codeLink = "https://github.com/ryanv249/personal-site"
-            images = 
+            imageList = 
             {
                 [
                 {

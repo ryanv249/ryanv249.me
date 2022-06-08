@@ -3,11 +3,11 @@ import ImageGallery from 'react-image-gallery';
 
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
-import Link from 'next/link';
 
-// // generalize this too? pass css name as prop? 
+// use this as template for something maybe at some point???
 
 // export function TestLayout({ children }){
 //     return <div className = {styles.test}>{children}</div>;
@@ -17,12 +17,12 @@ import Link from 'next/link';
 //     return <div className = {styles.about}>{children}</div>;
 // }
 
-export function ProjectPage({type, title, briefSum, fullDesc, codeLink, images}){
+export function ProjectPage({type, name, briefSum, fullDesc, codeLink, imageList}){
     return(
         <>
             <Head>
+                <title>{name}</title>
                 <link rel="icon" href="/favicon.ico" />
-                <title>{title}</title>
             </Head>
 
             <h2>
@@ -41,7 +41,9 @@ export function ProjectPage({type, title, briefSum, fullDesc, codeLink, images})
             <h3>
                 View this project's repo on Github:
                 <div className ={styles.codeLinkWrapper}>
-                    <a href={codeLink}>Link</a>
+                    {/* "_blank" =  opens link in a new tab
+                    "noopener noreferrer" = protection from tabnabbing*/}
+                    <a href={codeLink} target = "_blank" rel = "noopener noreferrer">Link</a>
                 </div>
             </h3>
 
@@ -49,7 +51,7 @@ export function ProjectPage({type, title, briefSum, fullDesc, codeLink, images})
 
             <div className={styles.gallery}>
                 <ImageGallery 
-                    items = {images} 
+                    items = {imagelist} 
                     showPlayButton = {false}  
                 />
             </div>
@@ -58,11 +60,34 @@ export function ProjectPage({type, title, briefSum, fullDesc, codeLink, images})
     );
 }
 
-// generalize layout for personal and school 
-export function ListPage(){
-
+export function ProjectPreviewList({school_list, personal_list}){
+    return(
+        <>
+            <h2>School Projects:</h2>
+            <h3>
+                {school_list.map((proj) =>(
+                    <div key = {proj.name}>
+                        <Link href= {"/projects/" + proj.name}>
+                            <a>{proj.name}</a>
+                        </Link>
+                        <p>{proj.briefSum}</p>
+                    </div>
+                ))}
+            </h3>
+            <h2>Personal Projects:</h2>
+            <h3>
+                {personal_list.map((proj) =>(
+                    <div key = {proj.name}>
+                        <Link href= {"/projects/" + proj.name}>
+                            <a>{proj.name}</a>
+                        </Link>
+                        <p>{proj.briefSum}</p>
+                    </div>
+                ))}
+            </h3>
+        </>
+    );
 }
-
 
 
 const name = 'Your Name';

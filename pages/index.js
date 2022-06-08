@@ -1,9 +1,20 @@
-import { useState } from "react"
 import Link from "next/link"
-import Head from "next/Head"
+import Head from "next/head"
+import {ProjectPreviewList} from "../components/layout"
+import { p_projects, s_projects } from "../data";
 
-function Header({ title }) {
-    return <h1>{title ? title : "Default title"}</h1>
+export async function getStaticProps(){
+
+    // right here can use await fetch (data url) and then await res.json() to get data
+    // set up database later?
+
+    return{
+        props: {
+            personal_projects: p_projects,
+            school_projects: s_projects
+        }
+    }
+
 }
 
 function NavList(){
@@ -29,31 +40,21 @@ function NavList(){
     );
 }
 
-export default function HomePage() {
-    const names = ["Ada Lovelace", "Grace Hopper", "Margaret Hamilton"]
 
-    const [likes, setLikes] = useState(0)
-
-    function handleClick() {
-        setLikes(likes + 1)
-    }
-
+export default function HomePage({personal_projects, school_projects}) {
     return (
-        <div>
+        <>
         <Head>
             <title>Ryan Velez Portfolio</title>
             <link rel="icon" href="/favicon.ico"/>
         </Head>
         <NavList>hello </NavList>
-        <Header title="Develop. Preview. Ship. 🚀" />
-        <ul>
-            {names.map((name) => (
-            <li key={name}>{name}</li>
-            ))}
-        </ul>
+        <ProjectPreviewList
+            personal_list={personal_projects}
+            school_list={school_projects}
+        />
         
 
-        <button onClick={handleClick}>Like ({likes})</button>
-        </div>
+        </>
     )
 }

@@ -4,11 +4,11 @@ export default function ChefDoe(){
     return(
         <ProjectPage
             type = "s"
-            title = "ChefDoe"
+            name = "ChefDoe"
             briefSum = "Website used to order ingredients needed for specific recipes"
             fullDesc = "FULL DESCRIPTION HERE"
             codeLink = "https://github.com/rkulskis/ChefDoe"
-            images = 
+            imageList = 
             {
                 [
                 {
@@ -34,9 +34,7 @@ export default function ChefDoe(){
                 {
                     original: "/images/ChefDoeConf.png",
                     thumbnail: "/images/ChefDoeConf.png",
-                },
-
-                
+                }
                 ]
             }
         />
