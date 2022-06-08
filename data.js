@@ -1,5 +1,31 @@
-export const s_projects = [
+export const previews = [
     {
+        id:
+        0,
+        type: 
+        "school",
+        name: 
+        "ChefDoe",
+        briefSum: 
+        "Website used to order ingredients needed for specific recipes",
+    },
+    {
+        id:
+        1,
+        type: 
+        "personal",
+        name: 
+        "RyanDotCom",
+        briefSum: 
+        "This website!",
+    },
+
+]
+
+export const projects = [
+    {
+        id:
+        0,
         type: 
         "school",
         name: 
@@ -17,11 +43,9 @@ export const s_projects = [
             "/images/ChefDoeReview.png", "/images/ChefDoeConf.png"
         ]
     },
-
-]
-
-export const p_projects = [
     {
+        id:
+        1,
         type: 
         "personal",
         name: 
@@ -36,7 +60,5 @@ export const p_projects = [
         [
             "/images/the_man_himself.jpg", "/images/cards_gamer.jpg"
         ]
-    },
-
+    }
 ]
-

@@ -26,8 +26,8 @@ export function ProjectPage({type, name, briefSum, fullDesc, codeLink, imageList
             </Head>
 
             <h2>
-                <Link href= {type == "p" ? "/personal" : "/school"}>
-                    <a>Back to {type == "p" ? "Personal" : "School"} Projects</a>
+                <Link href= "/">
+                    <a>Back to Home</a>
                 </Link>
             </h2>
 
@@ -35,8 +35,6 @@ export function ProjectPage({type, name, briefSum, fullDesc, codeLink, imageList
 
 
             <h1 className={styles.header}>{title}</h1>
-
-            <h2>{briefSum}</h2>
 
             <h3>
                 View this project's repo on Github:
@@ -51,7 +49,7 @@ export function ProjectPage({type, name, briefSum, fullDesc, codeLink, imageList
 
             <div className={styles.gallery}>
                 <ImageGallery 
-                    items = {imagelist} 
+                    items = {imageList} 
                     showPlayButton = {false}  
                 />
             </div>
@@ -66,8 +64,8 @@ export function ProjectPreviewList({school_list, personal_list}){
             <h2>School Projects:</h2>
             <h3>
                 {school_list.map((proj) =>(
-                    <div key = {proj.name}>
-                        <Link href= {"/projects/" + proj.name}>
+                    <div key = {proj.id}>
+                        <Link href= {"/projects/" + proj.type + "/" + proj.name}>
                             <a>{proj.name}</a>
                         </Link>
                         <p>{proj.briefSum}</p>
@@ -77,8 +75,8 @@ export function ProjectPreviewList({school_list, personal_list}){
             <h2>Personal Projects:</h2>
             <h3>
                 {personal_list.map((proj) =>(
-                    <div key = {proj.name}>
-                        <Link href= {"/projects/" + proj.name}>
+                    <div key = {proj.id}>
+                        <Link href= {"/projects/" + proj.type + "/" + proj.name}>
                             <a>{proj.name}</a>
                         </Link>
                         <p>{proj.briefSum}</p>

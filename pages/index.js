@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Head from "next/head"
 import {ProjectPreviewList} from "../components/layout"
-import { p_projects, s_projects } from "../data";
+import { previews } from "../data";
 
 export async function getStaticProps(){
 
@@ -9,9 +9,10 @@ export async function getStaticProps(){
     // set up database later?
 
     return{
+        // maybe set up data differently to avoid pulling images here? 
         props: {
-            personal_projects: p_projects,
-            school_projects: s_projects
+            personal_projects: previews.filter(p => p.type === "personal"),
+            school_projects: previews.filter(p => p.type === "school")
         }
     }
 
