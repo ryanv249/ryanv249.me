@@ -5,7 +5,7 @@ export const previews = [
         type: 
         "school",
         altDesc: 
-        "Website used to order ingredients needed for specific recipes",
+        "Web app used to order ingredients needed for specific recipes",
     },
     {
         name: 
@@ -35,6 +35,7 @@ export const projects = [
             "/images/ChefDoeReview.png", "/images/ChefDoeConf.png"
         ]
     },
+
     {
         name: 
         "RyanDotCom",
