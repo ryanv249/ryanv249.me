@@ -42,29 +42,6 @@ function NavList(){
     );
 }
 
-function DisplayProjectDebug({p}){
-    console.log(p)
-
-    const images = p.imageList.map((img) =>{
-        return ({original: img, thumbnail: img})
-    })
-    console.log(p.imageList)
-    console.log(images)
-    
-    return(
-        <>
-            
-            <p>{p.type}</p>
-            <p>{p.name}</p>
-            <p>{p.briefSum}</p>
-            <p>{p.fullDesc}</p>
-            <p>{p.codeLink}</p>
-            <p>{p.imageList}</p>
-            <p>{images}</p>
-        </>
-    );
-}
-
 
 export default function HomePage({personal_previews, school_previews}) {
 

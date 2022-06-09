@@ -50,8 +50,8 @@ export default function DisplayProjectInfo({project, images}){
     return(
         <ProjectPage
             name = {project.name}
-            fullDesc = {project.fullDesc}
-            codeLink = {project.codeLink}
+            desc = {project.fullDesc}
+            link = {project.link}
             // make sure to pass new image data list
             imageList = {images}
         />

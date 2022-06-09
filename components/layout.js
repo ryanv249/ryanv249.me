@@ -17,7 +17,7 @@ import utilStyles from '../styles/utils.module.css';
 //     return <div className = {styles.about}>{children}</div>;
 // }
 
-export function ProjectPage({name, fullDesc, codeLink, imageList}){
+export function ProjectPage({name, fullDesc, link, imageList}){
     return(
         <>
             <Head>
@@ -41,7 +41,7 @@ export function ProjectPage({name, fullDesc, codeLink, imageList}){
                 <div className ={styles.codeLinkWrapper}>
                     {/* "_blank" =  opens link in a new tab
                     "noopener noreferrer" = protection from tabnabbing*/}
-                    <a href={codeLink} target = "_blank" rel = "noopener noreferrer">Link</a>
+                    <a href={link} target = "_blank" rel = "noopener noreferrer">Link</a>
                 </div>
             </h3>
 
@@ -68,7 +68,7 @@ export function ProjectPreviews({school_list, personal_list}){
                         <Link href= {"/projects/" + proj.type + "/" + proj.name}>
                             <a>{proj.name}</a>
                         </Link>
-                        <p>{proj.briefSum}</p>
+                        <p>{proj.altDesc}</p>
                     </div>
                 ))}
             </h3>
@@ -79,7 +79,7 @@ export function ProjectPreviews({school_list, personal_list}){
                         <Link href= {"/projects/" + proj.type + "/" + proj.name}>
                             <a>{proj.name}</a>
                         </Link>
-                        <p>{proj.briefSum}</p>
+                        <p>{proj.altDesc}</p>
                     </div>
                 ))}
             </h3>

@@ -4,7 +4,7 @@ export const previews = [
         "ChefDoe",
         type: 
         "school",
-        briefSum: 
+        altDesc: 
         "Website used to order ingredients needed for specific recipes",
     },
     {
@@ -12,7 +12,7 @@ export const previews = [
         "RyanDotCom",
         type: 
         "personal",
-        briefSum: 
+        altDesc: 
         "This website!",
     },
 
@@ -26,7 +26,7 @@ export const projects = [
         "school",
         fullDesc: 
         "FULL DESCRIPTION HERE",
-        codeLink: 
+        link: 
         "https://github.com/rkulskis/ChefDoe",
         imageList: 
         [
@@ -42,7 +42,7 @@ export const projects = [
         "personal",
         fullDesc: 
         "FULL DESCRIPTION HERE",
-        codeLink: 
+        link: 
         "https://github.com/ryanv249/personal-site",
         imageList: 
         [
