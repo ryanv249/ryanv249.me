@@ -1,21 +1,17 @@
 export const previews = [
     {
-        id:
-        0,
-        type: 
-        "school",
         name: 
         "ChefDoe",
+        type: 
+        "school",
         briefSum: 
         "Website used to order ingredients needed for specific recipes",
     },
     {
-        id:
-        1,
-        type: 
-        "personal",
         name: 
         "RyanDotCom",
+        type: 
+        "personal",
         briefSum: 
         "This website!",
     },
@@ -24,14 +20,10 @@ export const previews = [
 
 export const projects = [
     {
-        id:
-        0,
-        type: 
-        "school",
         name: 
         "ChefDoe",
-        briefSum: 
-        "Website used to order ingredients needed for specific recipes",
+        type: 
+        "school",
         fullDesc: 
         "FULL DESCRIPTION HERE",
         codeLink: 
@@ -44,14 +36,10 @@ export const projects = [
         ]
     },
     {
-        id:
-        1,
-        type: 
-        "personal",
         name: 
         "RyanDotCom",
-        briefSum: 
-        "This website!",
+        type: 
+        "personal",
         fullDesc: 
         "FULL DESCRIPTION HERE",
         codeLink: 

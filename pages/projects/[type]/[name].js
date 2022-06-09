@@ -1,6 +1,5 @@
 import { projects } from "../../../data";
 import { ProjectPage } from "../../../components/layout";
-import Link from "next/link";
 
 /*
     this file is inside an extra folder just for aesthetic purposes...
@@ -38,6 +37,8 @@ export async function getStaticProps({params}){
         return ({original: img, thumbnail: img})
     })
 
+    // now, instead of list of strings, have list of objects with original and thumbnail vals 
+
     return{
         props: {project, images}
     }
@@ -45,16 +46,13 @@ export async function getStaticProps({params}){
 
 
 export default function DisplayProjectInfo({project, images}){
-    console.log(project, images)
-    // need to transform imageList into format for react-image-gallery 
-    // now, instead of list of strings, now have list of objects with original and thumbnail vals 
+    
     return(
         <ProjectPage
-            type = {project.type}
             name = {project.name}
-            briefSum = {project.briefSum}
             fullDesc = {project.fullDesc}
             codeLink = {project.codeLink}
+            // make sure to pass new image data list
             imageList = {images}
         />
     )

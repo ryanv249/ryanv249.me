@@ -13,7 +13,7 @@ export async function getStaticProps(){
         props: {
             personal_previews: previews.filter(prev => prev.type === "personal"),
             school_previews: previews.filter(prev => prev.type === "school"),
-            // projects
+            projects
         }
     }
 
@@ -42,33 +42,32 @@ function NavList(){
     );
 }
 
-// function DisplayProjectDebug({p}){
-//     console.log(p)
+function DisplayProjectDebug({p}){
+    console.log(p)
 
-//     const images = p.imageList.map((img) =>{
-//         return ({original: img, thumbnail: img})
-//     })
-//     console.log(p.imageList)
-//     console.log(images)
+    const images = p.imageList.map((img) =>{
+        return ({original: img, thumbnail: img})
+    })
+    console.log(p.imageList)
+    console.log(images)
     
-//     return(
-//         <>
+    return(
+        <>
             
-//             <p>{p.type}</p>
-//             <p>{p.name}</p>
-//             <p>{p.briefSum}</p>
-//             <p>{p.fullDesc}</p>
-//             <p>{p.codeLink}</p>
-//             <p>{p.imageList}</p>
-//             {/* <p>{images}</p> */}
-//         </>
-//     );
-// }
+            <p>{p.type}</p>
+            <p>{p.name}</p>
+            <p>{p.briefSum}</p>
+            <p>{p.fullDesc}</p>
+            <p>{p.codeLink}</p>
+            <p>{p.imageList}</p>
+            <p>{images}</p>
+        </>
+    );
+}
 
 
 export default function HomePage({personal_previews, school_previews}) {
-    // const p = projects.filter(pr => pr.id === 1)[0]
-    // console.log(p)
+
 
     return (
         <>
@@ -77,7 +76,6 @@ export default function HomePage({personal_previews, school_previews}) {
             <link rel="icon" href="/favicon.ico"/>
         </Head>
         <NavList>hello </NavList>
-        {/* <DisplayProjectDebug p = {p}/>   */}
         <ProjectPreviews
             personal_list={personal_previews}
             school_list={school_previews}

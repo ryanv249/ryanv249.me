@@ -17,7 +17,7 @@ import utilStyles from '../styles/utils.module.css';
 //     return <div className = {styles.about}>{children}</div>;
 // }
 
-export function ProjectPage({type, name, briefSum, fullDesc, codeLink, imageList}){
+export function ProjectPage({name, fullDesc, codeLink, imageList}){
     return(
         <>
             <Head>
@@ -64,7 +64,7 @@ export function ProjectPreviews({school_list, personal_list}){
             <h2>School Projects:</h2>
             <h3>
                 {school_list.map((proj) =>(
-                    <div key = {proj.id}>
+                    <div key = {proj.name}>
                         <Link href= {"/projects/" + proj.type + "/" + proj.name}>
                             <a>{proj.name}</a>
                         </Link>
@@ -75,7 +75,7 @@ export function ProjectPreviews({school_list, personal_list}){
             <h2>Personal Projects:</h2>
             <h3>
                 {personal_list.map((proj) =>(
-                    <div key = {proj.id}>
+                    <div key = {proj.name}>
                         <Link href= {"/projects/" + proj.type + "/" + proj.name}>
                             <a>{proj.name}</a>
                         </Link>
