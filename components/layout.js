@@ -34,7 +34,7 @@ export function ProjectPage({type, name, briefSum, fullDesc, codeLink, imageList
             {/* place navbar here ? */}
 
 
-            <h1 className={styles.header}>{title}</h1>
+            <h1 className={styles.header}>{name}</h1>
 
             <h3>
                 View this project's repo on Github:
@@ -58,7 +58,7 @@ export function ProjectPage({type, name, briefSum, fullDesc, codeLink, imageList
     );
 }
 
-export function ProjectPreviewList({school_list, personal_list}){
+export function ProjectPreviews({school_list, personal_list}){
     return(
         <>
             <h2>School Projects:</h2>

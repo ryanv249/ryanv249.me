@@ -10,12 +10,12 @@ import Link from "next/link";
 */
 
 export async function getStaticPaths(){
-    // can do the await fetch thing shown net ninja tutorial?
 
+    // make fetch request here instead of using projects variable
 
     const paths = projects.map(proj =>{
         return{
-            params: {ind: proj.ind, type: proj.type, name: proj.name}
+            params: {type: proj.type, name: proj.name}
         }
         // array of params objects with type and name data used to generate routes 
     })
@@ -30,12 +30,12 @@ export async function getStaticPaths(){
 
 export async function getStaticProps({params}){
 
-    // make fetch request here instead
+    // make fetch request here instead of this 
+    const project = projects.filter(p => p.name === params.name)[0]
 
-    const project = projects.filter(p => p.id === params.id)[0]
-
+    // converts image data into format required for react-image-gallery
     const images = project.imageList.map((img) =>{
-        return {original: img, thumbnail: img}
+        return ({original: img, thumbnail: img})
     })
 
     return{
@@ -45,9 +45,9 @@ export async function getStaticProps({params}){
 
 
 export default function DisplayProjectInfo({project, images}){
+    console.log(project, images)
     // need to transform imageList into format for react-image-gallery 
     // now, instead of list of strings, now have list of objects with original and thumbnail vals 
-
     return(
         <ProjectPage
             type = {project.type}
