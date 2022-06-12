@@ -1,7 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import Head from "next/head"
-import {AboutMeLayout, TestLayout} from '../components/layout'
+import {AboutMeLayout, Header, TestLayout} from '../components/layout'
 
 function MyFace(){
     return(
@@ -17,9 +16,7 @@ function MyFace(){
 export default function MyDescription(){
     return(
         <TestLayout>
-            <Head>
-                <title>About Me</title>
-            </Head>
+            <Header pageTitle={"About Me"}/>
             <h1>My name is Ryan</h1>
             <AboutMeLayout>
                 <p>

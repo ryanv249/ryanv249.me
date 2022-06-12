@@ -33,7 +33,6 @@ export async function getServerSideProps({res, params, query}){
         )
     }
 
-
     return{
         props: {project: cleanProject}
     }

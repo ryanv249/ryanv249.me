@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Head from "next/head"
+import { PageHeader } from "../components/layout";
 
 
 export function NavList({home}){
@@ -31,10 +32,7 @@ export default function HomePage() {
 
     return (
         <>
-        <Head>
-            <title>Ryan Velez Portfolio</title>
-            <link rel="icon" href="/favicon.ico"/>
-        </Head>
+        <PageHeader pageTitle={"Ryan Velez Portfolio"}/>
         <NavList></NavList>
         
 

@@ -1,13 +1,12 @@
 import Link from "next/link"
 import Head from "next/head"
-import { ProjectPreviews } from "../../components/layout"
+import { PageHeader, ProjectPreviews } from "../../components/layout"
 import { getDatabase } from "../../notion"
 import { NavList } from ".."
 
 export async function getStaticProps(){
     // get data from notion to display all previews 
     const data = await getDatabase();
-
 
     // build the preview object array
     const previews = (data.map((page) => {return({
@@ -21,26 +20,22 @@ export async function getStaticProps(){
 
     return{
         props: {
-            data,
             // even IDs are personal projects
             // checking bit instead of using modulus because of internet nerds 
             personal_previews: previews.filter(prev => ~prev.id & 1),
             school_previews: previews.filter(prev => prev.id & 1),
         },
+        // make sure this is up-to-date every 60 seconds
         revalidate: 60,
     };
 
 }
 
 
-export default function ProjectPreviewPage({data, personal_previews, school_previews}){   
-    console.log(data[0].id)
+export default function ProjectPreviewPage({personal_previews, school_previews}){   
     return(
         <>
-            <Head>
-                <title>Projects - Ryan Velez</title>
-                <link rel="icon" href="/favicon.ico"/>
-            </Head>
+            <PageHeader pageTitle={"Projects - Ryan Velez"}/>
             <NavList></NavList>
             <ProjectPreviews
                 personal_list={personal_previews}
