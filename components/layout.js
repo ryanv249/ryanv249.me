@@ -65,7 +65,12 @@ export function ProjectPreviews({school_list, personal_list}){
             <h3>
                 {school_list.map((prev) =>(
                     <div key = {prev.name}>
-                        <Link href= {"/projects/school/" + prev.name}>
+                        <Link 
+                          href= {{
+                            pathname: "/projects/school/" + prev.name,
+                            query: {id: prev.pageId}
+                          }}
+                        >
                             <a>{prev.name}</a>
                         </Link>
                         <p>{prev.altDesc}</p>
@@ -76,7 +81,12 @@ export function ProjectPreviews({school_list, personal_list}){
             <h3>
                 {personal_list.map((prev) =>(
                     <div key = {prev.name}>
-                        <Link href= {"/projects/personal/" + prev.name}>
+                        <Link 
+                          href= {{
+                            pathname: "/projects/personal/" + prev.name,
+                            query: prev.pageId
+                          }}
+                        >
                             <a>{prev.name}</a>
                         </Link>
                         <p>{prev.altDesc}</p>

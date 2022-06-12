@@ -11,3 +11,9 @@ export async function getDatabase(){
 
     return response.results
 }
+
+export async function getPage(pageId){
+    const response = await notion.pages.retrieve({page_id: pageId});
+
+    return response
+}   
