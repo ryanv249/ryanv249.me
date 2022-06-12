@@ -1,59 +1,78 @@
-import { projects } from "../../../data";
-import { ProjectPage } from "../../../components/layout";
-
-/*
-    this file is inside an extra folder just for aesthetic purposes...
-    i wanted the url to include 'projects' ex. projects/personal/RyanDotCom 
-    if i can find a way to do that without needing this folder, then this comment 
-    will cease to exist.
-*/
+import { ProjectPage } from "../../../components/layout"
+import { getDatabase, getProject } from "../../../notion"
+import { useRouter } from "next/router"
+import { useEffect } from "react"
 
 export async function getStaticPaths(){
+    // get data from notion to build paths
+    const data = await getDatabase();
 
-    // make fetch request here instead of using projects variable
-
-    const paths = projects.map(proj =>{
-        return{
-            params: {type: proj.type, name: proj.name}
+    // build pathnames from the project id and name
+    const paths = data.map(page => {return{
+        params: {
+                // even id === personal project
+                type: (~page.properties.id.number & 1 ? "personal" : "school"),
+                name: page.properties.name.title[0].plain_text
+            }
         }
-        // array of params objects with type and name data used to generate routes 
     })
-
+    
     return{
         paths,
         fallback: false 
-        // fallback pages... unimportant for now?
+        // fallback pages unimportant for now?
     }
 
 }
 
 export async function getStaticProps({params}){
+    /*
+        all my data is in the page properties, not blocks. change eventually?
 
-    // make fetch request here instead of this 
-    const project = projects.filter(p => p.name === params.name)[0]
 
-    // converts image data into format required for react-image-gallery
-    const images = project.imageList.map((img) =>{
-        return ({original: img, thumbnail: img})
-    })
+        OKAY. so after a couple hours of trying things out, I surrender.
+        Instead of breaking my back to find some workaround to avoid pulling all data again,
+        I will simply pull the entire database and access the page properties directly like I did with the previews
 
-    // now, instead of list of strings, have list of objects with original and thumbnail vals 
+        Next does not support passing data between getStaticPaths and getStaticProps. 
+
+        I was trying to do some weird hacky methods to get around this, but to be honest,
+        it seriously doesn't matter; my database is pretty small. 
+
+        !!! change this if next ever allows me to pass page id through params directly !!!
+    */
+    const data = await getDatabase()
+    
+    // select the project that this page is for
+    const rawProject = data.filter(page => page.properties.name.title[0].plain_text === params.name)[0]
+    
+    // convert data from notion into easier format
+
+    const cleanProject = {
+        name: params.name,
+        desc: rawProject.properties.fullDesc.rich_text[0].plain_text,
+        link: rawProject.properties.link.url,
+        images: rawProject.properties.imageList.files.map(
+            (item) => {return ({original: item.file.url, thumbnail: item.file.url})}
+        )
+    }
 
     return{
-        props: {project, images}
+        props: {project: cleanProject}
     }
 }
 
 
-export default function DisplayProjectInfo({project, images}){
-    
+export default function DisplayProjectInfo({project}){
+
+    console.log(project)
+
     return(
         <ProjectPage
             name = {project.name}
             desc = {project.fullDesc}
             link = {project.link}
-            // make sure to pass new image data list
-            imageList = {images}
+            images = {project.images}
         />
     )
 }

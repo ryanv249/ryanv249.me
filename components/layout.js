@@ -9,15 +9,15 @@ import utilStyles from '../styles/utils.module.css';
 
 // use this as template for something maybe at some point???
 
-// export function TestLayout({ children }){
-//     return <div className = {styles.test}>{children}</div>;
-// }
+export function TestLayout({ children }){
+    return <div className = {styles.test}>{children}</div>;
+}
 
-// export function AboutMeLayout ({ children }){
-//     return <div className = {styles.about}>{children}</div>;
-// }
+export function AboutMeLayout ({ children }){
+    return <div className = {styles.about}>{children}</div>;
+}
 
-export function ProjectPage({name, fullDesc, link, imageList}){
+export function ProjectPage({name, fullDesc, link, images}){
     return(
         <>
             <Head>
@@ -26,8 +26,8 @@ export function ProjectPage({name, fullDesc, link, imageList}){
             </Head>
 
             <h2>
-                <Link href= "/">
-                    <a>Back to Home</a>
+                <Link href= "/projects">
+                    <a>Back to Projects</a>
                 </Link>
             </h2>
 
@@ -37,7 +37,7 @@ export function ProjectPage({name, fullDesc, link, imageList}){
             <h1 className={styles.header}>{name}</h1>
 
             <h3>
-                View this project's repo on Github:
+                View this prevect's repo on Github:
                 <div className ={styles.codeLinkWrapper}>
                     {/* "_blank" =  opens link in a new tab
                     "noopener noreferrer" = protection from tabnabbing*/}
@@ -49,7 +49,7 @@ export function ProjectPage({name, fullDesc, link, imageList}){
 
             <div className={styles.gallery}>
                 <ImageGallery 
-                    items = {imageList} 
+                    items = {images} 
                     showPlayButton = {false}  
                 />
             </div>
@@ -63,23 +63,23 @@ export function ProjectPreviews({school_list, personal_list}){
         <>
             <h2>School Projects:</h2>
             <h3>
-                {school_list.map((proj) =>(
-                    <div key = {proj.name}>
-                        <Link href= {"/projects/" + proj.type + "/" + proj.name}>
-                            <a>{proj.name}</a>
+                {school_list.map((prev) =>(
+                    <div key = {prev.name}>
+                        <Link href= {"/projects/school/" + prev.name}>
+                            <a>{prev.name}</a>
                         </Link>
-                        <p>{proj.altDesc}</p>
+                        <p>{prev.altDesc}</p>
                     </div>
                 ))}
             </h3>
             <h2>Personal Projects:</h2>
             <h3>
-                {personal_list.map((proj) =>(
-                    <div key = {proj.name}>
-                        <Link href= {"/projects/" + proj.type + "/" + proj.name}>
-                            <a>{proj.name}</a>
+                {personal_list.map((prev) =>(
+                    <div key = {prev.name}>
+                        <Link href= {"/projects/personal/" + prev.name}>
+                            <a>{prev.name}</a>
                         </Link>
-                        <p>{proj.altDesc}</p>
+                        <p>{prev.altDesc}</p>
                     </div>
                 ))}
             </h3>

@@ -1,35 +1,18 @@
 import Link from "next/link"
 import Head from "next/head"
-import { ProjectPreviews } from "../components/layout"
-import { previews, projects } from "../data";
 
-export async function getStaticProps(){
 
-    // right here can use await fetch (data url) and then await res.json() to get data
-    // set up database later?
-
-    return{
-        // maybe set up data differently to avoid pulling images here? 
-        props: {
-            personal_previews: previews.filter(prev => prev.type === "personal"),
-            school_previews: previews.filter(prev => prev.type === "school"),
-            projects
-        }
-    }
-
-}
-
-function NavList(){
+export function NavList({home}){
     return (
         <>
             <p>
-                <Link href = "/personal">
-                    <a>Go to personal projects</a>
+                <Link href = "/">
+                    <a>Go to Home</a>
                 </Link>
             </p>
             <p>
-                <Link href = "/school">
-                    <a>Go to school projects</a>
+                <Link href = "/projects">
+                    <a>Go to Projects</a>
                 </Link>
             </p>
             <p>
@@ -43,7 +26,7 @@ function NavList(){
 }
 
 
-export default function HomePage({personal_previews, school_previews}) {
+export default function HomePage() {
 
 
     return (
@@ -52,11 +35,7 @@ export default function HomePage({personal_previews, school_previews}) {
             <title>Ryan Velez Portfolio</title>
             <link rel="icon" href="/favicon.ico"/>
         </Head>
-        <NavList>hello </NavList>
-        <ProjectPreviews
-            personal_list={personal_previews}
-            school_list={school_previews}
-        />
+        <NavList></NavList>
         
 
         </>
