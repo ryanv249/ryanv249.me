@@ -1,2 +1,8 @@
-My own personal website, built using Next.js. 
-It showcases and contains links to various projects that I've worked on.
+Source code of my personal website.
+
+See it live [here](https://ryanvelez.vercel.app/)
+
+## MADE WITH 
+- next.js
+- react-image-gallery
+- notion API 
