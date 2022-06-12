@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import Head from "next/Head"
+import Head from "next/head"
 import {AboutMeLayout, TestLayout} from '../components/layout'
 
 function MyFace(){
