@@ -1,5 +1,5 @@
 import { ProjectPage } from "../../../components/layout"
-import { getPage} from "../../../notion"
+import { getDatabase, getPage} from "../../../notion"
 
 /*
     since notion urls to files expire after 1 hour, I cant use static paths/props 
@@ -13,19 +13,26 @@ export async function getServerSideProps({res, params, query}){
         'Cache-Control',
         'public, s-maxage= 3540, stale-while-revalidate=50'
     )
-    // because using serverside, can use query params to get specific page 
+    // unfortunately, if i use query params, im stuck with an ugly url.
+    // there might be a way to fix it, but id rather move on.. 
+    // just grabbing whole database instead of specific page 
+
+    // get the data from notion
+    const data = await getDatabase()
+
     // select the project that this page is for
-    const data = await getPage(query.id);
+    const rawProject = data.filter(page => page.properties.name.title[0].plain_text === params.name)[0]
     
     // convert data from notion into easier format
     const cleanProject = {
         name: params.name,
-        desc: data.properties.fullDesc.rich_text[0].plain_text,
-        link: data.properties.link.url,
-        images: data.properties.imageList.files.map(
+        desc: rawProject.properties.fullDesc.rich_text[0].plain_text,
+        link: rawProject.properties.link.url,
+        images: rawProject.properties.imageList.files.map(
             (item) => {return ({original: item.file.url, thumbnail: item.file.url})}
         )
     }
+
 
     return{
         props: {project: cleanProject}
