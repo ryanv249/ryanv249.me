@@ -1,5 +1,5 @@
 module.exports = {
     images: {
-      domains: ["s3.us-west-2.amazonaws.com", "www.notion.so"],
+      domains: ["www.notion.so"],
     },
   }
