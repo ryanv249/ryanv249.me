@@ -1,6 +1,5 @@
 import Link from "next/link"
-import Head from "next/head"
-import { PageHeader } from "../components/layout";
+import { Header } from "../components/layout";
 
 
 export function NavList({home}){
@@ -32,7 +31,7 @@ export default function HomePage() {
 
     return (
         <>
-        <PageHeader pageTitle={"Ryan Velez Portfolio"}/>
+        <Header pageTitle={"Ryan Velez Portfolio"}/>
         <NavList></NavList>
         
 

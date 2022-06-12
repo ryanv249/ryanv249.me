@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Head from "next/head"
-import { PageHeader, ProjectPreviews } from "../../components/layout"
+import { Header, ProjectPreviews } from "../../components/layout"
 import { getDatabase } from "../../notion"
 import { NavList } from ".."
 
@@ -35,7 +35,7 @@ export async function getStaticProps(){
 export default function ProjectPreviewPage({personal_previews, school_previews}){   
     return(
         <>
-            <PageHeader pageTitle={"Projects - Ryan Velez"}/>
+            <Header pageTitle={"Projects - Ryan Velez"}/>
             <NavList></NavList>
             <ProjectPreviews
                 personal_list={personal_previews}
