@@ -47,7 +47,6 @@ export async function getStaticProps({params}){
     const rawProject = data.filter(page => page.properties.name.title[0].plain_text === params.name)[0]
     
     // convert data from notion into easier format
-
     const cleanProject = {
         name: params.name,
         desc: rawProject.properties.fullDesc.rich_text[0].plain_text,

@@ -37,7 +37,7 @@ export function ProjectPage({name, fullDesc, link, images}){
             <h1 className={styles.header}>{name}</h1>
 
             <h3>
-                View this prevect's repo on Github:
+                View this project's repo on Github:
                 <div className ={styles.codeLinkWrapper}>
                     {/* "_blank" =  opens link in a new tab
                     "noopener noreferrer" = protection from tabnabbing*/}
