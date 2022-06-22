@@ -40,19 +40,34 @@
 
 /* project styles
 
-    not sure what I need just yet 
+    the div styling is an ugly way to get react-image-gallery under control
+    no container because project IS the container 
 */
+.project {
+    background-color: rgb(116, 117, 116);
+}
 
-.projectContainer a{
+.project h1{
+    background-color: rgb(128, 0, 11);
+}
+
+.project h3{
+    background-color: rgb(210, 90, 38);
+}
+
+.project a{
     padding: 0px 5px 0px 4px;
     width: fit-content;
     background-color: green;
     color:blueviolet;
 }
 
-
+.project p{
+    background-color: rgb(197, 47, 152);
+}
 
 /* height override for react-image-gallery, applied in global.css */
-.gallery{
+.project div{
+    background-color: rgb(172, 194, 32);
     height: 300px;
 }

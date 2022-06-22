@@ -35,40 +35,46 @@ export function Header({ pageTitle }) {
     )
 }
 
+function Project({ children }){
+    return(
+        <div className ={styles.project}>
+            {children}
+        </div>
+    );
+}
+
 export function ProjectPageLayout({ project }) {
     return (
-        <div className={styles.projectContainer}>
+        <>
             <Header title={project.name} />
+
+            {/*      navbar stuff  */}
             <h2>
                 <Link href="/projects">
                     <a>Back to Projects</a>
                 </Link>
             </h2>
 
-            {/* place navbar here ? */}
+            {/* content */}
 
+            <Project>
+                <h1>{project.name}</h1>
 
-            <h1 className={styles.header}>{project.name}</h1>
+                <h3>View this project's repo on Github:</h3>
 
-            <h3>
-                View this project's repo on Github:
-                <div className={styles.codeLinkWrapper}>
-                    {/* "_blank" =  opens link in a new tab
-                  "noopener noreferrer" = protection from tabnabbing*/}
-                    <a href={project.link} target="_blank" rel="noopener noreferrer">Link</a>
+                <a href={project.link} target="_blank" rel="noopener noreferrer">Link</a>
+
+                <p>{project.desc}</p>
+
+                <div>
+                    <ImageGallery
+                        items={project.images}
+                        showPlayButton={false}
+                    />
                 </div>
-            </h3>
+            </Project>
 
-            <p>{project.desc}</p>
-
-            <div className={styles.gallery}>
-                <ImageGallery
-                    items={project.images}
-                    showPlayButton={false}
-                />
-            </div>
-
-        </div>
+        </>
     );
 }
 
@@ -92,9 +98,12 @@ function Preview({ mapKey, children }) {
 export function PreviewPageLayout({ school_list, personal_list }) {
     return (
         <>
-
             <Header pageTitle={"Projects - Ryan Velez"} />
+
+            {/*      navbar stuff  */}
             <NavList></NavList>
+
+            {/* content */}
 
             <PreviewGroup title = "School Projects:">
                 {school_list.map((prev) => (

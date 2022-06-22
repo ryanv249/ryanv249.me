@@ -30,7 +30,7 @@ img {
 
 /* 
     CSS overrides to react-image-gallery
-    height of entire gallery now depends on .gallery in layout.module.css
+    height of entire gallery determined in layout.module.css (see comments)
     certain things are specifically sized; otherwise inherit height from parent 
 
     note: image-gallery-thumbnails inherits 200px from image-gallery-thumbnails-wrapper 
@@ -46,7 +46,7 @@ img {
 .image-gallery-thumbnails,
 .image-gallery-thumbnail-inner,
 .image-gallery-thumbnail-image {
-    height: 100%;
+    height: 100% !important;
 }
 
 /* button height, needed to be changed specifically*/
@@ -59,7 +59,7 @@ img {
     this should fix that 
 */
 .image-gallery-thumbnails-wrapper {
-    height: 200px;
+    height: 200px !important;
 }
 
 /* 
@@ -78,7 +78,7 @@ img {
     120px seems correct
 */
 .image-gallery-thumbnail {
-    height: 120px;
+    height: 120px !important;
 }
 
 
