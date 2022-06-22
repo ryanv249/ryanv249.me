@@ -1,14 +1,13 @@
-import { ProjectPage } from "../../../components/layout"
-import { getDatabase, getPage} from "../../../notion"
-
+import { getDatabase } from "../../../notion";
+import { ProjectPageLayout } from "../../../components/layout";
 /*
     since notion urls to files expire after 1 hour, I cant use static paths/props 
     need to use serverside to ensure that the link used in the webpage is still live 
     this solves the issue of needing to pull the database twice here, funnily enough 
 */
 
-export async function getServerSideProps({res, params, query}){
-    // image url dies after an hour. 59 minutes and 50 seconds before it gets replaced
+export async function getServerSideProps({res, params}){
+    // image url dies after an hour. wait 59 minutes to fetch new and allow 50s of uptime before force refresh
     res.setHeader(
         'Cache-Control',
         'public, s-maxage= 3540, stale-while-revalidate=50'
@@ -34,18 +33,13 @@ export async function getServerSideProps({res, params, query}){
     }
 
     return{
-        props: {project: cleanProject}
+        props: {projectData: cleanProject}
     }
 }
 
-
-export default function DisplayProjectInfo({project}){
+export default function ProjectPage({projectData}){
     return(
-        <ProjectPage
-            name = {project.name}
-            desc = {project.fullDesc}
-            link = {project.link}
-            images = {project.images}
-        />
-    )
+        <ProjectPageLayout project = {projectData}/>
+    );
 }
+

@@ -12,14 +12,47 @@
     background-color: rgb(8, 1, 7);
 }
 
-/* height override for react-image-gallery, enforced in global.css */
-.gallery{
-    height: 300px;
+
+/* preview styles 
+
+    each project type has a separate container 
+    previews are children of a previewContainer
+*/
+.previewContainer{
+    background-color: rgb(64, 64, 64);
 }
 
-.codeLinkWrapper{
+.previewContainer h2{
+    background-color: rgb(216, 150, 221);
+}
+
+.preview{
+    background-color: rgb(196, 205, 27);
+}
+
+.preview a{
+    background-color: rgb(38, 19, 182);
+}
+
+.preview p {
+    background-color: rgb(34, 185, 29);
+}
+
+/* project styles
+
+    not sure what I need just yet 
+*/
+
+.projectContainer a{
     padding: 0px 5px 0px 4px;
     width: fit-content;
     background-color: green;
     color:blueviolet;
+}
+
+
+
+/* height override for react-image-gallery, applied in global.css */
+.gallery{
+    height: 300px;
 }

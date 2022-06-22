@@ -1,6 +1,6 @@
-import Link from "next/link"
-import Image from "next/image"
-import {AboutMeLayout, Header, TestLayout} from '../components/layout'
+import Link from "next/link";
+import Image from "next/image";
+import {AboutMeLayout, Header, TestLayout} from '../components/layout';
 
 function MyFace(){
     return(

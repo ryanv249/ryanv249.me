@@ -1,8 +1,5 @@
-import Link from "next/link"
-import Head from "next/head"
-import { Header, ProjectPreviews } from "../../components/layout"
-import { getDatabase } from "../../notion"
-import { NavList } from ".."
+import { getDatabase } from "../../notion";
+import { PreviewPageLayout } from "../../components/layout";
 
 export async function getStaticProps(){
     // get data from notion to display all previews 
@@ -22,8 +19,9 @@ export async function getStaticProps(){
         props: {
             // even IDs are personal projects
             // checking bit instead of using modulus because of internet nerds 
-            personal_previews: previews.filter(prev => ~prev.id & 1),
-            school_previews: previews.filter(prev => prev.id & 1),
+            // sort by ID, newest projects first
+            personal_previews: previews.filter(prev => ~prev.id & 1).sort((a,b) => b.id - a.id),
+            school_previews: previews.filter(prev => prev.id & 1).sort((a,b) => b.id - a.id),
         },
         // make sure this is up-to-date every 60 seconds
         revalidate: 60,
@@ -31,16 +29,11 @@ export async function getStaticProps(){
 
 }
 
-
-export default function ProjectPreviewPage({personal_previews, school_previews}){   
+export default function PreviewPage({personal_previews, school_previews}){   
     return(
-        <>
-            <Header pageTitle={"Projects - Ryan Velez"}/>
-            <NavList></NavList>
-            <ProjectPreviews
-                personal_list={personal_previews}
-                school_list={school_previews}
-            />
-        </>
+        <PreviewPageLayout
+            personal_list={personal_previews}
+            school_list={school_previews}
+        />
     )
 }

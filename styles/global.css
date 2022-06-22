@@ -2,30 +2,30 @@
 
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
-    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  line-height: 1.6;
-  font-size: 18px;
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+        Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    line-height: 1.6;
+    font-size: 18px;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 a {
-  color: #0070f3;
-  text-decoration: none;
+    color: #0070f3;
+    text-decoration: none;
 }
 
 a:hover {
-  color:red;
+    color: red;
 }
 
 img {
-  max-width: 100%;
-  display: block;
+    max-width: 100%;
+    display: block;
 }
 
 /* 
@@ -36,16 +36,21 @@ img {
     note: image-gallery-thumbnails inherits 200px from image-gallery-thumbnails-wrapper 
 */
 
-.image-gallery, .image-gallery-content, .image-gallery-slide-wrapper, 
-.image-gallery-swipe, .image-gallery-slides, .image-gallery-slide,
-.image-gallery-image, .image-gallery-thumbnails,
-.image-gallery-thumbnail-inner, .image-gallery-thumbnail-image
-{
+.image-gallery,
+.image-gallery-content,
+.image-gallery-slide-wrapper,
+.image-gallery-swipe,
+.image-gallery-slides,
+.image-gallery-slide,
+.image-gallery-image,
+.image-gallery-thumbnails,
+.image-gallery-thumbnail-inner,
+.image-gallery-thumbnail-image {
     height: 100%;
 }
 
 /* button height, needed to be changed specifically*/
-.image-gallery-svg{
+.image-gallery-svg {
     height: 50px !important;
 }
 
@@ -53,7 +58,7 @@ img {
     there was alot of blank space at the bottom of the page because of .gallery
     this should fix that 
 */
-.image-gallery-thumbnails-wrapper{
+.image-gallery-thumbnails-wrapper {
     height: 200px;
 }
 
@@ -63,7 +68,7 @@ img {
     
     note: height determined by content and scrollbar 
 */
-.image-gallery-thumbnails-container{
+.image-gallery-thumbnails-container {
     transform: translate3d(0px, 0px, 0px) !important;
     overflow-x: auto;
 }
@@ -72,24 +77,14 @@ img {
     needed to size thumbnails themselves to prevent resizing issue on overflow 
     120px seems correct
 */
-.image-gallery-thumbnail{
+.image-gallery-thumbnail {
     height: 120px;
 }
 
 
 /* width overrides to allow for differently sized thumbnails */
-.image-gallery-thumbnail, .image-gallery-thumbnail-inner, .image-gallery-thumbnail-image{
+.image-gallery-thumbnail,
+.image-gallery-thumbnail-inner,
+.image-gallery-thumbnail-image {
     width: auto;
 }
-
-
-
-
-
-
-
-
-
-
-
-
