@@ -46,7 +46,7 @@ function Project({ children }){
 export function ProjectPageLayout({ project }) {
     return (
         <>
-            <Header title={project.name} />
+            <Header pageTitle={project.name} />
 
             {/*      navbar stuff  */}
             <h2>
