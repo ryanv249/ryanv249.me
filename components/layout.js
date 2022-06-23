@@ -55,7 +55,7 @@ export function ProjectPageLayout({ project }) {
                 </Link>
             </h2>
 
-            {/* content */}
+            {/* content    make into a main?*/}
 
             <Project>
                 <h1>{project.name}</h1>
@@ -74,14 +74,15 @@ export function ProjectPageLayout({ project }) {
                 </div>
             </Project>
 
+             {/* footer    ?*/}
+
         </>
     );
 }
 
-function PreviewGroup({ title, children }){
+function PreviewGroup({ children }){
     return(
         <div className={styles.previewContainer}>
-            <h2>{title}</h2>
             {children}
         </div>
     );
@@ -103,9 +104,10 @@ export function PreviewPageLayout({ school_list, personal_list }) {
             {/*      navbar stuff  */}
             <NavList></NavList>
 
-            {/* content */}
+            {/* content    make into a main*/}
 
-            <PreviewGroup title = "School Projects:">
+            <PreviewGroup>
+                <h2>School Projects:</h2>
                 {school_list.map((prev) => (
                     <Preview mapKey = {prev.name}>
                         <Link href={"/projects/school/" + prev.name}>
@@ -116,7 +118,8 @@ export function PreviewPageLayout({ school_list, personal_list }) {
                 ))}
             </PreviewGroup>
             
-            <PreviewGroup title = "Personal Projects:">
+            <PreviewGroup>
+                <h2>Personal Projects:</h2>
                 {personal_list.map((prev) => (
                     <Preview mapKey = {prev.name}>
                         <Link href={"/projects/personal/" + prev.name}>
@@ -126,10 +129,84 @@ export function PreviewPageLayout({ school_list, personal_list }) {
                     </Preview>
                 ))}
             </PreviewGroup>
+
+            {/* footer      */}
         </>
     );
 }
 
+function MyFace({ children }){
+    return(
+        <div className={utilStyles.face}>
+            {children}
+        </div>
+    );
+}
+
+function HomeContentTop({ children }){
+    return(
+        <div className={styles.homeTop}>
+            {children}
+        </div>
+    );
+}
+
+function HomeContentBottom({ children }){
+    return(
+        <div className={styles.homeBottom}>
+            {children}
+        </div>
+    );
+}
+
+export function HomePageLayout(){
+    return(
+        <>
+            <Header pageTitle={"Home - Ryan Velez"}/>
+
+            {/* this will be in a nav, use display grid */}
+            <NavList></NavList>
+
+            {/* this will all be in a main */}
+
+                <HomeContentTop>
+                    <MyFace>
+                        <Image
+                            src = "/images/the_man_himself.jpg"
+                            height = {317 *.5}
+                            width = {214 * .5}
+                            alt = "me"
+                        />
+                    </MyFace>
+
+                    <h1>Ryan Velez</h1>
+
+                    <h3>Working on things!</h3>
+
+                    <p>
+                        I'm a soon-to-be graduate of Boston University, untested but full of energy and the drive to succeed.
+                    </p>
+
+                    <Link href = "/about">
+                        <a>More about me</a>
+                    </Link>
+                </HomeContentTop>
+
+                <HomeContentBottom>
+                    <h2>Get in touch</h2>
+
+                    <p>
+                        From job offers to feedback on my website and anything else in-between, my inbox is always open!
+                        Feel free to say anything. 
+                    </p>
+
+                    <a href="mailto:ryanv2468@hotmail.com">Contact Me</a>
+                </HomeContentBottom>
+            {/* this will be in a footer */}
+                {/* alternate navbar (use display grid), list of platforms, and copyright notice*/}
+        </>
+    );
+}
 
 const name = 'Your Name';
 export const siteTitle = 'Next.js Sample Website';

@@ -12,6 +12,46 @@
     background-color: rgb(8, 1, 7);
 }
 
+/* home styles
+
+    may merge top and bottom at some point.
+*/
+
+.homeTop{
+    background-color: rgb(100, 84, 84);
+}
+
+.homeTop h1{
+    background-color: rgb(213, 211, 80);
+}
+
+.homeTop h3{
+    background-color: rgb(229, 91, 91);
+}
+
+.homeTop p{
+    background-color: rgb(132, 178, 65);
+}
+
+.homeTop a{
+    background-color: rgb(209, 82, 220);
+}
+
+.homeBottom{
+    background-color: rgb(64, 64, 64);
+}
+
+.homeBottom h2{
+    background-color: rgb(82, 102, 38);
+}
+
+.homeBottom p{
+    background-color: rgb(105, 36, 36);
+}
+
+.homeBottom a{
+    background-color: rgb(220, 121, 144);
+}
 
 /* preview styles 
 
