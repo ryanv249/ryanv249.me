@@ -8,15 +8,7 @@ import ImageGallery from 'react-image-gallery';
 
 import { NavList } from '../pages';
 
-// use this as template for something maybe at some point???
-
-export function TestLayout({ children }) {
-    return <div className={styles.test}>{children}</div>;
-}
-
-export function AboutMeLayout({ children }) {
-    return <div className={styles.about}>{children}</div>;
-}
+import { SiC, SiPython, SiOcaml, SiReact, SiGithub, SiJupyter, SiNextdotjs, SiJava, SiGitlab } from 'react-icons/si'
 
 export function Header({ pageTitle }) {
     return (
@@ -204,6 +196,72 @@ export function HomePageLayout(){
                 </HomeContentBottom>
             {/* this will be in a footer */}
                 {/* alternate navbar (use display grid), list of platforms, and copyright notice*/}
+        </>
+    );
+}
+
+function AboutBio({ children }){
+    return(
+        <div className={styles.aboutBio}>
+            {children}
+        </div>
+    );
+}
+
+function AboutTech({ children }){
+    return(
+        <div className={styles.aboutTech}>
+            {children}
+        </div>
+    );
+}
+
+
+export function AboutPageLayout(){
+    return(
+        <>
+            <Header pageTitle={"About - Ryan Velez"}/>
+
+            {/* navbar stuff */}
+            <NavList></NavList>
+
+            {/* content    put into main? */}
+
+            {/* bio */}
+            <AboutBio>
+                <h1>Focused & Passionate</h1>
+
+                <p>
+                    I'm a senior studying Computer Science at Boston University.
+                </p>
+
+                <p>
+                    I am an avid gamer, proud cat person, and am happily the weirdest child. 
+                    My brother and sister are both successful in their own way, and now it's my turn. 
+                    
+                    My time at BU has taught me that the only way to fail is to give up; even if I need to ask for help, I finish what I start.
+                </p>
+            </AboutBio>
+
+            {/* things I know */}
+            <AboutTech>
+                <h1>languages/technologies i've used </h1>
+                {/* figure out styling for these eventually */}
+                <SiJava/>
+                <SiC/>
+                <SiPython/>
+                <SiOcaml/>
+                <SiReact/>
+                <SiNextdotjs/>
+                <SiGithub/>
+                <SiGitlab/>
+                <SiJupyter/>
+            </AboutTech>
+            
+            
+            {/* job experience section ? */}
+
+            {/* footer stuff */}
         </>
     );
 }

@@ -12,6 +12,9 @@
     background-color: rgb(8, 1, 7);
 }
 
+
+
+
 /* home styles
 
     may merge top and bottom at some point.
@@ -53,6 +56,10 @@
     background-color: rgb(220, 121, 144);
 }
 
+
+
+
+
 /* preview styles 
 
     each project type has a separate container 
@@ -77,6 +84,9 @@
 .preview p {
     background-color: rgb(34, 185, 29);
 }
+
+
+
 
 /* project styles
 
@@ -110,4 +120,31 @@
 .project div{
     background-color: rgb(172, 194, 32);
     height: 300px;
+}
+
+
+
+/* about styles
+
+    no container because uh
+*/
+
+.aboutBio{
+    background-color: rgb(17, 249, 171);
+}
+
+.aboutBio h1{
+    background-color: rgb(52, 72, 138);
+}
+
+.aboutBio p{
+    background-color: rgb(45, 138, 93);
+}
+
+.aboutTech{
+    background-color: blanchedalmond;
+}
+
+.aboutTech h1{
+    background-color: rgb(179, 113, 63);
 }
