@@ -30,6 +30,36 @@ export function Header({ pageTitle }) {
     )
 }
 
+function NavBar ({ currPage }){
+    return(
+        <nav>
+            {/* page links */}
+            {/* depending on page, 'highlight' that link */}
+            <div>
+                <div className={currPage === "home" ? utilStyles.highlight : ""}>
+                    <Link href = "/">
+                        <a>Home</a>
+                    </Link>
+                </div>
+                <div className={currPage === "about" ? utilStyles.highlight : ""}>
+                    <Link href = "/about">
+                        <a>About</a>
+                    </Link>
+                </div>
+                <div className={currPage === "projects" ? utilStyles.highlight : ""}>
+                    <Link href = "/projects">
+                        <a>Projects</a>
+                    </Link>
+                </div>
+            </div>
+            {/* contact link */}
+            <div>
+                <a href="mailto:ryanv2468@hotmail.com">Contact Me</a>
+            </div>
+        </nav>
+    )
+}
+
 function Project({ children }){
     return(
         <div className ={styles.project}>
@@ -44,11 +74,7 @@ export function ProjectPageLayout({ project }) {
             <Header pageTitle={project.name} />
 
             {/*      navbar stuff  */}
-            <h2>
-                <Link href="/projects">
-                    <a>Back to Projects</a>
-                </Link>
-            </h2>
+            <NavBar currPage=""/>
 
             {/* content    make into a main?*/}
 
@@ -97,7 +123,7 @@ export function PreviewPageLayout({ school_list, personal_list }) {
             <Header pageTitle={"Projects - Ryan Velez"} />
 
             {/*      navbar stuff  */}
-            <NavList></NavList>
+            <NavBar currPage="projects"/>
 
             {/* content    make into a main*/}
 
@@ -160,7 +186,7 @@ export function HomePageLayout(){
             <Header pageTitle={"Home - Ryan Velez"}/>
 
             {/* this will be in a nav, use display grid */}
-            <NavList></NavList>
+            <NavBar currPage="home"/>
 
             {/* this will all be in a main */}
 
@@ -226,7 +252,7 @@ export function AboutPageLayout(){
             <Header pageTitle={"About - Ryan Velez"}/>
 
             {/* navbar stuff */}
-            <NavList></NavList>
+            <NavBar currPage="about"/>
 
             {/* content    put into main? */}
 
