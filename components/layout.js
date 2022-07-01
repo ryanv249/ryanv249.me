@@ -6,9 +6,7 @@ import utilStyles from '../styles/utils.module.css';
 import ImageGallery from 'react-image-gallery';
 // https://github.com/xiaolin/react-image-gallery
 
-import { NavList } from '../pages';
-
-import { SiC, SiPython, SiOcaml, SiReact, SiGithub, SiJupyter, SiNextdotjs, SiJava, SiGitlab } from 'react-icons/si'
+import { SiC, SiPython, SiOcaml, SiReact, SiGithub, SiJupyter, SiNextdotjs, SiJava, SiGitlab, SiLinkedin } from 'react-icons/si'
 
 export function Header({ pageTitle }) {
     return (
@@ -59,9 +57,47 @@ function NavBar ({ currPage }){
             </div>
             {/* contact link */}
             <div>
-                <a href="mailto:ryanv2468@hotmail.com">Contact Me</a>
+                <a href="mailto:ryanv249@bu.edu">Contact Me</a>
             </div>
         </nav>
+    )
+}
+
+function Footer (){
+    return(
+        <footer>
+            {/* page links & email */}
+            <div>
+                <div>
+                    <Link href = "/">
+                        <a>Home</a>
+                    </Link>
+                </div>
+                <div>
+                    <Link href = "/about">
+                        <a>About</a>
+                    </Link>
+                </div>
+                <div>
+                    <Link href = "/projects">
+                        <a>Projects</a>
+                    </Link>
+                </div>
+                <div>
+                    <a href="mailto:ryanv249@bu.edu">Contact</a>
+                </div>
+            </div>
+
+            {/* external links */}
+            <div>
+                <SiGithub/>
+                <SiLinkedin/>
+            </div>
+
+            <p>
+                © 2022 Ryan Velez
+            </p>
+        </footer>
     )
 }
 
@@ -230,6 +266,7 @@ export function HomePageLayout(){
                 </HomeContentBottom>
             {/* this will be in a footer */}
                 {/* alternate navbar (use display grid), list of platforms, and copyright notice*/}
+            <Footer/>
         </>
     );
 }
@@ -300,70 +337,17 @@ export function AboutPageLayout(){
     );
 }
 
-const name = 'Your Name';
-export const siteTitle = 'Next.js Sample Website';
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, page }) {
     return (
-        <div className={styles.container}>
-            <Head>
-                <link rel="icon" href="/favicon.ico" />
-                <meta
-                    name="description"
-                    content="Learn how to build a personal website using Next.js"
-                />
-                <meta
-                    property="og:image"
-                    content={`https://og-image.vercel.app/${encodeURI(
-                        siteTitle,
-                    )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-                />
-                <meta name="og:title" content={siteTitle} />
-                <meta name="twitter:card" content="summary_large_image" />
-            </Head>
-            <header className={styles.header}>
-                {home ? (
-                    <>
-                        <Image
-                            priority
-                            src="/images/profile.jpg"
-                            className={utilStyles.borderCircle}
-                            height={144}
-                            width={144}
-                            alt={name}
-                        />
-                        <h1 className={utilStyles.heading2Xl}>{name}</h1>
-                    </>
-                ) : (
-                    <>
-                        <Link href="/">
-                            <a>
-                                <Image
-                                    priority
-                                    src="/images/profile.jpg"
-                                    className={utilStyles.borderCircle}
-                                    height={108}
-                                    width={108}
-                                    alt={name}
-                                />
-                            </a>
-                        </Link>
-                        <h2 className={utilStyles.headingLg}>
-                            <Link href="/">
-                                <a className={utilStyles.colorInherit}>{name}</a>
-                            </Link>
-                        </h2>
-                    </>
-                )}
-            </header>
+        <div>
+            <Header/>
+
+            <NavBar currPage = {page} />
+
             <main>{children}</main>
-            {!home && (
-                <div className={styles.backToHome}>
-                    <Link href="/">
-                        <a>← Back to home</a>
-                    </Link>
-                </div>
-            )}
+
+            <Footer/>
         </div>
     );
 }
