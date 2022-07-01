@@ -1,4 +1,3 @@
-
 .about{
     max-width: 36rem;
     padding: 0 1vw;
@@ -86,7 +85,21 @@
 
     the div styling is an ugly way to get react-image-gallery under control
     no container because project IS the container 
+
+    backButton and galleryShift not unique to project class, but here because only used on a project page
+        backButton is styling for special link back to project list 
+        galleryShift is styling for footer to work with react-image-gallery weirdness (needs to be pushed down so not hidden)
 */
+
+.backButton{
+    background-color: rgb(128, 33, 98);
+}
+
+.galleryShift{
+    top: 200px;
+    position: relative;
+}
+
 .project {
     background-color: rgb(116, 117, 116);
 }

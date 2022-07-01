@@ -1,5 +1,12 @@
-import { getDatabase } from "../../../notion";
-import { ProjectPageLayout } from "../../../components/layout";
+import Link from 'next/link';
+
+import Layout from '../../../components/layout';
+import { Project, BackButton } from '../../../components/wrappers';
+
+import { getDatabase } from '../../../notion';
+import ImageGallery from 'react-image-gallery';
+// https://github.com/xiaolin/react-image-gallery
+
 /*
     since notion urls to files expire after 1 hour, I cant use static paths/props 
     need to use serverside to ensure that the link used in the webpage is still live 
@@ -33,13 +40,35 @@ export async function getServerSideProps({res, params}){
     }
 
     return{
-        props: {projectData: cleanProject}
+        props: {project: cleanProject}
     }
 }
 
-export default function ProjectPage({projectData}){
+export default function ProjectPage({project}){
     return(
-        <ProjectPageLayout project = {projectData}/>
+        <Layout page = {project.name} onProjectPage={true}>
+            <BackButton>
+                <Link href = "/projects">
+                    <a>Back to Projects</a>
+                </Link>
+            </BackButton>
+            <Project>
+                <h1>{project.name}</h1>
+
+                <h3>View this project's repo on Github:</h3>
+
+                <a href={project.link} target="_blank" rel="noopener noreferrer">Link</a>
+
+                <p>{project.desc}</p>
+
+                <div>
+                    <ImageGallery
+                        items={project.images}
+                        showPlayButton={false}
+                    />
+                </div>
+            </Project>
+        </Layout>
     );
 }
 

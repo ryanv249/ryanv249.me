@@ -1,5 +1,9 @@
-import { getDatabase } from "../../notion";
-import { PreviewPageLayout } from "../../components/layout";
+import Link from 'next/link';
+
+import Layout from '../../components/layout';
+import { PreviewGroup, Preview } from '../../components/wrappers';
+
+import { getDatabase } from '../../notion';
 
 export async function getStaticProps(){
     // get data from notion to display all previews 
@@ -29,11 +33,33 @@ export async function getStaticProps(){
 
 }
 
-export default function PreviewPage({personal_previews, school_previews}){   
+export default function PreviewPage({school_previews, personal_previews}){   
     return(
-        <PreviewPageLayout
-            personal_list={personal_previews}
-            school_list={school_previews}
-        />
+        <Layout page = "Projects" onProjectPage={false}>
+            <PreviewGroup>
+                <h2>School Projects:</h2>
+                {school_previews.map((prev) => (
+                    <Preview mapKey = {prev.name}>
+                        <Link href={"/projects/school/" + prev.name}>
+                            <a>{prev.name}</a>
+                        </Link>
+                        <p>{prev.altDesc}</p>
+                    </Preview>
+                ))}
+            </PreviewGroup>
+
+            <PreviewGroup>
+                <h2>Personal Projects:</h2>
+                {personal_previews.map((prev) => (
+                    <Preview mapKey = {prev.name}>
+                        <Link href={"/projects/personal/" + prev.name}>
+                            <a>{prev.name}</a>
+                        </Link>
+                        <p>{prev.altDesc}</p>
+                    </Preview>
+                ))}
+            </PreviewGroup>
+
+        </Layout>
     )
 }
