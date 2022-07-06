@@ -55,11 +55,10 @@ img {
 }
 
 /* 
-    there was alot of blank space at the bottom of the page because of .gallery
-    this should fix that 
+    reduces blank space at bottom of gallery (default is 300, need at least 140)
 */
 .image-gallery-thumbnails-wrapper {
-    height: 200px !important;
+    height: 150px !important;
 }
 
 /* 

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import Layout from '../../../components/layout';
-import { Project, BackButton } from '../../../components/wrappers';
+import { ProjectContainer, ProjectHead, ProjectBody, ProjectFoot } from '../../../components/wrappers';
 
 import { getDatabase } from '../../../notion';
 import ImageGallery from 'react-image-gallery';
@@ -47,27 +47,33 @@ export async function getServerSideProps({res, params}){
 export default function ProjectPage({project}){
     return(
         <Layout page = {project.name} onProjectPage={true}>
-            <BackButton>
-                <Link href = "/projects">
-                    <a>Back to Projects</a>
-                </Link>
-            </BackButton>
-            <Project>
-                <h1>{project.name}</h1>
+            <ProjectContainer>
+                <ProjectHead>
+                    <Link href = "/projects">
+                        <a>Back to Projects</a>
+                    </Link>
+                
+                    <h1>{project.name}</h1>
 
-                <h3>View this project's repo on Github:</h3>
+                </ProjectHead>
 
-                <a href={project.link} target="_blank" rel="noopener noreferrer">Link</a>
+                <ProjectBody>
+                    <h3>View this project's repo on Github:</h3>
 
-                <p>{project.desc}</p>
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">Link</a>
 
-                <div>
-                    <ImageGallery
-                        items={project.images}
-                        showPlayButton={false}
-                    />
-                </div>
-            </Project>
+                    <p>{project.desc}</p>
+                </ProjectBody>
+
+                <ProjectFoot>
+                    <div>
+                        <ImageGallery
+                            items={project.images}
+                            showPlayButton={false}
+                        />
+                    </div>
+                </ProjectFoot>
+            </ProjectContainer>
         </Layout>
     );
 }

@@ -1,44 +1,68 @@
 import Layout from '../components/layout';
-import { AboutBio, AboutTech } from '../components/wrappers';
+import { AboutContainer, AboutHead, AboutBody, AboutFoot, AboutTech, AboutIcons  } from '../components/wrappers';
 
 import { SiC, SiPython, SiOcaml, SiReact, SiGithub, SiGitlab, SiJupyter, SiNextdotjs, SiJava} from 'react-icons/si'
 
 export default function AboutPage(){
     return(
         <Layout page = "About" onProjectPage={false}>
-            {/* bio */}
-            <AboutBio>
-                <h1>Focused & Passionate</h1>
+            <AboutContainer>
+                <AboutHead>
+                    <h1>Focused & Passionate</h1>
 
-                <p>
-                    I'm a senior studying Computer Science at Boston University.
-                </p>
+                    <p>
+                        I'm a senior studying Computer Science at Boston University.
+                    </p>
+                </AboutHead>
 
-                <p>
-                    I am an avid gamer, proud cat person, and am happily the weirdest child. 
-                    My brother and sister are both successful in their own way, and now it's my turn. 
-                    
-                    My time at BU has taught me that the only way to fail is to give up; even if I need to ask for help, I finish what I start.
-                </p>
-            </AboutBio>
+                <AboutBody>
+                    <p>
+                        I am an avid gamer, proud cat person, and am happily the weirdest child. 
+                        My brother and sister are both successful in their own way, and now it's my turn. 
+                        
+                        My time at BU has taught me that the only way to fail is to give up; even if I need to ask for help, I finish what I start.
+                    </p>
+                </AboutBody>
 
-            {/* things I know */}
-            <AboutTech>
-                <h1>languages/technologies i've used </h1>
-                {/* figure out styling for these eventually */}
-                <SiJava/>
-                <SiC/>
-                <SiPython/>
-                <SiOcaml/>
-                <SiReact/>
-                <SiNextdotjs/>
-                <SiGithub/>
-                <SiGitlab/>
-                <SiJupyter/>
-            </AboutTech>
+                <AboutFoot>
+                    <h1>languages/technologies i've used </h1>
+                    {/* this is an ugly solution to wrapping these, but it works. */}
+                    <AboutTech> 
+                        <AboutIcons>
+                            <div>
+                                <SiJava/>
+                            </div>
+                            <div>
+                                <SiC/>
+                            </div>
+                            <div>
+                                <SiPython/>
+                            </div>
+                            <div>
+                                <SiOcaml/>
+                            </div>
+                            <div>
+                                <SiReact/>
+                            </div>
+                            <div>
+                                <SiNextdotjs/>
+                            </div>
+                            <div>
+                                <SiGithub/>
+                            </div>
+                            <div>
+                                <SiGitlab/>
+                            </div>
+                            <div>
+                                <SiJupyter/>
+                            </div>
+                        </AboutIcons>
+                    </AboutTech>
+                </AboutFoot>
 
-            {/* job experience section ? */}
-
+                {/* job experience section ?
+                    eventually, add this as foot, place bio paragraph into head and place tech into body */}
+            </AboutContainer>
         </Layout>
     );
 }

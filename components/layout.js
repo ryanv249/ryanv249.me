@@ -3,8 +3,10 @@ import Link from 'next/link';
 
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
+import { NavContainer, FootContainer, FootIcons } from './wrappers';
 
 import { SiGithub, SiLinkedin } from 'react-icons/si'
+
 
 function Header({ pageTitle }) {
     return (
@@ -34,29 +36,31 @@ function Header({ pageTitle }) {
 function NavBar ({ currPage }){
     return(
         <nav>
-            {/* page links */}
-            {/* depending on page, 'highlight' that link */}
-            <div>
-                <div className={currPage === "Home" ? utilStyles.highlight : ""}>
-                    <Link href = "/">
-                        <a>Home</a>
-                    </Link>
+            <NavContainer>
+                {/* page links */}
+                {/* depending on page, 'highlight' that link */}
+                <div>
+                    <div className={currPage === "Home" ? utilStyles.highlight : ""}>
+                        <Link href = "/">
+                            <a>Home</a>
+                        </Link>
+                    </div>
+                    <div className={currPage === "About" ? utilStyles.highlight : ""}>
+                        <Link href = "/about">
+                            <a>About</a>
+                        </Link>
+                    </div>
+                    <div className={currPage === "Projects" ? utilStyles.highlight : ""}>
+                        <Link href = "/projects">
+                            <a>Projects</a>
+                        </Link>
+                    </div>
                 </div>
-                <div className={currPage === "About" ? utilStyles.highlight : ""}>
-                    <Link href = "/about">
-                        <a>About</a>
-                    </Link>
+                {/* contact link */}
+                <div>
+                    <a href="mailto:ryanv249@bu.edu">Contact Me</a>
                 </div>
-                <div className={currPage === "Projects" ? utilStyles.highlight : ""}>
-                    <Link href = "/projects">
-                        <a>Projects</a>
-                    </Link>
-                </div>
-            </div>
-            {/* contact link */}
-            <div>
-                <a href="mailto:ryanv249@bu.edu">Contact Me</a>
-            </div>
+            </NavContainer>
         </nav>
     )
 }
@@ -64,37 +68,41 @@ function NavBar ({ currPage }){
 function Footer ({ onProjectPage }){
     return(
         <footer className={onProjectPage ? styles.galleryShift : ""}>
-            {/* page links & email */}
-            <div>
+            <FootContainer>
+                {/* page links & email */}
                 <div>
-                    <Link href = "/">
-                        <a>Home</a>
-                    </Link>
+                    <div>
+                        <Link href = "/">
+                            <a>Home</a>
+                        </Link>
+                    </div>
+                    <div>
+                        <Link href = "/about">
+                            <a>About</a>
+                        </Link>
+                    </div>
+                    <div>
+                        <Link href = "/projects">
+                            <a>Projects</a>
+                        </Link>
+                    </div>
+                    <div>
+                        <a href="mailto:ryanv249@bu.edu">Contact</a>
+                    </div>
                 </div>
-                <div>
-                    <Link href = "/about">
-                        <a>About</a>
-                    </Link>
-                </div>
-                <div>
-                    <Link href = "/projects">
-                        <a>Projects</a>
-                    </Link>
-                </div>
-                <div>
-                    <a href="mailto:ryanv249@bu.edu">Contact</a>
-                </div>
-            </div>
 
-            {/* external links */}
-            <div>
-                <SiGithub/>
-                <SiLinkedin/>
-            </div>
+                {/* external links */}
+                <div>
+                    <FootIcons>
+                        <SiGithub/>
+                        <SiLinkedin/>
+                    </FootIcons>
+                </div>
 
-            <p>
-                © 2022 Ryan Velez
-            </p>
+                <p>
+                    © 2022 Ryan Velez
+                </p>
+            </FootContainer>
         </footer>
     )
 }

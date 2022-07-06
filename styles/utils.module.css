@@ -54,12 +54,15 @@
 /* idk about the stuff above this  */
 
 
-/* styling for profile pic */
-.face{
-    background-color: rgb(33, 38, 181);
-}
-
 /* applies to the div surrounding the link to the page being currently displayed */
 .highlight{
     background-color: aqua;
+}
+
+.navContainer{
+    background-color: rgb(187, 187, 187);
+}
+
+.footContainer{
+    background-color: rgb(149, 149, 149);
 }

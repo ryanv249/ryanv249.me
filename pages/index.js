@@ -2,36 +2,40 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import Layout  from '../components/layout';
-import { MyFace, HomeContentTop, HomeContentBottom } from '../components/wrappers';
+import { HomeContainer, HomeHead, HomeFace, HomeBody, HomeFoot } from '../components/wrappers';
 
 
 export default function HomePage() {
     return (
         <Layout page = "Home" onProjectPage={false}>
-            <HomeContentTop>
-                    <MyFace>
-                        <Image
-                            src = "/images/the_man_himself.jpg"
-                            height = {317 *.5}
-                            width = {214 * .5}
-                            alt = "me"
-                        />
-                    </MyFace>
+            <HomeContainer>
+                <HomeHead>
+                    <HomeFace>
+                        <div>
+                            <Image
+                                src = "/images/the_man_himself.jpg"
+                                alt = "Ryan Velez"
+                                layout='fill'
+                            />
+                        </div>
+                    </HomeFace>
 
                     <h1>Ryan Velez</h1>
 
                     <h3>Working on things!</h3>
+                </HomeHead>
 
+                <HomeBody>
                     <p>
-                        I'm a soon-to-be graduate of Boston University, untested but full of energy and the drive to succeed.
+                        I'm a soon-to-be graduate of Boston University, full of energy and the drive to succeed.
                     </p>
 
                     <Link href = "/about">
                         <a>More about me</a>
                     </Link>
-                </HomeContentTop>
-
-                <HomeContentBottom>
+                </HomeBody>
+                        
+                <HomeFoot>
                     <h2>Get in touch</h2>
 
                     <p>
@@ -40,7 +44,8 @@ export default function HomePage() {
                     </p>
 
                     <a href="mailto:ryanv2468@hotmail.com">Contact Me</a>
-                </HomeContentBottom>
+                </HomeFoot>
+            </HomeContainer>
         </Layout>
     )
 }
