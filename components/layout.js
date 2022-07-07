@@ -3,9 +3,10 @@ import Link from 'next/link';
 
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
-import { NavContainer, FootContainer, FootIcons } from './wrappers';
+import { NavContainer, NavPages, NavLink, NavContact, FootContainer, FootPages, FootLink, FootContact, FootIcons } from './wrappers';
 
-import { SiGithub, SiLinkedin } from 'react-icons/si'
+import { SiGithub, SiLinkedin } from 'react-icons/si';
+import { IoIosMail } from 'react-icons/io'
 
 
 function Header({ pageTitle }) {
@@ -38,28 +39,31 @@ function NavBar ({ currPage }){
         <nav>
             <NavContainer>
                 {/* page links */}
-                {/* depending on page, 'highlight' that link */}
-                <div>
-                    <div className={currPage === "Home" ? utilStyles.highlight : ""}>
+                {/* highlight link to current page */}
+                <NavPages>
+                    <NavLink linkTo = "Home" currPage = {currPage} >
                         <Link href = "/">
                             <a>Home</a>
                         </Link>
-                    </div>
-                    <div className={currPage === "About" ? utilStyles.highlight : ""}>
+                    </NavLink>
+
+                    <NavLink linkTo = "About" currPage = {currPage} >
                         <Link href = "/about">
                             <a>About</a>
                         </Link>
-                    </div>
-                    <div className={currPage === "Projects" ? utilStyles.highlight : ""}>
+                    </NavLink>
+
+                    <NavLink linkTo = "Projects" currPage = {currPage} >
                         <Link href = "/projects">
                             <a>Projects</a>
                         </Link>
-                    </div>
-                </div>
-                {/* contact link */}
-                <div>
+                    </NavLink>
+                </NavPages>
+                
+                {/* email link */}
+                <NavContact>
                     <a href="mailto:ryanv249@bu.edu">Contact Me</a>
-                </div>
+                </NavContact>
             </NavContainer>
         </nav>
     )
@@ -67,37 +71,45 @@ function NavBar ({ currPage }){
 
 function Footer ({ onProjectPage }){
     return(
-        <footer className={onProjectPage ? styles.galleryShift : ""}>
-            <FootContainer>
-                {/* page links & email */}
-                <div>
-                    <div>
+        <footer>
+            <FootContainer shift = {onProjectPage}>
+                {/* page links */}
+                <FootPages>
+                    <FootLink>
                         <Link href = "/">
                             <a>Home</a>
                         </Link>
-                    </div>
-                    <div>
+                    </FootLink>
+
+                    <FootLink>
                         <Link href = "/about">
                             <a>About</a>
                         </Link>
-                    </div>
-                    <div>
+                    </FootLink>
+
+                    <FootLink>
                         <Link href = "/projects">
                             <a>Projects</a>
                         </Link>
-                    </div>
-                    <div>
-                        <a href="mailto:ryanv249@bu.edu">Contact</a>
-                    </div>
-                </div>
+                    </FootLink>
+                </FootPages>
 
-                {/* external links */}
-                <div>
+                {/* external and email links */}
+                <FootContact>
                     <FootIcons>
-                        <SiGithub/>
-                        <SiLinkedin/>
+                        <a href={"https://github.com/ryanv249"} target="_blank" rel="noopener noreferrer">
+                            <SiGithub/>
+                        </a>
+                        
+                        <a href={"https://www.linkedin.com/in/ryan-velez-054b0b207/"} target="_blank" rel="noopener noreferrer">
+                            <SiLinkedin/>
+                        </a>
+
+                        <a href="mailto:ryanv249@bu.edu">
+                            <IoIosMail />
+                        </a>
                     </FootIcons>
-                </div>
+                </FootContact>
 
                 <p>
                     © 2022 Ryan Velez
@@ -110,7 +122,7 @@ function Footer ({ onProjectPage }){
 
 export default function Layout({ children, page, onProjectPage }) {
     return (
-        <div>
+        <>
             <Header pageTitle={page + " - Ryan Velez"}/>
 
             <NavBar currPage = {page} />
@@ -118,6 +130,6 @@ export default function Layout({ children, page, onProjectPage }) {
             <main>{children}</main>
 
             <Footer onProjectPage = {onProjectPage} />
-        </div>
+        </>
     );
 }

@@ -3,7 +3,7 @@ import utilStyles from '../styles/utils.module.css';
 import { IconContext } from 'react-icons'
 
 
-// navbar and footer wrappers
+// navbar wrappers
 export function NavContainer({ children }){
     return(
         <div className ={utilStyles.navContainer}>
@@ -12,19 +12,76 @@ export function NavContainer({ children }){
     );
 }
 
-export function FootContainer({ children }){
+export function NavPages({ children }){
     return(
-        <div className ={utilStyles.footContainer}>
+        <div className ={utilStyles.navPages}>
             {children}
         </div>
     );
 }
 
+// linkTo is destination, currPage is page on screen
+// highlight link to current page
+export function NavLink({ linkTo, currPage, children }){
+    return(
+        <div className ={linkTo === currPage ? utilStyles.navLinkFocused : utilStyles.navLink}>
+            {children}
+        </div>
+    );
+}
+
+export function NavContact({ children }){
+    return(
+        <div className ={utilStyles.navContact}>
+            {children}
+        </div>
+    );
+}
+
+
+
+// footer wrappers
+// shifts down by 150px on project page
+export function FootContainer({ shift, children }){
+    return(
+        <div className ={utilStyles.footContainer} style = {shift ? {top: 150} : {}}>
+            {children}
+        </div>
+    );
+}
+
+export function FootPages({ children }){
+    return(
+        <div className ={utilStyles.footPages}>
+            {children}
+        </div>
+    );
+}
+
+export function FootLink({ children }){
+    return(
+        <div className ={utilStyles.footLink}>
+            {children}
+        </div>
+    );
+}
+
+export function FootContact({ children }){
+    return(
+        <div className ={utilStyles.footContact}>
+            {children}
+        </div>
+    );
+}
+
+
 // define styling for footer icons here (cant pass css class)
 export function FootIcons({ children }){
     return(
-        <IconContext.Provider value={{size: 25}}>
-            {children}
+        <IconContext.Provider value={{size: 30}}>
+            <div className = {utilStyles.footIcons}>
+                {children}
+            </div>
         </IconContext.Provider>
     );
 }
@@ -91,10 +148,9 @@ export function PreviewGroup({ children }){
     );
 }
 
-// need a key because used in map function, see /projects/index
-export function Preview({ mapKey, children }) {
+export function Preview({ children }) {
     return(
-        <div key = {mapKey} className={styles.preview}>
+        <div className={styles.preview}>
             {children}
         </div>
     );

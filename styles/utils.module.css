@@ -54,15 +54,60 @@
 /* idk about the stuff above this  */
 
 
-/* applies to the div surrounding the link to the page being currently displayed */
-.highlight{
-    background-color: aqua;
-}
-
 .navContainer{
     background-color: rgb(187, 187, 187);
 }
 
-.footContainer{
+.navPages{
+    background-color: red;
+}
+
+.navLinkFocused{
+    background-color: aqua;
+}
+
+.navLink{
+    background-color: inherit;
+}
+
+.navContact{
+    background-color: green;
+}
+
+
+
+ /* 
+    footer styles 
+ 
+ */
+
+ .footContainer{
+    position: relative;
     background-color: rgb(149, 149, 149);
+}
+
+.footPages{
+    background-color: rgb(204, 255, 0);
+}
+
+.footLink{
+    background-color: inherit;
+}
+
+.footContact{
+    background-color: green;
+}
+
+.footIcons{
+    background-color: blue;
+}
+
+.footIcons a{
+    color: rgb(99, 99, 99);
+    transition: color 0.2s ease;
+}
+
+.footIcons a :hover{
+    color: black;
+    transition: color 0.2s ease;
 }

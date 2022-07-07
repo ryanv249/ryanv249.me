@@ -114,16 +114,9 @@
 
 /* project styles ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    galleryShift is styling for page footer to work with react-image-gallery (needs to be pushed down)
-        defined here because it is only used on project pages 
 
     image-gallery is hard to work with; foot contains height override (see global.css for details)
 */
-.galleryShift{
-    top: 150px;
-    position: relative;
-}
-
 
 .projectContainer{
     background-color: rgb(85, 201, 49);

@@ -41,7 +41,7 @@ export default function PreviewPage({school_previews, personal_previews}){
                     <PreviewGroup>
                         <h2>School Projects:</h2>
                         {school_previews.map((prev) => (
-                            <Preview mapKey = {prev.name}>
+                            <Preview key = {prev.name}>
                                 <Link href={"/projects/school/" + prev.name}>
                                     <a>{prev.name}</a>
                                 </Link>
@@ -53,7 +53,7 @@ export default function PreviewPage({school_previews, personal_previews}){
                     <PreviewGroup>
                         <h2>Personal Projects:</h2>
                         {personal_previews.map((prev) => (
-                            <Preview mapKey = {prev.name}>
+                            <Preview key = {prev.name}>
                                 <Link href={"/projects/personal/" + prev.name}>
                                     <a>{prev.name}</a>
                                 </Link>
