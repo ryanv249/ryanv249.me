@@ -12,6 +12,14 @@ export function NavContainer({ children }){
     );
 }
 
+export function NavPagesBox({ children }){
+    return(
+        <div className ={utilStyles.navPagesBox}>
+            {children}
+        </div>
+    );
+}
+
 export function NavPages({ children }){
     return(
         <div className ={utilStyles.navPages}>
@@ -20,11 +28,18 @@ export function NavPages({ children }){
     );
 }
 
-// linkTo is destination, currPage is page on screen
-// highlight link to current page
+// highlight link to current page   linkTo - destination page   currPage - page being displayed
 export function NavLink({ linkTo, currPage, children }){
     return(
-        <div className ={linkTo === currPage ? utilStyles.navLinkFocused : utilStyles.navLink}>
+        <div className ={utilStyles.navLink} style = {linkTo === currPage ? {backgroundColor: 'cyan'} : {}}>
+            {children}
+        </div>
+    );
+}
+
+export function NavContactBox({ children }){
+    return(
+        <div className ={utilStyles.navContactBox}>
             {children}
         </div>
     );
@@ -41,10 +56,18 @@ export function NavContact({ children }){
 
 
 // footer wrappers
-// shifts down by 150px on project page
+// on project page, move entire footer down by 150px  (to fit image gallery)
 export function FootContainer({ shift, children }){
     return(
         <div className ={utilStyles.footContainer} style = {shift ? {top: 150} : {}}>
+            {children}
+        </div>
+    );
+}
+
+export function FootPagesBox({ children }){
+    return(
+        <div className ={utilStyles.footPagesBox}>
             {children}
         </div>
     );
@@ -66,20 +89,21 @@ export function FootLink({ children }){
     );
 }
 
-export function FootContact({ children }){
+export function FootContactBox({ children }){
     return(
-        <div className ={utilStyles.footContact}>
+        <div className ={utilStyles.footContactBox}>
             {children}
         </div>
     );
 }
 
 
+
 // define styling for footer icons here (cant pass css class)
-export function FootIcons({ children }){
+export function FootContact({ children }){
     return(
         <IconContext.Provider value={{size: 30}}>
-            <div className = {utilStyles.footIcons}>
+            <div className = {utilStyles.footContact}>
                 {children}
             </div>
         </IconContext.Provider>
@@ -234,6 +258,15 @@ export function AboutFoot({ children }){
         </div>
     );
 }
+
+export function AboutIconsBox({ children }){
+    return(
+        <div className={styles.aboutIconsBox}>
+            {children}
+        </div>
+    );
+}
+
 
 // define styling for icons here (cant pass css class)
 export function AboutIcons({ children }){

@@ -1,9 +1,10 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
-import styles from './layout.module.css';
-import utilStyles from '../styles/utils.module.css';
-import { NavContainer, NavPages, NavLink, NavContact, FootContainer, FootPages, FootLink, FootContact, FootIcons } from './wrappers';
+import { 
+    NavContainer, NavPagesBox,  NavPages, NavLink, NavContactBox, NavContact,
+    FootContainer, FootPagesBox, FootPages, FootLink, FootContactBox, FootContact 
+} from './wrappers';
 
 import { SiGithub, SiLinkedin } from 'react-icons/si';
 import { IoIosMail } from 'react-icons/io'
@@ -39,31 +40,34 @@ function NavBar ({ currPage }){
         <nav>
             <NavContainer>
                 {/* page links */}
-                {/* highlight link to current page */}
-                <NavPages>
-                    <NavLink linkTo = "Home" currPage = {currPage} >
-                        <Link href = "/">
-                            <a>Home</a>
-                        </Link>
-                    </NavLink>
+                <NavPagesBox>
+                    <NavPages>
+                        <NavLink linkTo = "Home" currPage = {currPage} >
+                            <Link href = "/">
+                                <a>Home</a>
+                            </Link>
+                        </NavLink>
 
-                    <NavLink linkTo = "About" currPage = {currPage} >
-                        <Link href = "/about">
-                            <a>About</a>
-                        </Link>
-                    </NavLink>
+                        <NavLink linkTo = "About" currPage = {currPage} >
+                            <Link href = "/about">
+                                <a>About</a>
+                            </Link>
+                        </NavLink>
 
-                    <NavLink linkTo = "Projects" currPage = {currPage} >
-                        <Link href = "/projects">
-                            <a>Projects</a>
-                        </Link>
-                    </NavLink>
-                </NavPages>
-                
+                        <NavLink linkTo = "Projects" currPage = {currPage} >
+                            <Link href = "/projects">
+                                <a>Projects</a>
+                            </Link>
+                        </NavLink>
+                    </NavPages>
+                </NavPagesBox>
+
                 {/* email link */}
-                <NavContact>
-                    <a href="mailto:ryanv249@bu.edu">Contact Me</a>
-                </NavContact>
+                <NavContactBox>
+                    <NavContact>
+                        <a href="mailto:ryanv249@bu.edu">Contact Me</a>
+                    </NavContact>
+                </NavContactBox>
             </NavContainer>
         </nav>
     )
@@ -74,42 +78,44 @@ function Footer ({ onProjectPage }){
         <footer>
             <FootContainer shift = {onProjectPage}>
                 {/* page links */}
-                <FootPages>
-                    <FootLink>
-                        <Link href = "/">
-                            <a>Home</a>
-                        </Link>
-                    </FootLink>
+                <FootPagesBox>
+                    <FootPages>
+                        <FootLink>
+                            <Link href = "/">
+                                <a>Home</a>
+                            </Link>
+                        </FootLink>
 
-                    <FootLink>
-                        <Link href = "/about">
-                            <a>About</a>
-                        </Link>
-                    </FootLink>
+                        <FootLink>
+                            <Link href = "/about">
+                                <a>About</a>
+                            </Link>
+                        </FootLink>
 
-                    <FootLink>
-                        <Link href = "/projects">
-                            <a>Projects</a>
-                        </Link>
-                    </FootLink>
-                </FootPages>
+                        <FootLink>
+                            <Link href = "/projects">
+                                <a>Projects</a>
+                            </Link>
+                        </FootLink>
+                    </FootPages>
+                </FootPagesBox>
 
                 {/* external and email links */}
-                <FootContact>
-                    <FootIcons>
-                        <a href={"https://github.com/ryanv249"} target="_blank" rel="noopener noreferrer">
-                            <SiGithub/>
-                        </a>
-                        
-                        <a href={"https://www.linkedin.com/in/ryan-velez-054b0b207/"} target="_blank" rel="noopener noreferrer">
-                            <SiLinkedin/>
-                        </a>
+                <FootContactBox>
+                        <FootContact>
+                            <a href={"https://github.com/ryanv249"} target="_blank" rel="noopener noreferrer">
+                                <SiGithub/>
+                            </a>
+                            
+                            <a href={"https://www.linkedin.com/in/ryan-velez-054b0b207/"} target="_blank" rel="noopener noreferrer">
+                                <SiLinkedin/>
+                            </a>
 
-                        <a href="mailto:ryanv249@bu.edu">
-                            <IoIosMail />
-                        </a>
-                    </FootIcons>
-                </FootContact>
+                            <a href="mailto:ryanv249@bu.edu">
+                                <IoIosMail />
+                            </a>
+                        </FootContact>
+                </FootContactBox>
 
                 <p>
                     © 2022 Ryan Velez

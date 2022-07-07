@@ -56,22 +56,41 @@
 
 .navContainer{
     background-color: rgb(187, 187, 187);
+    display: grid;
+    grid-template-columns: 0.55fr 0.45fr;
+    align-items: center;
+}
+
+.navPagesBox{
+    background-color: greenyellow;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .navPages{
     background-color: red;
-}
-
-.navLinkFocused{
-    background-color: aqua;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 15px;
+    gap: 3em;
 }
 
 .navLink{
-    background-color: inherit;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.navContactBox{
+    background-color: purple;
+    display: flex;
+    padding-left: 100px;
 }
 
 .navContact{
     background-color: green;
+    padding: 5px;
 }
 
 
@@ -83,31 +102,60 @@
 
  .footContainer{
     position: relative;
+    display: grid;
     background-color: rgb(149, 149, 149);
+}
+
+.footContainer p {
+    background-color: brown;
+    display: flex;
+    justify-self: center;
+    margin: 0;
+}
+
+.footPagesBox{
+    background-color: red;
+    display: flex;
+    justify-content: center;
 }
 
 .footPages{
     background-color: rgb(204, 255, 0);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 5px;
+    gap: 2em;
 }
 
 .footLink{
-    background-color: inherit;
+    /* background-color: inherit; */
+    background-color: rgb(211, 136, 136);
+    display: flex;
+    justify-content: center;
+}
+
+.footContactBox{
+    background-color: rgb(255, 0, 179);
+    display: flex;
+    justify-content: center;
 }
 
 .footContact{
-    background-color: green;
-}
-
-.footIcons{
     background-color: blue;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 2em;
+    padding: 5px;
 }
 
-.footIcons a{
+.footContact a{
+    background-color: rgb(4, 255, 0);
+    height: 30px;
     color: rgb(99, 99, 99);
     transition: color 0.2s ease;
 }
 
-.footIcons a :hover{
+.footContact a :hover{
     color: black;
     transition: color 0.2s ease;
 }
