@@ -204,18 +204,25 @@
     background-color: rgb(179, 113, 63);
 }
 
+.aboutIconsBox{
+    background-color: rgb(251, 0, 255);
+    display: flex;
+    justify-content: center;
+}
+
 /* not displaying gitlab because not an even number of icons. add more but only if total is even */
 .aboutIcons{
     background-color: rgb(89, 193, 45);
     display: grid;
     grid-template-columns: repeat(4, auto);
-    /* align-content: space-around; */
-    justify-content: space-evenly;
+    gap: 1em 4em;
+    padding: 5px 0px 5px 0px;
 }
 
 .aboutIcons div{
     background-color: rgb(35, 132, 132);
-    padding: 5px 5px 5px 5px;
+    height: 50px;
+    padding: 5px;
     margin: 5px;
 }
 
