@@ -235,19 +235,13 @@ export function AboutFoot({ children }){
     );
 }
 
-export function AboutTech({ children }){
-    return(
-        <div className={styles.aboutTech}>
-            {children}
-        </div>
-    );
-}
-
-// define styling for aboutTech icons here (cant pass css class)
+// define styling for icons here (cant pass css class)
 export function AboutIcons({ children }){
     return(
         <IconContext.Provider value={{size: 40}}>
-            {children}
+            <div className={styles.aboutIcons}>
+                {children}
+            </div>
         </IconContext.Provider>
     );
 }

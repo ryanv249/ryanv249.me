@@ -1,5 +1,5 @@
 import Layout from '../components/layout';
-import { AboutContainer, AboutHead, AboutBody, AboutFoot, AboutTech, AboutIcons  } from '../components/wrappers';
+import { AboutContainer, AboutHead, AboutBody, AboutFoot, AboutIcons  } from '../components/wrappers';
 
 import { SiC, SiPython, SiOcaml, SiReact, SiGithub, SiGitlab, SiJupyter, SiNextdotjs, SiJava} from 'react-icons/si'
 
@@ -27,37 +27,35 @@ export default function AboutPage(){
                 <AboutFoot>
                     <h1>languages/technologies i've used </h1>
                     {/* this is an ugly solution to wrapping these, but it works. */}
-                    <AboutTech> 
-                        <AboutIcons>
-                            <div>
-                                <SiJava/>
-                            </div>
-                            <div>
-                                <SiC/>
-                            </div>
-                            <div>
-                                <SiPython/>
-                            </div>
-                            <div>
-                                <SiOcaml/>
-                            </div>
-                            <div>
-                                <SiReact/>
-                            </div>
-                            <div>
-                                <SiNextdotjs/>
-                            </div>
-                            <div>
-                                <SiGithub/>
-                            </div>
-                            <div>
-                                <SiGitlab/>
-                            </div>
-                            <div>
-                                <SiJupyter/>
-                            </div>
-                        </AboutIcons>
-                    </AboutTech>
+                    <AboutIcons>
+                        <div>
+                            <SiJava/>
+                        </div>
+                        <div>
+                            <SiC/>
+                        </div>
+                        <div>
+                            <SiPython/>
+                        </div>
+                        <div>
+                            <SiOcaml/>
+                        </div>
+                        <div>
+                            <SiReact/>
+                        </div>
+                        <div>
+                            <SiNextdotjs/>
+                        </div>
+                        <div>
+                            <SiGithub/>
+                        </div>
+                        {/* <div>
+                            <SiGitlab/>
+                        </div> */}
+                        <div>
+                            <SiJupyter/>
+                        </div>
+                    </AboutIcons>
                 </AboutFoot>
 
                 {/* job experience section ?
