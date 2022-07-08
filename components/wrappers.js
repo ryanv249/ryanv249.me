@@ -120,7 +120,7 @@ export function FootContactBox({ children }){
 // define styling for footer icons here (cant pass css class)
 export function FootContact({ children }){
     return(
-        <IconContext.Provider value={{size: 30}}>
+        <IconContext.Provider value={{size: 40}}>
             <div className = {utilStyles.footContact}>
                 {children}
             </div>

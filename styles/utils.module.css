@@ -133,7 +133,7 @@
 
 .footContainer p {
     background-color: brown;
-    margin: 0rem 0rem 1rem 0rem;
+    margin: 0rem 0rem 0.75rem 0rem;
 }
 
 .footPagesBox{
@@ -147,13 +147,14 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 5px;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .footLink{
     /* background-color: inherit; */
     background-color: rgb(211, 136, 136);
     text-align: center;
+    font-size: 1.15rem;
 }
 
 .footContactBox{
@@ -172,7 +173,7 @@
 
 .footContact a{
     background-color: rgb(4, 255, 0);
-    height: 30px;
+    height: 40px;
     color: rgb(99, 99, 99);
     transition: color 0.2s ease;
 }
