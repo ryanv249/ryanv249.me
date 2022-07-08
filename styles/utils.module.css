@@ -53,6 +53,17 @@
 
 /* idk about the stuff above this  */
 
+.textContainer{
+    display: flex;
+    justify-content: center;
+    letter-spacing: 0.01em;
+}
+
+.linkContainer{
+    display: flex;
+    justify-content: center;
+}
+
 
 .navContainer{
     background-color: rgb(187, 187, 187);
@@ -72,13 +83,11 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 15px;
-    gap: 3em;
+    gap: 3rem;
 }
 
 .navLink{
     background-color: yellow;
-    display: flex;
-    justify-content: center;
     padding: 5px;
 }
 
@@ -108,8 +117,6 @@
 
 .footContainer p {
     background-color: brown;
-    display: flex;
-    justify-self: center;
     margin: 0;
 }
 
@@ -124,14 +131,12 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 5px;
-    gap: 2em;
+    gap: 2rem;
 }
 
 .footLink{
     /* background-color: inherit; */
     background-color: rgb(211, 136, 136);
-    display: flex;
-    justify-content: center;
 }
 
 .footContactBox{
@@ -144,7 +149,7 @@
     background-color: blue;
     display: grid;
     grid-template-columns: repeat(3, auto);
-    gap: 2em;
+    gap: 2rem;
     padding: 5px;
 }
 

@@ -2,6 +2,26 @@ import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import { IconContext } from 'react-icons'
 
+// generic wrappers
+// they are called by more specific wrappers to reduce repeating lines
+
+export function TextContainer({ children }){
+    return(
+        <div className ={utilStyles.textContainer}>
+            {children}
+        </div>
+    );
+}
+
+export function LinkContainer({ children }){
+    return(
+        <div className ={utilStyles.linkContainer}>
+            {children}
+        </div>
+    );
+}
+
+
 
 // navbar wrappers
 export function NavContainer({ children }){
@@ -31,7 +51,9 @@ export function NavPages({ children }){
 // highlight link to current page   linkTo - destination page   currPage - page being displayed
 export function NavLink({ linkTo, currPage, children }){
     return(
-        <div className ={utilStyles.navLink} style = {linkTo === currPage ? {backgroundColor: 'cyan'} : {}}>
+        <div 
+        className ={utilStyles.navLink + ' ' + utilStyles.linkContainer}
+        style = {linkTo === currPage ? {backgroundColor: 'cyan'} : {}}>
             {children}
         </div>
     );
@@ -83,7 +105,7 @@ export function FootPages({ children }){
 
 export function FootLink({ children }){
     return(
-        <div className ={utilStyles.footLink}>
+        <div className ={utilStyles.footLink + ' ' + utilStyles.linkContainer}>
             {children}
         </div>
     );

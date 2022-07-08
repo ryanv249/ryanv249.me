@@ -2,8 +2,9 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 import { 
+    TextContainer, 
     NavContainer, NavPagesBox,  NavPages, NavLink, NavContactBox, NavContact,
-    FootContainer, FootPagesBox, FootPages, FootLink, FootContactBox, FootContact 
+    FootContainer, FootPagesBox, FootPages, FootLink, FootContactBox, FootContact, LinkContainer 
 } from './wrappers';
 
 import { SiGithub, SiLinkedin } from 'react-icons/si';
@@ -65,7 +66,9 @@ function NavBar ({ currPage }){
                 {/* email link */}
                 <NavContactBox>
                     <NavContact>
-                        <a href="mailto:ryanv249@bu.edu">Contact Me</a>
+                        <LinkContainer>
+                            <a href="mailto:ryanv249@bu.edu">Contact Me</a>
+                        </LinkContainer>
                     </NavContact>
                 </NavContactBox>
             </NavContainer>
@@ -100,7 +103,9 @@ function Footer ({ onProjectPage }){
                     </FootPages>
                 </FootPagesBox>
 
-                {/* external and email links */}
+                {/* external and email links
+                    LinkContainers not necessary because links are icons
+                 */}
                 <FootContactBox>
                         <FootContact>
                             <a href={"https://github.com/ryanv249"} target="_blank" rel="noopener noreferrer">
@@ -117,9 +122,11 @@ function Footer ({ onProjectPage }){
                         </FootContact>
                 </FootContactBox>
 
-                <p>
-                    © 2022 Ryan Velez
-                </p>
+                <TextContainer>
+                    <p>
+                        © 2022 Ryan Velez
+                    </p>
+                </TextContainer>
             </FootContainer>
         </footer>
     )
