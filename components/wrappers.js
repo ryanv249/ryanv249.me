@@ -293,7 +293,7 @@ export function AboutIconsBox({ children }){
 // define styling for icons here (cant pass css class)
 export function AboutIcons({ children }){
     return(
-        <IconContext.Provider value={{size: 40}}>
+        <IconContext.Provider value={{size: 45}}>
             <div className={styles.aboutIcons}>
                 {children}
             </div>

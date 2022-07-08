@@ -1,5 +1,7 @@
 import Layout from '../components/layout';
-import { AboutContainer, AboutHead, AboutBody, AboutFoot, AboutIconsBox, AboutIcons  } from '../components/wrappers';
+import { TextContainer,
+    AboutContainer, AboutHead, AboutBody, AboutFoot, AboutIconsBox, AboutIcons
+} from '../components/wrappers';
 
 import { SiC, SiPython, SiOcaml, SiReact, SiGithub, SiGitlab, SiJupyter, SiNextdotjs, SiJava} from 'react-icons/si'
 
@@ -8,24 +10,33 @@ export default function AboutPage(){
         <Layout page = "About" onProjectPage={false}>
             <AboutContainer>
                 <AboutHead>
-                    <h1>Focused & Passionate</h1>
-
-                    <p>
-                        I'm a senior studying Computer Science at Boston University.
-                    </p>
+                    <TextContainer>
+                        <h1>Focused & Passionate</h1>
+                    </TextContainer>
+                    
+                    <TextContainer>
+                        <p>
+                            I'm a senior studying Computer Science at Boston University.
+                        </p>
+                    </TextContainer>
                 </AboutHead>
 
                 <AboutBody>
-                    <p>
-                        I am an avid gamer, proud cat person, and am happily the weirdest child. 
-                        My brother and sister are both successful in their own way, and now it's my turn. 
-                        
-                        My time at BU has taught me that the only way to fail is to give up; even if I need to ask for help, I finish what I start.
-                    </p>
+                    <TextContainer>
+                        <p>
+                            I am an avid gamer, proud cat person, and am happily the weirdest child. 
+                            My brother and sister are both successful in their own way, and now it's my turn. 
+                            
+                            My time at BU has taught me that the only way to fail is to give up; even if I need to ask for help, I finish what I start.
+                        </p>
+                    </TextContainer>
                 </AboutBody>
 
                 <AboutFoot>
-                    <h1>languages/technologies i've used </h1>
+                    <TextContainer>
+                        <h1>Languages/technologies I've used </h1>
+                    </TextContainer>
+
                     {/* this is an ugly solution to wrapping these, but it works. */}
                     <AboutIconsBox>
                         <AboutIcons>

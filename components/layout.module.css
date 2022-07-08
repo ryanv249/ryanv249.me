@@ -215,6 +215,10 @@
 */
 .aboutContainer{
     background-color: red;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 3.5rem 0rem;
 }
 
 
@@ -224,6 +228,17 @@
 
 .aboutHead h1{
     background-color: rgb(52, 72, 138);
+    margin: 0rem 3rem;
+    max-width: 35rem;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.aboutHead p{
+    background-color: rgb(164, 82, 241);
+    margin: 2rem 1rem 0rem 1rem;
+    font-size: 1.05rem;
+    width: 35rem;
 }
 
 
@@ -233,6 +248,9 @@
 
 .aboutBody p{
     background-color: rgb(45, 138, 93);
+    font-size: 1.05rem;
+    max-width: 35rem;
+    margin: 1rem
 }
 
 
@@ -242,27 +260,41 @@
 
 .aboutFoot h1{
     background-color: rgb(179, 113, 63);
+    margin: 0rem 3rem;
+    /* max-width: 35rem; */
+    font-size: 2rem;
+    text-align: center;
 }
 
 .aboutIconsBox{
     background-color: rgb(251, 0, 255);
     display: flex;
     justify-content: center;
+    margin: 1rem 0rem 0rem 0rem;
 }
 
 /* not displaying gitlab because not an even number of icons. add more but only if total is even */
 .aboutIcons{
     background-color: rgb(89, 193, 45);
     display: grid;
-    grid-template-columns: repeat(4, auto);
-    gap: 1rem 4rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem 4rem;
     padding: 5px 0px 5px 0px;
 }
 
+/* swap grid to mobile format */
+@media screen and (max-width: 679px) {
+    .aboutIcons {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem 5rem;
+    }
+  }
+
 .aboutIcons div{
     background-color: rgb(35, 132, 132);
-    height: 50px;
+    height: 55px;
     padding: 5px;
-    margin: 5px;
+    margin: 15px;
+    outline: 2px black solid;
 }
 
