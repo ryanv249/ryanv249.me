@@ -58,7 +58,7 @@ export default function ProjectPage({project}){
                 </ProjectHead>
 
                 <ProjectBody>
-                    <h3>View this project's repo on Github:</h3>
+                    <h3>View this project&apos;s repo on Github:</h3>
 
                     <a href={project.link} target="_blank" rel="noopener noreferrer">Link</a>
 

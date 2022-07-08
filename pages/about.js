@@ -16,7 +16,7 @@ export default function AboutPage(){
                     
                     <TextContainer>
                         <p>
-                            I'm a senior studying Computer Science at Boston University.
+                            I&apos;m a senior studying Computer Science at Boston University.
                         </p>
                     </TextContainer>
                 </AboutHead>
@@ -25,7 +25,7 @@ export default function AboutPage(){
                     <TextContainer>
                         <p>
                             I am an avid gamer, proud cat person, and am happily the weirdest child. 
-                            My brother and sister are both successful in their own way, and now it's my turn. 
+                            My brother and sister are both successful in their own way, and now it&apos;s my turn. 
                             
                             My time at BU has taught me that the only way to fail is to give up; even if I need to ask for help, I finish what I start.
                         </p>
@@ -34,7 +34,7 @@ export default function AboutPage(){
 
                 <AboutFoot>
                     <TextContainer>
-                        <h1>Languages/technologies I've used </h1>
+                        <h1>Languages/technologies I&apos;ve used </h1>
                     </TextContainer>
 
                     {/* this is an ugly solution to wrapping these, but it works. */}

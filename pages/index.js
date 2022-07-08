@@ -32,7 +32,7 @@ export default function HomePage() {
                 <HomeBody>
                     <TextContainer>
                         <p>
-                            I'm a soon-to-be graduate of Boston University, full of energy and the drive to succeed.
+                            I&apos;m a soon-to-be graduate of Boston University, full of energy and the drive to succeed.
                         </p>
                     </TextContainer>
 
