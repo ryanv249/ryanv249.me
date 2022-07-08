@@ -2,9 +2,7 @@ import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import { IconContext } from 'react-icons'
 
-// generic wrappers
-// they are called by more specific wrappers to reduce repeating lines
-
+// generic wrappers to reduce repeated lines 
 export function TextContainer({ children }){
     return(
         <div className ={utilStyles.textContainer}>
@@ -51,9 +49,7 @@ export function NavPages({ children }){
 // highlight link to current page   linkTo - destination page   currPage - page being displayed
 export function NavLink({ linkTo, currPage, children }){
     return(
-        <div 
-        className ={utilStyles.navLink + ' ' + utilStyles.linkContainer}
-        style = {linkTo === currPage ? {backgroundColor: 'cyan'} : {}}>
+        <div className ={utilStyles.navLink} style = {linkTo === currPage ? {backgroundColor: 'cyan'} : {}}>
             {children}
         </div>
     );
@@ -105,7 +101,7 @@ export function FootPages({ children }){
 
 export function FootLink({ children }){
     return(
-        <div className ={utilStyles.footLink + ' ' + utilStyles.linkContainer}>
+        <div className ={utilStyles.footLink}>
             {children}
         </div>
     );

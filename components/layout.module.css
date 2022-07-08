@@ -1,11 +1,3 @@
-.about{
-    max-width: 36rem;
-    padding: 0 1vw;
-    margin: 3rem auto 6rem;
-    background-color: rgb(8, 1, 7);
-}
-
-
 
 
 /* home styles ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -288,7 +280,7 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 0.75rem 5rem;
     }
-  }
+}
 
 .aboutIcons div{
     background-color: rgb(35, 132, 132);
