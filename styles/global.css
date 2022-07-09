@@ -93,13 +93,11 @@ img {
         height: 120px !important;
     }
 
-    .image-gallery-thumbnails {
+    .image-gallery-thumbnails-container {
         height: 200px !important;
+        background-color: red !important;
     }
 
-    .thumbnails-swipe-horizontal{
-        height: 300px !important;
-    }
 
 }
 
