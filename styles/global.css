@@ -83,8 +83,8 @@ img {
     yes, the scroll is supposed here and not in container
 */
 .image-gallery-thumbnails{
-    width: 800px !important;
-    overflow-x: auto !important;
+    width: fit-content !important;
+    overflow-y: auto !important;
 }
 
 /* 
@@ -130,12 +130,36 @@ img {
     width: auto !important;
 }
 
+/* 
+    all we need to do here is resize the images and resize the whole box accordingly
+    however, also need to adjust margin for footer (see layout.module)
+*/
+
+/* medium-screen overrides */
+@media screen and (max-width: 850px) {
+    .image-gallery-thumbnails-wrapper {
+        height: 210px !important;
+    }
+
+    .image-gallery-thumbnail {
+        height: 125px !important;
+    }
+}
+
+/* small-screen overrides */
+@media screen and (max-width: 720px) {
+    .image-gallery-thumbnails-wrapper {
+        height: 180px !important;
+    }
+
+    .image-gallery-thumbnail {
+        height: 100px !important;
+    }
+}
+
+
 /* mobile overrides */
-@media screen and (max-width: 499px) {
-    /* 
-        all we need to do here is resize the images and resize the whole box accordingly
-        however, also need to adjust margin for footer (see layout.module)
-    */
+@media screen and (max-width: 560px) {
     .image-gallery-thumbnails-wrapper {
         height: 160px !important;
     }
@@ -144,4 +168,5 @@ img {
         height: 75px !important;
     }
 }
+
 

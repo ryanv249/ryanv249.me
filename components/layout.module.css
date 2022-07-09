@@ -309,21 +309,51 @@
     margin-bottom: 310px;
 }
 
-/* mobile override */
-@media screen and (max-width: 499px) {
-    /* on mobile, gallery shrinks, so need to pull footer up too */
+/* when gallery shrinks need to pull footer up too */
+/* medium-screen overrides */
+@media screen and (max-width: 850px) {
+    .projectFoot{
+        margin-bottom: 210px;
+    }
+}
+
+/* small-screen overrides */
+@media screen and (max-width: 720px) {
+    .projectFoot{
+        margin-bottom: 180px;
+    }
+}
+
+/* mobile overrides */
+@media screen and (max-width: 560px) {
     .projectFoot{
         margin-bottom: 160px;
     }
 }
 
-/* main height override for react-image-gallery, applied in global.css */
+
+/* 
+    main height override for react-image-gallery, applied in global.css
+    i noticed that it was too tall on smaller screens, so these are some adjustments that seem ok
+*/
 .projectFoot div{
     background-color: inherit;
     height: 300px;
 }
 
+/* bruh-sized screen overrides */
+@media screen and (max-width: 360px) {
+    .projectFoot div{
+        height: 250px;
+    }
+}
 
+/* bruh-sized screen overrides */
+@media screen and (max-width: 300px) {
+    .projectFoot div{
+        height: 200px;
+    }
+}
 
 /* about styles ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
