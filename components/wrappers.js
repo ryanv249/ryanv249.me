@@ -91,14 +91,6 @@ export function FootPagesBox({ children }){
     );
 }
 
-export function FootPagesBox({ children }){
-    return(
-        <div className ={utilStyles.footPagesBox}>
-            {children}
-        </div>
-    );
-}
-
 export function FootPages({ children }){
     return(
         <div className ={utilStyles.footPages}>

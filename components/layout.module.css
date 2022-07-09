@@ -451,12 +451,6 @@
     margin: 1rem 0rem 0rem 0rem;
 }
 
-.aboutIconsBox{
-    background-color: rgb(251, 0, 255);
-    display: flex;
-    justify-content: center;
-}
-
 /* not displaying gitlab because not an even number of icons. add more but only if total is even */
 .aboutIcons{
     background-color: rgb(89, 193, 45);
