@@ -2,7 +2,8 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
-        "postbuild": "next-sitemap"
+        "postbuild": "next-sitemap",
+        "lint": "next lint"
     },
     "dependencies": {
         "@notionhq/client": "^1.0.4",
@@ -12,5 +13,9 @@
         "react-dom": "^18.1.0",
         "react-icons": "^4.4.0",
         "react-image-gallery": "^1.2.8"
+    },
+    "devDependencies": {
+        "eslint": "8.19.0",
+        "eslint-config-next": "12.2.1"
     }
 }

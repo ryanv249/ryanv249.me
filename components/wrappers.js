@@ -2,6 +2,24 @@ import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import { IconContext } from 'react-icons'
 
+// generic wrappers to reduce repeated lines 
+export function TextContainer({ children }){
+    return(
+        <div className ={utilStyles.textContainer}>
+            {children}
+        </div>
+    );
+}
+
+export function LinkContainer({ children }){
+    return(
+        <div className ={utilStyles.linkContainer}>
+            {children}
+        </div>
+    );
+}
+
+
 
 // navbar wrappers
 export function NavContainer({ children }){
@@ -56,10 +74,23 @@ export function NavContact({ children }){
 
 
 // footer wrappers
+<<<<<<< HEAD
 // on project page, move entire footer down by 150px  (to fit image gallery)
 export function FootContainer({ shift, children }){
+=======
+// on project page, shifted down to fit gallery. applied in layout.module
+export function FootContainer({ children }){
+>>>>>>> dev
     return(
-        <div className ={utilStyles.footContainer} style = {shift ? {top: 150} : {}}>
+        <div className ={utilStyles.footContainer}>
+            {children}
+        </div>
+    );
+}
+
+export function FootPagesBox({ children }){
+    return(
+        <div className ={utilStyles.footPagesBox}>
             {children}
         </div>
     );
@@ -102,7 +133,11 @@ export function FootContactBox({ children }){
 // define styling for footer icons here (cant pass css class)
 export function FootContact({ children }){
     return(
+<<<<<<< HEAD
         <IconContext.Provider value={{size: 30}}>
+=======
+        <IconContext.Provider value={{size: 40}}>
+>>>>>>> dev
             <div className = {utilStyles.footContact}>
                 {children}
             </div>
@@ -156,6 +191,14 @@ export function PreviewContainer({ children }){
     );
 }
 
+export function PreviewHead({ children }){
+    return(
+        <div className={styles.previewHead}>
+            {children}
+        </div>
+    );
+}
+
 export function PreviewBody({ children }){
     return(
         <div className={styles.previewBody}>
@@ -167,6 +210,14 @@ export function PreviewBody({ children }){
 export function PreviewGroup({ children }){
     return(
         <div className={styles.previewGroup}>
+            {children}
+        </div>
+    );
+}
+
+export function PreviewList({ children }){
+    return(
+        <div className={styles.previewList}>
             {children}
         </div>
     );
@@ -271,7 +322,7 @@ export function AboutIconsBox({ children }){
 // define styling for icons here (cant pass css class)
 export function AboutIcons({ children }){
     return(
-        <IconContext.Provider value={{size: 40}}>
+        <IconContext.Provider value={{size: 45}}>
             <div className={styles.aboutIcons}>
                 {children}
             </div>

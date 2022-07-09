@@ -1,7 +1,10 @@
 import Link from 'next/link';
 
 import Layout from '../../components/layout';
-import { PreviewContainer, PreviewBody, PreviewGroup, Preview } from '../../components/wrappers';
+import { 
+    TextContainer,
+    PreviewContainer, PreviewHead, PreviewBody, PreviewList, PreviewGroup, Preview, LinkContainer 
+} from '../../components/wrappers';
 
 import { getDatabase } from '../../notion';
 
@@ -35,31 +38,65 @@ export async function getStaticProps(){
 
 export default function PreviewPage({school_previews, personal_previews}){   
     return(
-        <Layout page = "Projects" onProjectPage={false}>
+        <Layout page = "Projects">
             <PreviewContainer>
+                <PreviewHead>
+                    <TextContainer>
+                        <h1>My Work</h1>
+                    </TextContainer>
+
+                    <TextContainer>
+                        <p>
+                            These are the various projects which I&apos;ve worked on.
+                            For more information, click it&apos;s name!
+                        </p>
+                    </TextContainer>
+                </PreviewHead>
+
                 <PreviewBody>
                     <PreviewGroup>
-                        <h2>School Projects:</h2>
-                        {school_previews.map((prev) => (
-                            <Preview key = {prev.name}>
-                                <Link href={"/projects/school/" + prev.name}>
-                                    <a>{prev.name}</a>
-                                </Link>
-                                <p>{prev.altDesc}</p>
-                            </Preview>
-                        ))}
+                        <TextContainer>
+                            <h2>School Projects</h2> 
+                        </TextContainer>
+
+                        <PreviewList>
+
+                            {school_previews.map((prev) => (
+                                <Preview key = {prev.name}>
+                                    <LinkContainer>
+                                        <Link href={"/projects/school/" + prev.name}>
+                                            <a>{prev.name}</a>
+                                        </Link>
+                                    </LinkContainer>
+
+                                    <TextContainer>
+                                    <p>{prev.altDesc}</p> 
+                                    </TextContainer>
+                                </Preview>
+                            ))}
+                            </PreviewList>
                     </PreviewGroup>
 
                     <PreviewGroup>
-                        <h2>Personal Projects:</h2>
-                        {personal_previews.map((prev) => (
-                            <Preview key = {prev.name}>
-                                <Link href={"/projects/personal/" + prev.name}>
-                                    <a>{prev.name}</a>
-                                </Link>
-                                <p>{prev.altDesc}</p>
-                            </Preview>
-                        ))}
+                        <TextContainer>
+                            <h2>Personal Projects</h2>
+                        </TextContainer>
+
+                        <PreviewList>
+                            {personal_previews.map((prev) => (
+                                <Preview key = {prev.name}>
+                                    <LinkContainer>
+                                        <Link href={"/projects/personal/" + prev.name}>
+                                            <a>{prev.name}</a>
+                                        </Link>
+                                    </LinkContainer>
+
+                                    <TextContainer>
+                                        <p>{prev.altDesc}</p>
+                                    </TextContainer>
+                                </Preview>
+                            ))}
+                            </PreviewList>
                     </PreviewGroup>
                 </PreviewBody>
             </PreviewContainer>

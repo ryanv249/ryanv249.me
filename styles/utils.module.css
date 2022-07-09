@@ -53,6 +53,17 @@
 
 /* idk about the stuff above this  */
 
+.textContainer{
+    display: flex;
+    justify-content: center;
+    letter-spacing: 0.01em;
+}
+
+.linkContainer{
+    display: flex;
+    justify-content: center;
+}
+
 
 .navContainer{
     background-color: rgb(187, 187, 187);
@@ -72,14 +83,23 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 15px;
+<<<<<<< HEAD
     gap: 3em;
+=======
+    gap: 3rem;
+>>>>>>> dev
 }
 
 .navLink{
     background-color: yellow;
+<<<<<<< HEAD
     display: flex;
     justify-content: center;
     padding: 5px;
+=======
+    padding: 5px;
+    text-align: center;
+>>>>>>> dev
 }
 
 .navContactBox{
@@ -95,6 +115,29 @@
 
 
 
+/* swap navbar to tablet format */
+@media screen and (max-width: 679px) {
+    .navContainer{
+        grid-template-columns: 1fr;
+    }
+
+    .navPagesBox{
+        justify-content: center;
+    }
+
+    .navContactBox {
+      display: none;
+    }
+}
+
+/* mobile navbar time */
+@media screen and (max-width: 500px) {
+    .navContainer{
+        display: none;
+    }
+}
+
+
  /* 
     footer styles 
  
@@ -108,9 +151,13 @@
 
 .footContainer p {
     background-color: brown;
+<<<<<<< HEAD
     display: flex;
     justify-self: center;
     margin: 0;
+=======
+    margin: 0rem 0rem 0.75rem 0rem;
+>>>>>>> dev
 }
 
 .footPagesBox{
@@ -124,14 +171,30 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 5px;
+<<<<<<< HEAD
     gap: 2em;
+=======
+    gap: 2.5rem;
+}
+
+/* bruh-sized screen override */
+@media screen and (max-width: 300px) {
+    .footPages{
+        gap: 2rem;
+    }
+>>>>>>> dev
 }
 
 .footLink{
     /* background-color: inherit; */
     background-color: rgb(211, 136, 136);
+<<<<<<< HEAD
     display: flex;
     justify-content: center;
+=======
+    text-align: center;
+    font-size: 1.15rem;
+>>>>>>> dev
 }
 
 .footContactBox{
@@ -144,13 +207,21 @@
     background-color: blue;
     display: grid;
     grid-template-columns: repeat(3, auto);
+<<<<<<< HEAD
     gap: 2em;
+=======
+    gap: 2rem;
+>>>>>>> dev
     padding: 5px;
 }
 
 .footContact a{
     background-color: rgb(4, 255, 0);
+<<<<<<< HEAD
     height: 30px;
+=======
+    height: 40px;
+>>>>>>> dev
     color: rgb(99, 99, 99);
     transition: color 0.2s ease;
 }
