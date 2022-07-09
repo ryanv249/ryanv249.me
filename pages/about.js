@@ -1,5 +1,7 @@
+import Link from 'next/link';
+
 import Layout from '../components/layout';
-import { TextContainer,
+import { TextContainer, LinkContainer,
     AboutContainer, AboutHead, AboutBody, AboutFoot, AboutIconsBox, AboutIcons
 } from '../components/wrappers';
 
@@ -30,6 +32,12 @@ export default function AboutPage(){
                             My time at BU has taught me that the only way to fail is to give up; even if I need to ask for help, I finish what I start.
                         </p>
                     </TextContainer>
+
+                    <LinkContainer>
+                        <Link href = "/projects">
+                            <a>See my work</a>
+                        </Link>
+                    </LinkContainer>
                 </AboutBody>
 
                 <AboutFoot>
