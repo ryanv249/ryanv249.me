@@ -1,7 +1,9 @@
 import Link from 'next/link';
 
 import Layout from '../../../components/layout';
-import { ProjectContainer, ProjectHead, ProjectBody, ProjectFoot } from '../../../components/wrappers';
+import {
+    TextContainer, LinkContainer, 
+    ProjectContainer, ProjectHead, ProjectBody, ProjectFoot} from '../../../components/wrappers';
 
 import { getDatabase } from '../../../notion';
 import ImageGallery from 'react-image-gallery';
@@ -36,7 +38,8 @@ export async function getServerSideProps({res, params}){
         link: rawProject.properties.link.url,
         images: rawProject.properties.imageList.files.map(
             (item) => {return ({original: item.file.url, thumbnail: item.file.url})}
-        )
+        ),
+        tech: rawProject.properties.techList.rich_text[0].plain_text
     }
 
     return{
@@ -49,20 +52,41 @@ export default function ProjectPage({project}){
         <Layout page = {project.name} onProjectPage={true}>
             <ProjectContainer>
                 <ProjectHead>
-                    <Link href = "/projects">
-                        <a>Back to Projects</a>
-                    </Link>
-                
-                    <h1>{project.name}</h1>
-
+                    <LinkContainer>
+                        <Link href = "/projects">
+                            <a>←Back to Projects</a>
+                        </Link>
+                    </LinkContainer>
+                    
+                    <TextContainer>
+                        <h1>{project.name}</h1>
+                    </TextContainer>
                 </ProjectHead>
 
                 <ProjectBody>
-                    <h3>View this project&apos;s repo on Github:</h3>
+                    <TextContainer>
+                        <p>
+                            {project.desc} 
+                        </p>
+                    </TextContainer>
 
-                    <a href={project.link} target="_blank" rel="noopener noreferrer">Link</a>
+                    <TextContainer>
+                        <h2>
+                            TECHNOLOGIES UTILIZED:
+                        </h2>
+                    </TextContainer>
 
-                    <p>{project.desc}</p>
+                    <TextContainer>
+                        <h3>
+                            {project.tech}
+                        </h3>
+                    </TextContainer>
+
+                    <LinkContainer>
+                        <a href={project.link} target="_blank" rel="noopener noreferrer">
+                            Go to project repo
+                        </a>
+                    </LinkContainer>
                 </ProjectBody>
 
                 <ProjectFoot>

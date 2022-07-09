@@ -234,40 +234,69 @@
 
 .projectContainer{
     background-color: rgb(85, 201, 49);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* gap: 1rem; */
+    margin: 2rem 0rem;
 }
 
 
 .projectHead{
     background-color: rgb(116, 117, 116);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .projectHead a {
     background-color: rgb(128, 33, 98);
+    text-align: center;
+    font-size: 1.75rem;
+    margin: 0rem 0rem 0rem 0rem;
 }
 
 .projectHead h1{
     background-color: rgb(128, 0, 11);
+    font-size: 3.5rem;
+    margin: 0rem 0rem 0rem 0rem;
 }
 
 
 .projectBody {
     background-color: rgb(155, 118, 144);
-}
-
-.projectBody h3{
-    background-color: rgb(210, 90, 38);
-}
-
-.projectBody a{
-    padding: 0px 5px 0px 4px;
-    width: fit-content;
-    background-color: green;
-    color:blueviolet;
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 .projectBody p{
     background-color: rgb(197, 47, 152);
+    text-align: start;
+    font-size: 0.95rem;
+    margin: 1rem 2rem 0rem 2rem;
+    max-height: 350px;
+    max-width: 750px;
+    overflow-y: auto;
 }
+
+.projectBody h2{
+    background-color: blue;
+    margin: 1rem 0rem 0rem 0rem;
+    font-size: 1.7rem;
+}
+
+.projectBody h3{
+    background-color: rgb(210, 90, 38);
+    margin: 0.5rem 0rem 1.5rem 0rem;
+    font-size: 1.4rem;
+}
+
+.projectBody a{
+    background-color: green;
+    margin: 0rem 0rem 1rem 0rem;
+    font-size: 1.3rem;
+}
+
 
 
 /* this color is applied to the entirety of react-image-gallery, I can't be specific with it */
