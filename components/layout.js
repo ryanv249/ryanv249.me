@@ -76,10 +76,10 @@ function NavBar ({ currPage }){
     )
 }
 
-function Footer ({ onProjectPage }){
+function Footer (){
     return(
         <footer>
-            <FootContainer shift = {onProjectPage}>
+            <FootContainer >
                 {/* page links */}
                 <FootPagesBox>
                     <FootPages>

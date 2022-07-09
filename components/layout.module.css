@@ -299,12 +299,25 @@
 
 
 
-/* this color is applied to the entirety of react-image-gallery, I can't be specific with it */
+/* 
+    color is applied to the entirety of react-image-gallery, I can't be specific with it
+
+    need to use margin to push footer away from the gallery, since I can't easily flex or grid around it
+*/
 .projectFoot{
     background-color: rgb(32, 194, 172);
+    margin-bottom: 310px;
 }
 
-/* height override for react-image-gallery, applied in global.css */
+/* mobile override */
+@media screen and (max-width: 499px) {
+    /* on mobile, gallery shrinks, so need to pull footer up too */
+    .projectFoot{
+        margin-bottom: 160px;
+    }
+}
+
+/* main height override for react-image-gallery, applied in global.css */
 .projectFoot div{
     background-color: inherit;
     height: 300px;

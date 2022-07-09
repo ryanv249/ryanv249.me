@@ -7,7 +7,7 @@ import { TextContainer, LinkContainer, HomeContainer, HomeHead, HomeFace, HomeBo
 
 export default function HomePage() {
     return (
-        <Layout page = "Home" onProjectPage={false}>
+        <Layout page = "Home">
             <HomeContainer>
                 <HomeHead>
                     <HomeFace>

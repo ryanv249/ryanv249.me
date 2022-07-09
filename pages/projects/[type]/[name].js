@@ -49,7 +49,7 @@ export async function getServerSideProps({res, params}){
 
 export default function ProjectPage({project}){
     return(
-        <Layout page = {project.name} onProjectPage={true}>
+        <Layout page = {project.name}>
             <ProjectContainer>
                 <ProjectHead>
                     <LinkContainer>

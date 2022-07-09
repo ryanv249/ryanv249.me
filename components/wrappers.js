@@ -74,10 +74,10 @@ export function NavContact({ children }){
 
 
 // footer wrappers
-// on project page, move entire footer down by 150px  (to fit image gallery)
-export function FootContainer({ shift, children }){
+// on project page, shifted down to fit gallery. applied in layout.module
+export function FootContainer({ children }){
     return(
-        <div className ={utilStyles.footContainer} style = {shift ? {top: 150} : {}}>
+        <div className ={utilStyles.footContainer}>
             {children}
         </div>
     );

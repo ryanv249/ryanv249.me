@@ -38,7 +38,7 @@ export async function getStaticProps(){
 
 export default function PreviewPage({school_previews, personal_previews}){   
     return(
-        <Layout page = "Projects" onProjectPage={false}>
+        <Layout page = "Projects">
             <PreviewContainer>
                 <PreviewHead>
                     <TextContainer>
