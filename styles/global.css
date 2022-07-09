@@ -65,7 +65,7 @@ img {
     reduces blank space at bottom of gallery (default is 300, need at least 140)
 */
 .image-gallery-thumbnails-wrapper {
-    height: 150px !important;
+    height: 180px !important;
 }
 
 /* 
@@ -85,6 +85,15 @@ img {
 */
 .image-gallery-thumbnail {
     height: 120px !important;
+}
+
+/* mobile overrides */
+@media screen and (max-width: 400px) {
+    .image-gallery-thumbnail,
+    .image-gallery-thumbnail-inner,
+    .image-gallery-thumbnail-image {
+        width: 50%;
+    }
 }
 
 
