@@ -16,6 +16,7 @@
     background-color: rgb(100, 84, 84);
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 .homeFace{
@@ -38,16 +39,12 @@
 
 .homeHead h1{
     background-color: rgb(213, 211, 80);
-    display: flex;
-    justify-content: center;
     font-size: 3.5rem;
     margin: 0rem 0rem 0.5rem 0rem;
 }
 
 .homeHead h3{
     background-color: rgb(229, 91, 91);
-    display: flex;
-    justify-content: center;
     font-size: 1.5rem;
     margin: 0;
 }
@@ -60,6 +57,7 @@
     flex-direction: column;
 }
 
+
 .homeBody p{
     background-color: rgb(132, 178, 65);
     font-size: 1.05rem;
@@ -71,6 +69,7 @@
 .homeBody a{
     background-color: rgb(209, 82, 220);
     font-size: 1.3rem;
+    margin: 0.5rem;
 }
 
 
@@ -79,6 +78,7 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    text-align: center;
 }
 
 .homeFoot h2{
@@ -91,14 +91,12 @@
     background-color: rgb(105, 36, 36);
     font-size: 1.05rem;
     max-width: 30rem;
-    text-align: center;
     margin: 1rem 2rem;
 }
 
 .homeFoot a{
     background-color: rgb(123, 220, 121);
     font-size: 1.5rem;
-    
 }
 
 
@@ -114,31 +112,115 @@
 */
 .previewContainer{
     background-color: brown;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* gap: 1rem; */
+    margin: 2rem 0rem;
+}
+
+.previewHead{
+    background-color: orange;
+}
+
+.previewHead h1{
+    background-color: blueviolet;
+    font-size: 3.3rem;
+    margin: 0rem;
+}
+
+.previewHead p{
+    background-color: seagreen;
+    font-size: 1.05rem;
+    max-width: 45rem;
+    margin: 1.5rem 2rem 1rem 2rem;
 }
 
 
 .previewBody{
-    background-color: rgb(220, 57, 57);
+    background-color: rgb(179, 119, 119);
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    gap: 2rem 0rem;
+    justify-content: center;
+}
+
+/* large grid */
+@media screen and (min-width: 1350px) {
+    .previewBody {
+        display: flex;
+        justify-content: space-between;
+        margin: 1rem 2rem;
+        align-self: center;
+    }
+
+    .previewGroup{
+        width: 600px;
+        margin: 0rem 1.5rem;
+    }
+}
+
+/* mid-size grid */
+@media screen and (min-width: 1030px) and (max-width: 1349.99px) {
+    .previewBody {
+        display: flex;
+        justify-content: space-between;
+        align-self: center;
+    }
+
+    .previewGroup{
+        width: 450px;
+        margin: 0rem 1.5rem;
+    }
 }
 
 .previewGroup{
     background-color: rgb(64, 64, 64);
+    border: 3px black solid;
+    max-width: 600px;
 }
 
 .previewGroup h2{
     background-color: rgb(216, 150, 221);
+    margin: 0.5rem 0rem;
+    border-bottom: 3px black solid;
+}
+
+.previewList{
+    background-color: rgb(142, 144, 142);
+    display: flex;
+    flex-direction: column;
+    max-height: 300px;
+    gap: 0.25rem;
+    overflow-y: auto;
+    align-items: center;
 }
 
 .preview{
     background-color: rgb(196, 205, 27);
+    width: 60%;
+    border-radius: 25px;
+    margin: 0.75rem 0rem 0.75rem 0.75rem;
+}
+
+/* on mobile devices, don't shift previews to the right */
+@media screen and (max-width: 400px) {
+    .preview {
+        margin: 0.75rem;
+    }
+
 }
 
 .preview a{
     background-color: rgb(38, 19, 182);
+    font-size: 1.4rem;
+    margin: 0.5rem;
 }
 
 .preview p {
     background-color: rgb(34, 185, 29);
+    font-size: 1rem;
+    margin: 0.5rem;
 }
 
 

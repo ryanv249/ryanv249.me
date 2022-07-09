@@ -174,6 +174,14 @@ export function PreviewContainer({ children }){
     );
 }
 
+export function PreviewHead({ children }){
+    return(
+        <div className={styles.previewHead}>
+            {children}
+        </div>
+    );
+}
+
 export function PreviewBody({ children }){
     return(
         <div className={styles.previewBody}>
@@ -185,6 +193,14 @@ export function PreviewBody({ children }){
 export function PreviewGroup({ children }){
     return(
         <div className={styles.previewGroup}>
+            {children}
+        </div>
+    );
+}
+
+export function PreviewList({ children }){
+    return(
+        <div className={styles.previewList}>
             {children}
         </div>
     );
