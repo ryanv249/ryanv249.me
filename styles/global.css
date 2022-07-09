@@ -89,14 +89,12 @@ img {
 
 /* mobile overrides */
 @media screen and (max-width: 400px) {
-    .image-gallery-thumbnail,
-    .image-gallery-thumbnail-inner,
-    .image-gallery-thumbnail-image {
-        width: 50% ;
-    }
-
     .image-gallery-thumbnail {
         height: 150px !important;
+    }
+
+    .image-gallery-thumbnails {
+        height: 200px !important;
     }
 }
 
