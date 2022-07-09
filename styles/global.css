@@ -90,12 +90,14 @@ img {
 /* mobile overrides */
 @media screen and (max-width: 400px) {
     .image-gallery-thumbnail {
-        height: 120px !important;
+        height: 75px !important;
     }
 
     .image-gallery-thumbnails-container {
-        height: 200px !important;
-        background-color: red !important;
+        height: fit-content !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, auto) !important;
+        overflow: scroll !important;
     }
 
 
