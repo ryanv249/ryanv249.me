@@ -9,6 +9,8 @@ import { getDatabase } from '../../../notion';
 import ImageGallery from 'react-image-gallery';
 // https://github.com/xiaolin/react-image-gallery
 
+import { BsArrowLeft } from 'react-icons/bs'
+
 /*
     since notion urls to files expire after 1 hour, I cant use static paths/props 
     need to use serverside to ensure that the link used in the webpage is still live 
@@ -54,7 +56,9 @@ export default function ProjectPage({project}){
                 <ProjectHead>
                     <LinkContainer>
                         <Link href = "/projects">
-                            <a>←Back to Projects</a>
+                            <a>
+                                <BsArrowLeft />
+                            </a>
                         </Link>
                     </LinkContainer>
                     

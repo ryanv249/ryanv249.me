@@ -98,6 +98,13 @@
     padding-left: 100px;
 }
 
+.navContact{
+    background-color: green;
+    padding: 5px;
+}
+
+
+
 /* swap navbar to tablet format */
 @media screen and (max-width: 679px) {
     .navContainer{
@@ -113,11 +120,12 @@
     }
 }
 
-.navContact{
-    background-color: green;
-    padding: 5px;
+/* mobile navbar time */
+@media screen and (max-width: 500px) {
+    .navContainer{
+        display: none;
+    }
 }
-
 
 
  /* 
@@ -148,6 +156,13 @@
     grid-template-columns: repeat(3, 1fr);
     padding: 5px;
     gap: 2.5rem;
+}
+
+/* bruh-sized screen override */
+@media screen and (max-width: 300px) {
+    .footPages{
+        gap: 2rem;
+    }
 }
 
 .footLink{

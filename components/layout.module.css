@@ -252,7 +252,8 @@
 .projectHead a {
     background-color: rgb(128, 33, 98);
     text-align: center;
-    font-size: 1.75rem;
+    font-size: 5rem;
+    line-height: 0.8;
     margin: 0rem 0rem 0rem 0rem;
 }
 
@@ -261,6 +262,18 @@
     font-size: 3.5rem;
     margin: 0rem 0rem 0rem 0rem;
 }
+
+
+@media screen and (max-width: 679px) {
+    .projectHead a {
+        font-size: 2.5rem;
+    }
+    
+    .projectHead h1{
+        font-size: 2rem;
+    }
+}
+
 
 
 .projectBody {
@@ -415,6 +428,20 @@
     /* max-width: 35rem; */
     font-size: 1.8rem;
     text-align: center;
+}
+
+/* mobile */
+@media screen and (max-width: 400px) {
+    .aboutFoot h1{
+        font-size: 1.5rem;
+    }
+}
+
+/* bruh-sized screen */
+@media screen and (max-width: 300px) {
+    .aboutFoot h1{
+        font-size: 1.3rem;
+    }
 }
 
 .aboutIconsBox{
