@@ -90,12 +90,17 @@ img {
 /* mobile overrides */
 @media screen and (max-width: 400px) {
     .image-gallery-thumbnail {
-        height: 150px !important;
+        height: 120px !important;
     }
 
     .image-gallery-thumbnails {
         height: 200px !important;
     }
+
+    .thumbnails-swipe-horizontal{
+        height: 300px !important;
+    }
+
 }
 
 
