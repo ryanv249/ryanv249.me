@@ -461,11 +461,6 @@
 .aboutIcons{
     background-color: rgb(89, 193, 45);
     display: grid;
-<<<<<<< HEAD
-    grid-template-columns: repeat(4, auto);
-    gap: 1em 4em;
-    padding: 5px 0px 5px 0px;
-=======
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem 4rem;
     padding: 5px 0px 5px 0px;
@@ -477,20 +472,13 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 0.75rem 5rem;
     }
->>>>>>> dev
 }
 
 .aboutIcons div{
     background-color: rgb(35, 132, 132);
-<<<<<<< HEAD
-    height: 50px;
-    padding: 5px;
-    margin: 5px;
-=======
     height: 55px;
     padding: 5px;
     margin: 15px;
     outline: 2px black solid;
->>>>>>> dev
 }
 

@@ -1,13 +1,9 @@
 import Link from 'next/link';
 
 import Layout from '../components/layout';
-<<<<<<< HEAD
-import { AboutContainer, AboutHead, AboutBody, AboutFoot, AboutIconsBox, AboutIcons  } from '../components/wrappers';
-=======
 import { TextContainer, LinkContainer,
     AboutContainer, AboutHead, AboutBody, AboutFoot, AboutIconsBox, AboutIcons
 } from '../components/wrappers';
->>>>>>> dev
 
 import { SiC, SiPython, SiOcaml, SiReact, SiGithub, SiGitlab, SiJupyter, SiNextdotjs, SiJava} from 'react-icons/si'
 

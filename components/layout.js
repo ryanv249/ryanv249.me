@@ -2,14 +2,9 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 import { 
-<<<<<<< HEAD
-    NavContainer, NavPagesBox,  NavPages, NavLink, NavContactBox, NavContact,
-    FootContainer, FootPagesBox, FootPages, FootLink, FootContactBox, FootContact 
-=======
     TextContainer, 
     NavContainer, NavPagesBox,  NavPages, NavLink, NavContactBox, NavContact,
     FootContainer, FootPagesBox, FootPages, FootLink, FootContactBox, FootContact, LinkContainer 
->>>>>>> dev
 } from './wrappers';
 
 import { SiGithub, SiLinkedin } from 'react-icons/si';
@@ -71,13 +66,9 @@ function NavBar ({ currPage }){
                 {/* email link */}
                 <NavContactBox>
                     <NavContact>
-<<<<<<< HEAD
-                        <a href="mailto:ryanv249@bu.edu">Contact Me</a>
-=======
                         <LinkContainer>
                             <a href="mailto:ryanv249@bu.edu">Contact Me</a>
                         </LinkContainer>
->>>>>>> dev
                     </NavContact>
                 </NavContactBox>
             </NavContainer>
@@ -112,13 +103,9 @@ function Footer (){
                     </FootPages>
                 </FootPagesBox>
 
-<<<<<<< HEAD
-                {/* external and email links */}
-=======
                 {/* external and email links
                     LinkContainers not necessary because links are icons
                  */}
->>>>>>> dev
                 <FootContactBox>
                         <FootContact>
                             <a href={"https://github.com/ryanv249"} target="_blank" rel="noopener noreferrer">
@@ -135,17 +122,11 @@ function Footer (){
                         </FootContact>
                 </FootContactBox>
 
-<<<<<<< HEAD
-                <p>
-                    © 2022 Ryan Velez
-                </p>
-=======
                 <TextContainer>
                     <p>
                         © 2022 Ryan Velez
                     </p>
                 </TextContainer>
->>>>>>> dev
             </FootContainer>
         </footer>
     )

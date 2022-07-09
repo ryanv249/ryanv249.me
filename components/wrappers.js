@@ -74,13 +74,8 @@ export function NavContact({ children }){
 
 
 // footer wrappers
-<<<<<<< HEAD
-// on project page, move entire footer down by 150px  (to fit image gallery)
-export function FootContainer({ shift, children }){
-=======
 // on project page, shifted down to fit gallery. applied in layout.module
 export function FootContainer({ children }){
->>>>>>> dev
     return(
         <div className ={utilStyles.footContainer}>
             {children}
@@ -133,11 +128,7 @@ export function FootContactBox({ children }){
 // define styling for footer icons here (cant pass css class)
 export function FootContact({ children }){
     return(
-<<<<<<< HEAD
-        <IconContext.Provider value={{size: 30}}>
-=======
         <IconContext.Provider value={{size: 40}}>
->>>>>>> dev
             <div className = {utilStyles.footContact}>
                 {children}
             </div>
