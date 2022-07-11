@@ -2,7 +2,7 @@ import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import { IconContext } from 'react-icons'
 
-// generic wrappers to reduce repeated lines 
+// generic wrappers to reduce repeated lines   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~     
 export function TextContainer({ children }){
     return(
         <div className ={utilStyles.textContainer}>
@@ -21,51 +21,97 @@ export function LinkContainer({ children }){
 
 
 
-// navbar wrappers
-export function NavContainer({ children }){
+// navmenu wrappers     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+export function MenuContainer({ children }){
     return(
-        <div className ={utilStyles.navContainer}>
+        <div className ={utilStyles.menuContainer}>
             {children}
         </div>
     );
 }
 
-export function NavPagesBox({ children }){
+// need to define size for menu icon here
+export function MenuButton({ children }){
     return(
-        <div className ={utilStyles.navPagesBox}>
+        <IconContext.Provider value={{size: 55}}>
+            <div className={utilStyles.menuButton}>
+                {children}
+            </div>
+        </IconContext.Provider>
+    );
+}
+
+export function MenuContentBox({ children }){
+    return(
+        <div className ={utilStyles.menuContentBox}>
             {children}
         </div>
     );
 }
 
-export function NavPages({ children }){
+export function MenuContent({ children }){
     return(
-        <div className ={utilStyles.navPages}>
+        <div className ={utilStyles.menuContent}>
+            {children}
+        </div>
+    );
+}
+
+export function MenuLink({ children }){
+    return(
+        <div className ={utilStyles.menuLink}>
+            {children}
+        </div>
+    );
+}
+
+
+
+// navbar wrappers     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+export function BarContainer({ children }){
+    return(
+        <div className ={utilStyles.barContainer}>
+            {children}
+        </div>
+    );
+}
+
+export function BarPagesBox({ children }){
+    return(
+        <div className ={utilStyles.barPagesBox}>
+            {children}
+        </div>
+    );
+}
+
+export function BarPages({ children }){
+    return(
+        <div className ={utilStyles.barPages}>
             {children}
         </div>
     );
 }
 
 // highlight link to current page   linkTo - destination page   currPage - page being displayed
-export function NavLink({ linkTo, currPage, children }){
+export function BarLink({ linkTo, currPage, children }){
     return(
-        <div className ={utilStyles.navLink} style = {linkTo === currPage ? {backgroundColor: 'cyan'} : {}}>
+        <div className ={utilStyles.barLink} style = {linkTo === currPage ? {backgroundColor: 'cyan'} : {}}>
             {children}
         </div>
     );
 }
 
-export function NavContactBox({ children }){
+export function BarContactBox({ children }){
     return(
-        <div className ={utilStyles.navContactBox}>
+        <div className ={utilStyles.barContactBox}>
             {children}
         </div>
     );
 }
 
-export function NavContact({ children }){
+export function BarContact({ children }){
     return(
-        <div className ={utilStyles.navContact}>
+        <div className ={utilStyles.barContact}>
             {children}
         </div>
     );
@@ -73,7 +119,7 @@ export function NavContact({ children }){
 
 
 
-// footer wrappers
+// footer wrappers    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // on project page, shifted down to fit gallery. applied in layout.module
 export function FootContainer({ children }){
     return(
@@ -115,9 +161,7 @@ export function FootContactBox({ children }){
     );
 }
 
-
-
-// define styling for footer icons here (cant pass css class)
+// need to define size for foot link icons here
 export function FootContact({ children }){
     return(
         <IconContext.Provider value={{size: 40}}>
@@ -130,42 +174,105 @@ export function FootContact({ children }){
 
 
 
-// project page wrappers
-export function ProjectContainer({ children }){
+// home page wrappers        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+export function HomeContainer({ children}){
     return(
-        <div className ={styles.projectContainer}>
+        <div className={styles.homeContainer}>
             {children}
         </div>
     );
 }
 
-export function ProjectHead({ children }){
+export function HomeHead({ children }){
     return(
-        <div className ={styles.projectHead}>
-            {children}
-        </div>
-    );
-}
-
-export function ProjectBody({ children }){
-    return(
-        <div className ={styles.projectBody}>
-            {children}
-        </div>
-    );
-}
-
-export function ProjectFoot({ children }){
-    return(
-        <div className ={styles.projectFoot}>
+        <div className={styles.homeHead}>
             {children}
         </div>
     );
 }
 
 
+export function HomeFace({ children }){
+    return(
+        <div className={styles.homeFace}>
+            {children}
+        </div>
+    );
+}
 
-// preview page wrappers
+export function HomeBody({ children }){
+    return(
+        <div className={styles.homeBody}>
+            {children}
+        </div>
+    );
+}
+
+export function HomeFoot({ children }){
+    return(
+        <div className={styles.homeFoot}>
+            {children}
+        </div>
+    );
+}
+
+
+
+// about page wrappers          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+export function AboutContainer({ children }){
+    return(
+        <div className={styles.aboutContainer}>
+            {children}
+        </div>
+    );
+}
+
+export function AboutHead({ children }){
+    return(
+        <div className={styles.aboutHead}>
+            {children}
+        </div>
+    );
+}
+
+export function AboutBody({ children }){
+    return(
+        <div className={styles.aboutBody}>
+            {children}
+        </div>
+    );
+}
+
+export function AboutFoot({ children }){
+    return(
+        <div className={styles.aboutFoot}>
+            {children}
+        </div>
+    );
+}
+
+export function AboutIconsBox({ children }){
+    return(
+        <div className={styles.aboutIconsBox}>
+            {children}
+        </div>
+    );
+}
+
+// need to define size for tech icons here 
+export function AboutIcons({ children }){
+    return(
+        <IconContext.Provider value={{size: 45}}>
+            <div className={styles.aboutIcons}>
+                {children}
+            </div>
+        </IconContext.Provider>
+    );
+}
+
+
+
+// preview page wrappers      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export function PreviewContainer({ children }){
     return(
         <div className={styles.previewContainer}>
@@ -216,99 +323,35 @@ export function Preview({ children }) {
 
 
 
-// home page wrappers
-export function HomeContainer({ children}){
+// project page wrappers    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+export function ProjectContainer({ children }){
     return(
-        <div className={styles.homeContainer}>
+        <div className ={styles.projectContainer}>
             {children}
         </div>
     );
 }
 
-export function HomeHead({ children }){
+export function ProjectHead({ children }){
     return(
-        <div className={styles.homeHead}>
+        <div className ={styles.projectHead}>
             {children}
         </div>
     );
 }
 
-
-export function HomeFace({ children }){
+export function ProjectBody({ children }){
     return(
-        <div className={styles.homeFace}>
+        <div className ={styles.projectBody}>
             {children}
         </div>
     );
 }
 
-export function HomeBody({ children }){
+export function ProjectFoot({ children }){
     return(
-        <div className={styles.homeBody}>
+        <div className ={styles.projectFoot}>
             {children}
         </div>
-    );
-}
-
-export function HomeFoot({ children }){
-    return(
-        <div className={styles.homeFoot}>
-            {children}
-        </div>
-    );
-}
-
-
-
-// about page wrappers
-export function AboutContainer({ children }){
-    return(
-        <div className={styles.aboutContainer}>
-            {children}
-        </div>
-    );
-}
-
-export function AboutHead({ children }){
-    return(
-        <div className={styles.aboutHead}>
-            {children}
-        </div>
-    );
-}
-
-export function AboutBody({ children }){
-    return(
-        <div className={styles.aboutBody}>
-            {children}
-        </div>
-    );
-}
-
-export function AboutFoot({ children }){
-    return(
-        <div className={styles.aboutFoot}>
-            {children}
-        </div>
-    );
-}
-
-export function AboutIconsBox({ children }){
-    return(
-        <div className={styles.aboutIconsBox}>
-            {children}
-        </div>
-    );
-}
-
-
-// define styling for icons here (cant pass css class)
-export function AboutIcons({ children }){
-    return(
-        <IconContext.Provider value={{size: 45}}>
-            <div className={styles.aboutIcons}>
-                {children}
-            </div>
-        </IconContext.Provider>
     );
 }

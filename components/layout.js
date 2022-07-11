@@ -1,14 +1,21 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { useState } from 'react';
+
 
 import { 
     TextContainer, 
-    NavContainer, NavPagesBox,  NavPages, NavLink, NavContactBox, NavContact,
-    FootContainer, FootPagesBox, FootPages, FootLink, FootContactBox, FootContact, LinkContainer 
+    MenuContainer, MenuButton, MenuContentBox, MenuContent, MenuLink,
+    BarContainer, BarPagesBox,  BarPages, BarLink, BarContactBox, BarContact,
+    FootContainer, FootPagesBox, FootPages, FootLink, FootContactBox, FootContact
 } from './wrappers';
 
 import { SiGithub, SiLinkedin } from 'react-icons/si';
-import { IoIosMail } from 'react-icons/io'
+import { IoIosMail, IoMdMenu, IoIosClose } from 'react-icons/io'
+import { useMediaQuery } from 'react-responsive';
+
+
+
 
 
 function Header({ pageTitle }) {
@@ -36,43 +43,91 @@ function Header({ pageTitle }) {
     )
 }
 
+
+function NavMenu ({open, setOpen}){
+    return(
+        <>
+            <MenuContainer>
+                <MenuButton>
+                    {
+                        open
+                        ?
+                        (<IoIosClose onClick={() => setOpen(false)}/>)
+                        :
+                        (<IoMdMenu onClick={() => setOpen(true)}/>)
+                    }
+                </MenuButton>
+                
+                {/* also toggles display of page content */}
+                { open && (
+                    <>
+                        <MenuContentBox>
+                            <MenuContent>
+                                <MenuLink>
+                                    <Link href = "/">
+                                        <a>Home</a>
+                                    </Link>
+                                </MenuLink>
+
+                                <MenuLink>
+                                    <Link href = "/about">
+                                        <a>About</a>
+                                    </Link>
+                                </MenuLink>
+
+                                <MenuLink>
+                                    <Link href = "/projects">
+                                        <a>Projects</a>
+                                    </Link>
+                                </MenuLink>
+
+                                <MenuLink>
+                                    <a href="mailto:ryanv249@bu.edu">Contact Me</a>
+                                </MenuLink>
+                            </MenuContent>
+                        </MenuContentBox>
+                    </>
+                )}
+            </MenuContainer>
+        </>
+    )
+}
+
 function NavBar ({ currPage }){
     return(
-        <nav>
-            <NavContainer>
+        <>
+            <BarContainer>
                 {/* page links */}
-                <NavPagesBox>
-                    <NavPages>
-                        <NavLink linkTo = "Home" currPage = {currPage} >
+                <BarPagesBox>
+                    <BarPages>
+                        <BarLink linkTo = "Home" currPage = {currPage} >
                             <Link href = "/">
                                 <a>Home</a>
                             </Link>
-                        </NavLink>
+                        </BarLink>
 
-                        <NavLink linkTo = "About" currPage = {currPage} >
+                        <BarLink linkTo = "About" currPage = {currPage} >
                             <Link href = "/about">
                                 <a>About</a>
                             </Link>
-                        </NavLink>
+                        </BarLink>
 
-                        <NavLink linkTo = "Projects" currPage = {currPage} >
+                        <BarLink linkTo = "Projects" currPage = {currPage} >
                             <Link href = "/projects">
                                 <a>Projects</a>
                             </Link>
-                        </NavLink>
-                    </NavPages>
-                </NavPagesBox>
+                        </BarLink>
+                    </BarPages>
+                </BarPagesBox>
 
                 {/* email link */}
-                <NavContactBox>
-                    <NavContact>
-                        <LinkContainer>
-                            <a href="mailto:ryanv249@bu.edu">Contact Me</a>
-                        </LinkContainer>
-                    </NavContact>
-                </NavContactBox>
-            </NavContainer>
-        </nav>
+                <BarContactBox>
+                    <BarContact>
+                        <a href="mailto:ryanv249@bu.edu">Contact Me</a>
+                    </BarContact>
+                </BarContactBox>
+            </BarContainer>
+        </>
     )
 }
 
@@ -103,9 +158,7 @@ function Footer (){
                     </FootPages>
                 </FootPagesBox>
 
-                {/* external and email links
-                    LinkContainers not necessary because links are icons
-                 */}
+                {/* external and email links*/}
                 <FootContactBox>
                         <FootContact>
                             <a href={"https://github.com/ryanv249"} target="_blank" rel="noopener noreferrer">
@@ -134,13 +187,34 @@ function Footer (){
 
 
 export default function Layout({ children, page, onProjectPage }) {
+    // true if menu is open (no effect on NavBar)
+    const [open, setOpen] = useState(false);
+    // true if menu is on screen  
+    // if menu is open, page content is not displayed.
+    // need this because if true but menu is suddenly not on screen (i.e. window gets bigger) need to display content again
+    const displayMenu = useMediaQuery({query: '(max-width: 501px)'})
+
     return (
         <>
             <Header pageTitle={page + " - Ryan Velez"}/>
 
-            <NavBar currPage = {page} />
+            <nav>
+                {/* bar for large screens, menu for small-medium */}
+                <NavMenu open = {open} setOpen = {setOpen} />
+                <NavBar currPage = {page} />      
+            </nav>
 
-            <main>{children}</main>
+            {/* 
+                if using bar, always display page content. 
+                if using menu, only display if menu closed. 
+                menu and bar display managed through CSS   (doing it here caused mismatch between server and client render)
+            */}
+
+            { (!displayMenu || (displayMenu && open === false))  && 
+                (
+                    <main>{children}</main>
+                )
+            }
 
             <Footer onProjectPage = {onProjectPage} />
         </>

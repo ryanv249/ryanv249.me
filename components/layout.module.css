@@ -1,8 +1,6 @@
-
-
-/* home styles ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/* 
+    home styles      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
-
 .homeContainer{
     background-color: rgb(136, 0, 104);
     display: flex;
@@ -57,7 +55,6 @@
     flex-direction: column;
 }
 
-
 .homeBody p{
     background-color: rgb(132, 178, 65);
     font-size: 1.05rem;
@@ -100,15 +97,11 @@
 }
 
 
-
-
-
-/* preview styles  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/* 
+    preview styles        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     each project type is in a separate group
-    preview is child of preview group
-
-    technically, Body is a container already, but might change later. stay consistent
+    everything in body bunched together because all direct children
 */
 .previewContainer{
     background-color: brown;
@@ -225,9 +218,8 @@
 
 
 
-
-/* project styles ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+/* 
+    project styles        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     image-gallery is hard to work with; foot contains height override (see global.css for details)
 */
@@ -263,7 +255,6 @@
     margin: 0rem 0rem 0rem 0rem;
 }
 
-
 @media screen and (max-width: 679px) {
     .projectHead a {
         font-size: 2.5rem;
@@ -273,7 +264,6 @@
         font-size: 2rem;
     }
 }
-
 
 
 .projectBody {
@@ -310,12 +300,9 @@
     font-size: 1.3rem;
 }
 
-
-
 /* 
-    color is applied to the entirety of react-image-gallery, I can't be specific with it
-
-    need to use margin to push footer away from the gallery, since I can't easily flex or grid around it
+    this color override is for upper half of gallery. lower half color override in global.css
+    need to use margin to push footer away from the gallery (gallery is annoying)
 */
 .projectFoot{
     background-color: rgb(32, 194, 172);
@@ -344,7 +331,6 @@
     }
 }
 
-
 /* 
     main height override for react-image-gallery, applied in global.css
     i noticed that it was too tall on smaller screens, so these are some adjustments that seem ok
@@ -368,9 +354,12 @@
     }
 }
 
-/* about styles ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    aboutTech divs are containers for svgs 
+
+/* 
+    about styles       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    aboutIcon divs are the tech icon containers 
 */
 .aboutContainer{
     background-color: red;
@@ -458,6 +447,7 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem 4rem;
     padding: 5px 0px 5px 0px;
+    font-size: 45px;
 }
 
 /* swap grid to mobile format */
