@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
 import { 
@@ -12,7 +12,6 @@ import {
 
 import { SiGithub, SiLinkedin } from 'react-icons/si';
 import { IoIosMail, IoMdMenu, IoIosClose } from 'react-icons/io'
-import { useMediaQuery } from 'react-responsive';
 
 
 
@@ -189,10 +188,30 @@ function Footer (){
 export default function Layout({ children, page, onProjectPage }) {
     // true if menu is open (no effect on NavBar)
     const [open, setOpen] = useState(false);
-    // true if menu is on screen  
-    // if menu is open, page content is not displayed.
-    // need this because if true but menu is suddenly not on screen (i.e. window gets bigger) need to display content again
-    const displayMenu = useMediaQuery({query: '(max-width: 501px)'})
+    // true if menu is on screen
+    const [canDisplayMenu, setCanDisplayMenu] = useState(false);
+    
+    /* 
+        Heres how this works: 
+
+        useEffect is looking for... something to change.  (not sure what exactly)       
+
+        when the screen size changes, we generate an event listener that checks to see if the width is <= 501px     ***i think
+        if the size is now <= or > 501px it registers and calls setCanDisplayMenu with the new value (need ! because of how e.matches works)
+        
+        we then make sure to call a cleanup function to remove the listener if its not already gone. 
+
+        need this to allow for page content to be displayed on screen re-size, since page content should always be visible with bar
+        menu is not changed so if menu is open and screen is made larger and then smaller, page content is removed again
+    */
+
+    useEffect(() => {
+        window
+        .matchMedia("(min-width: 501px)")
+        .addEventListener('change', e => setCanDisplayMenu(!e.matches));
+
+        return () => window.removeEventListener('change', e => setCanDisplayMenu(!e.matches));
+    }, []);
 
     return (
         <>
@@ -210,7 +229,7 @@ export default function Layout({ children, page, onProjectPage }) {
                 menu and bar display managed through CSS   (doing it here caused mismatch between server and client render)
             */}
 
-            { (!displayMenu || (displayMenu && open === false))  && 
+            { (!canDisplayMenu || (canDisplayMenu && open === false))  && 
                 (
                     <main>{children}</main>
                 )
