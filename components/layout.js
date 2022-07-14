@@ -43,7 +43,7 @@ function Header({ pageTitle }) {
 }
 
 
-function NavMenu ({open, setOpen}){
+function NavMenu ({currPage, open, setOpen}){
     return(
         <>
             <MenuContainer>
@@ -57,26 +57,29 @@ function NavMenu ({open, setOpen}){
                     }
                 </MenuButton>
                 
-                {/* also toggles display of page content */}
+                {/* 
+                    open also toggles display of page content
+                    note: link to current page styling applied here, unlike BarLink 
+                 */}
                 { open && (
                     <>
                         <MenuContentBox>
                             <MenuContent>
                                 <MenuLink>
                                     <Link href = "/">
-                                        <a>Home</a>
+                                        <a style = {currPage === "Home" ? {color: 'cyan'} : {}}>Home</a>
                                     </Link>
                                 </MenuLink>
 
                                 <MenuLink>
                                     <Link href = "/about">
-                                        <a>About</a>
+                                        <a style = {currPage === "About" ? {color: 'cyan'} : {}}>About</a>
                                     </Link>
                                 </MenuLink>
 
                                 <MenuLink>
-                                    <Link href = "/projects">
-                                        <a>Projects</a>
+                                    <Link href = "/projects" >
+                                        <a style = {currPage === "Projects" ? {color: 'cyan'} : {}}>Projects</a>
                                     </Link>
                                 </MenuLink>
 
@@ -96,7 +99,10 @@ function NavBar ({ currPage }){
     return(
         <>
             <BarContainer>
-                {/* page links */}
+                {/* 
+                    page links 
+                    link to current page styling handled in wrappers
+                */}
                 <BarPagesBox>
                     <BarPages>
                         <BarLink linkTo = "Home" currPage = {currPage} >
@@ -223,7 +229,7 @@ export default function Layout({ children, page, onProjectPage }) {
 
             <nav>
                 {/* bar for large screens, menu for small-medium */}
-                <NavMenu open = {open} setOpen = {setOpen} />
+                <NavMenu  currPage = {page} open = {open} setOpen = {setOpen} />
                 <NavBar currPage = {page} />      
             </nav>
 

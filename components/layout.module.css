@@ -425,16 +425,41 @@
     background-color: rgb(197, 47, 152);
     text-align: start;
     font-size: 0.95rem;
-    margin: 1rem 2rem 0rem 2rem;
+    margin: 1rem 2rem 1rem 2rem;
     max-height: 350px;
     max-width: 750px;
     overflow-y: auto;
 }
 
+/* small-medium overrides */
+@media screen and (max-width: 499px) {
+    .projectBody p{
+        max-height: 250px;
+        margin: 1rem 1.5rem 1rem 1.5rem;
+    }
+}
+
+/* bruh-sized screen overrides */
+@media screen and (max-width: 299px) {
+    .projectBody h2{
+        font-size: 1.23rem !important;
+    }
+
+    .projectBody h3{
+        font-size: 1.13rem !important;
+    }
+
+    .projectBody a{
+        font-size: 1.03rem !important;
+    }
+}
+
+
+
 .projectBody h2{
     background-color: blue;
     margin: 1rem 0rem 0rem 0rem;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 }
 
 .projectBody h3{
@@ -466,14 +491,14 @@
     }
 }
 
-/* small-screen overrides */
+/* medium-screen overrides */
 @media screen and (max-width: 720px) {
     .projectFoot{
         margin-bottom: 180px;
     }
 }
 
-/* mobile overrides */
+/* small-medium overrides */
 @media screen and (max-width: 560px) {
     .projectFoot{
         margin-bottom: 160px;
