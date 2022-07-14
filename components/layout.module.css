@@ -189,7 +189,6 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem 4rem;
     padding: 5px 0px 5px 0px;
-    font-size: 45px;
 }
 
 /* swap grid to mobile format */
