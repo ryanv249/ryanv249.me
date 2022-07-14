@@ -186,10 +186,14 @@ function Footer (){
 
 
 export default function Layout({ children, page, onProjectPage }) {
-    // true if menu is open (no effect on NavBar)
+    // true if menu is open
+    // starts false because never open on page load
     const [open, setOpen] = useState(false);
-    // true if menu is on screen
-    const [canDisplayMenu, setCanDisplayMenu] = useState(false);
+    // true if menu is on screen 
+    // starts true because visible on small screen page load
+    const [menuVisible, setMenuVisible] = useState(true);
+
+    // both hooks have no effect on NavBar (and larger screens in general)
     
     /* 
         Heres how this works: 
@@ -197,7 +201,7 @@ export default function Layout({ children, page, onProjectPage }) {
         useEffect is looking for... something to change.  (not sure what exactly)       
 
         when the screen size changes, we generate an event listener that checks to see if the width is <= 501px     ***i think
-        if the size is now <= or > 501px it registers and calls setCanDisplayMenu with the new value (need ! because of how e.matches works)
+        if the size is now <= or > 501px it registers and calls setMenuVisible with the new value (need ! because of how e.matches works)
         
         we then make sure to call a cleanup function to remove the listener if its not already gone. 
 
@@ -208,9 +212,9 @@ export default function Layout({ children, page, onProjectPage }) {
     useEffect(() => {
         window
         .matchMedia("(min-width: 501px)")
-        .addEventListener('change', e => setCanDisplayMenu(!e.matches));
+        .addEventListener('change', e => setMenuVisible(!e.matches));
 
-        return () => window.removeEventListener('change', e => setCanDisplayMenu(!e.matches));
+        return () => window.removeEventListener('change', e => setMenuVisible(!e.matches));
     }, []);
 
     return (
@@ -229,7 +233,7 @@ export default function Layout({ children, page, onProjectPage }) {
                 menu and bar display managed through CSS   (doing it here caused mismatch between server and client render)
             */}
 
-            { (!canDisplayMenu || (canDisplayMenu && open === false))  && 
+            { (!menuVisible || (menuVisible && open === false))  && 
                 (
                     <main>{children}</main>
                 )
