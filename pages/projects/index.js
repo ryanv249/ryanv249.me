@@ -90,7 +90,7 @@ export default function PreviewPage({school_previews, personal_previews}){
 
                         <PreviewList>
                             {personal_previews.map((prev) => (
-                                <Preview key = {prev.name}>
+                                <Preview key = {prev.name} scrollShift = {width}>
                                     <LinkContainer>
                                         <Link href={"/projects/personal/" + prev.name}>
                                             <a>{prev.name}</a>
