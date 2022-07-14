@@ -16,6 +16,7 @@ export default function HomePage() {
                                 src = "/images/the_man_himself.jpg"
                                 alt = "Ryan Velez"
                                 layout='fill'
+                                priority= {true}
                             />
                         </div>
                     </HomeFace>

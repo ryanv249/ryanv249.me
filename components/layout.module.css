@@ -246,7 +246,7 @@
     background-color: rgb(179, 119, 119);
     display: grid;
     grid-template-columns: repeat(1, auto);
-    gap: 2rem 0rem;
+    gap: 3rem 0rem;
     justify-content: center;
 }
 
@@ -285,6 +285,39 @@
     max-width: 600px;
 }
 
+/* mobile overrides */
+@media screen and (max-width: 599px) {
+    .previewBody{
+        gap: 2rem 0rem !important;
+    }
+
+    .previewGroup{
+        margin: 0rem 2rem 0rem 2rem !important;
+    }
+
+    .preview {
+        width: 70% !important;
+        margin: 0.75rem !important;
+    }
+}
+
+/* very small screen overrides */
+@media screen and (max-width: 299px) {
+    .previewGroup{
+        margin: 0rem 1.5rem 0rem 1.5rem !important;
+    }
+
+    .preview a{
+        font-size: 1.1rem !important;
+    }
+    
+    .preview p {
+        font-size: 0.8rem !important;
+    }
+    
+}
+
+
 .previewGroup h2{
     background-color: rgb(216, 150, 221);
     margin: 0.5rem 0rem;
@@ -308,13 +341,6 @@
     margin: 0.75rem 0rem 0.75rem 0.75rem;
 }
 
-/* on mobile devices, don't shift previews to the right */
-@media screen and (max-width: 400px) {
-    .preview {
-        margin: 0.75rem;
-    }
-
-}
 
 .preview a{
     background-color: rgb(38, 19, 182);
