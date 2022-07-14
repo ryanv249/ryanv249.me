@@ -73,51 +73,90 @@
     navbar styles    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 .barContainer{
-    background-color: rgb(187, 187, 187);
+    /* background-color: rgb(187, 187, 187); */
     display: grid;
     grid-template-columns: 0.55fr 0.45fr;
     align-items: center;
+    margin: 2rem 0rem 0rem 0rem;
 }
 
 .barPagesBox{
-    background-color: greenyellow;
+    /* background-color: greenyellow; */
     display: flex;
     justify-content: flex-end;
 }
 
 .barPages{
-    background-color: red;
+    /* background-color: red; */
+    background-color: rgba(0,0,0,0.15);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 15px;
     gap: 3rem;
+    border-radius: 30px;
 }
 
 .barLink{
-    background-color: yellow;
-    padding: 5px;
+    /* background-color: yellow; */
     text-align: center;
+    border-radius: 15px;
+    padding: 0rem 0.3rem;
 }
 
 .barContactBox{
-    background-color: purple;
+    /* background-color: purple; */
     display: flex;
-    padding-left: 100px;
 }
 
 .barContact{
-    background-color: green;
-    padding: 5px;
+    /* background-color: green; */
+    background-color: rgba(0,0,0,0.4);
+    margin: 0rem 0rem 0rem 100px;
+    border-radius: 10px;
+    width: 170px;
+    text-align: center;
+    border: 5px solid black;
+    padding: 0.3rem 0rem 0.4rem 0rem;
 }
 
+
+.barLink a, .barContact a{
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 500;
+    transition: color 0.15s ease;
+}
+
+.barLink a:hover, .barContact a:hover{
+    color: rgb(255, 255, 255);
+    transition: color 0.15s ease;
+}
+
+/* mid-size navbar */
+@media screen and (max-width: 999px) {
+    .barPages{
+        gap: 1.5rem;
+    }
+
+    .barContact{
+        margin: 0rem 0rem 0rem 50px;
+    }
+
+}
+
+
 /* swap navbar to tablet format */
-@media screen and (max-width: 679px) {
+@media screen and (max-width: 799px) {
     .barContainer{
         grid-template-columns: 1fr;
     }
 
     .barPagesBox{
         justify-content: center;
+    }
+
+    .barPages{
+        gap: 2.5rem;
     }
 
     .barContactBox {

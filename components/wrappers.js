@@ -95,7 +95,10 @@ export function BarPages({ children }){
 // highlight link to current page   linkTo - destination page   currPage - page being displayed
 export function BarLink({ linkTo, currPage, children }){
     return(
-        <div className ={utilStyles.barLink} style = {linkTo === currPage ? {backgroundColor: 'cyan'} : {}}>
+        <div 
+            className ={utilStyles.barLink} 
+            style = {linkTo === currPage ? {backgroundColor: 'rgba(0,0,0,0.4)'} : {}}
+        >
             {children}
         </div>
     );
