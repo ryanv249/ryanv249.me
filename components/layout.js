@@ -169,13 +169,13 @@ function Footer (){
                             <a href={"https://github.com/ryanv249"} target="_blank" rel="noopener noreferrer">
                                 <SiGithub/>
                             </a>
-                            
-                            <a href={"https://www.linkedin.com/in/ryan-velez-054b0b207/"} target="_blank" rel="noopener noreferrer">
-                                <SiLinkedin/>
-                            </a>
 
                             <a href="mailto:ryanv249@bu.edu">
                                 <IoIosMail />
+                            </a>
+                            
+                            <a href={"https://www.linkedin.com/in/ryan-velez-054b0b207/"} target="_blank" rel="noopener noreferrer">
+                                <SiLinkedin/>
                             </a>
                         </FootContact>
                 </FootContactBox>

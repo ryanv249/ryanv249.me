@@ -167,7 +167,7 @@ export function FootContactBox({ children }){
 // need to define size for foot link icons here
 export function FootContact({ children }){
     return(
-        <IconContext.Provider value={{size: 40}}>
+        <IconContext.Provider value={{size: 50}}>
             <div className = {utilStyles.footContact}>
                 {children}
             </div>
