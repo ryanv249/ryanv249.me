@@ -313,9 +313,10 @@ export function PreviewList({ children }){
     );
 }
 
-export function Preview({ children }) {
+// uses react-scrollbar-size to center previews properly (not all scrollbars take up space)
+export function Preview({ scrollShift, children }) {
     return(
-        <div className={styles.preview}>
+        <div className={styles.preview} style={{marginLeft: scrollShift}}>
             {children}
         </div>
     );

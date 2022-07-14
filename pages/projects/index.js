@@ -8,6 +8,9 @@ import {
 
 import { getDatabase } from '../../notion';
 
+import useScrollbarSize from 'react-scrollbar-size';
+// https://github.com/shawnmcknight/react-scrollbar-size
+
 export async function getStaticProps(){
     // get data from notion to display all previews 
     const data = await getDatabase();
@@ -37,6 +40,8 @@ export async function getStaticProps(){
 }
 
 export default function PreviewPage({school_previews, personal_previews}){   
+    // used to make sure previews are centered on all devices
+    const { height, width } = useScrollbarSize();
     return(
         <Layout page = "Projects">
             <PreviewContainer>
@@ -62,7 +67,7 @@ export default function PreviewPage({school_previews, personal_previews}){
                         <PreviewList>
 
                             {school_previews.map((prev) => (
-                                <Preview key = {prev.name}>
+                                <Preview key = {prev.name} scrollShift = {width}>
                                     <LinkContainer>
                                         <Link href={"/projects/school/" + prev.name}>
                                             <a>{prev.name}</a>
@@ -74,6 +79,7 @@ export default function PreviewPage({school_previews, personal_previews}){
                                     </TextContainer>
                                 </Preview>
                             ))}
+                            
                             </PreviewList>
                     </PreviewGroup>
 

@@ -285,26 +285,37 @@
     max-width: 600px;
 }
 
-/* mobile overrides */
+/* sm-edium screen overrides */
 @media screen and (max-width: 599px) {
     .previewBody{
         gap: 2rem 0rem !important;
     }
 
     .previewGroup{
-        margin: 0rem 2rem 0rem 2rem !important;
+        margin: 0rem 3rem 0rem 3rem !important;
     }
 
     .preview {
         width: 70% !important;
-        margin: 0.75rem !important;
     }
+}
+
+/* small screen overrides */
+@media screen and (max-width: 399px){
+    .previewGroup{
+        margin: 0rem 2rem 0rem 2rem !important;
+    }
+
 }
 
 /* very small screen overrides */
 @media screen and (max-width: 299px) {
     .previewGroup{
         margin: 0rem 1.5rem 0rem 1.5rem !important;
+    }
+
+    .previewGroup h2{
+        font-size: 1.4rem !important;
     }
 
     .preview a{
