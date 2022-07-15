@@ -1,11 +1,12 @@
-import styles from './layout.module.css';
-import utilStyles from '../styles/utils.module.css';
+import pageStyles from '../styles/pages.module.css';
+import layoutStyles from './layout.module.css';
+
 import { IconContext } from 'react-icons'
 
 // generic wrappers to reduce repeated lines   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~     
 export function TextContainer({ children }){
     return(
-        <div className ={utilStyles.textContainer}>
+        <div className ={layoutStyles.textContainer}>
             {children}
         </div>
     );
@@ -13,7 +14,7 @@ export function TextContainer({ children }){
 
 export function LinkContainer({ children }){
     return(
-        <div className ={utilStyles.linkContainer}>
+        <div className ={layoutStyles.linkContainer}>
             {children}
         </div>
     );
@@ -30,17 +31,17 @@ export function PageLink({ type, linkTo, currPage, children }){
     var cStyle
     switch (type){
         case "menu":
-            cName = utilStyles.menuLink
+            cName = layoutStyles.menuLink
             cStyle = {backgroundColor: 'rgb(187,187,187)'}
             break;
 
         case "bar":
-            cName = utilStyles.barLink
+            cName = layoutStyles.barLink
             cStyle = {backgroundColor: 'rgb(187,187,187)'}
             break;
 
         case "foot":
-            cName = utilStyles.footLink
+            cName = layoutStyles.footLink
             cStyle = {backgroundColor: 'rgb(187,187,187)'}
             break;
     }
@@ -57,7 +58,7 @@ export function PageLink({ type, linkTo, currPage, children }){
 // navmenu wrappers     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export function MenuContainer({ children }){
     return(
-        <div className ={utilStyles.menuContainer}>
+        <div className ={layoutStyles.menuContainer}>
             {children}
         </div>
     );
@@ -67,7 +68,7 @@ export function MenuContainer({ children }){
 export function MenuButton({ children }){
     return(
         <IconContext.Provider value={{size: 55}}>
-            <div className={utilStyles.menuButton}>
+            <div className={layoutStyles.menuButton}>
                 {children}
             </div>
         </IconContext.Provider>
@@ -76,7 +77,7 @@ export function MenuButton({ children }){
 
 export function MenuPagesBox({ children }){
     return(
-        <div className ={utilStyles.menuPagesBox}>
+        <div className ={layoutStyles.menuPagesBox}>
             {children}
         </div>
     );
@@ -84,7 +85,7 @@ export function MenuPagesBox({ children }){
 
 export function MenuPages({ children }){
     return(
-        <div className ={utilStyles.menuPages}>
+        <div className ={layoutStyles.menuPages}>
             {children}
         </div>
     );
@@ -92,7 +93,7 @@ export function MenuPages({ children }){
 
 export function MenuContactBox({ children }){
     return(
-        <div className ={utilStyles.menuContactBox}>
+        <div className ={layoutStyles.menuContactBox}>
             {children}
         </div>
     );
@@ -100,7 +101,7 @@ export function MenuContactBox({ children }){
 
 export function MenuContact({ children }){
     return(
-        <div className ={utilStyles.menuContact}>
+        <div className ={layoutStyles.menuContact}>
             {children}
         </div>
     );
@@ -112,7 +113,7 @@ export function MenuContact({ children }){
 // navbar wrappers     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export function BarContainer({ children }){
     return(
-        <div className ={utilStyles.barContainer}>
+        <div className ={layoutStyles.barContainer}>
             {children}
         </div>
     );
@@ -120,7 +121,7 @@ export function BarContainer({ children }){
 
 export function BarPagesBox({ children }){
     return(
-        <div className ={utilStyles.barPagesBox}>
+        <div className ={layoutStyles.barPagesBox}>
             {children}
         </div>
     );
@@ -128,7 +129,7 @@ export function BarPagesBox({ children }){
 
 export function BarPages({ children }){
     return(
-        <div className ={utilStyles.barPages}>
+        <div className ={layoutStyles.barPages}>
             {children}
         </div>
     );
@@ -136,7 +137,7 @@ export function BarPages({ children }){
 
 export function BarContactBox({ children }){
     return(
-        <div className ={utilStyles.barContactBox}>
+        <div className ={layoutStyles.barContactBox}>
             {children}
         </div>
     );
@@ -144,7 +145,7 @@ export function BarContactBox({ children }){
 
 export function BarContact({ children }){
     return(
-        <div className ={utilStyles.barContact}>
+        <div className ={layoutStyles.barContact}>
             {children}
         </div>
     );
@@ -156,7 +157,7 @@ export function BarContact({ children }){
 // on project page, shifted down to fit gallery. applied in layout.module
 export function FootContainer({ children }){
     return(
-        <div className ={utilStyles.footContainer}>
+        <div className ={layoutStyles.footContainer}>
             {children}
         </div>
     );
@@ -164,7 +165,7 @@ export function FootContainer({ children }){
 
 export function FootPagesBox({ children }){
     return(
-        <div className ={utilStyles.footPagesBox}>
+        <div className ={layoutStyles.footPagesBox}>
             {children}
         </div>
     );
@@ -172,7 +173,7 @@ export function FootPagesBox({ children }){
 
 export function FootPages({ children }){
     return(
-        <div className ={utilStyles.footPages}>
+        <div className ={layoutStyles.footPages}>
             {children}
         </div>
     );
@@ -180,7 +181,7 @@ export function FootPages({ children }){
 
 export function FootContactBox({ children }){
     return(
-        <div className ={utilStyles.footContactBox}>
+        <div className ={layoutStyles.footContactBox}>
             {children}
         </div>
     );
@@ -190,7 +191,7 @@ export function FootContactBox({ children }){
 export function FootContact({ children }){
     return(
         <IconContext.Provider value={{size: 50}}>
-            <div className = {utilStyles.footContact}>
+            <div className = {layoutStyles.footContact}>
                 {children}
             </div>
         </IconContext.Provider>
@@ -202,7 +203,7 @@ export function FootContact({ children }){
 // home page wrappers        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export function HomeContainer({ children}){
     return(
-        <div className={styles.homeContainer}>
+        <div className={pageStyles.homeContainer}>
             {children}
         </div>
     );
@@ -210,7 +211,7 @@ export function HomeContainer({ children}){
 
 export function HomeHead({ children }){
     return(
-        <div className={styles.homeHead}>
+        <div className={pageStyles.homeHead}>
             {children}
         </div>
     );
@@ -219,7 +220,7 @@ export function HomeHead({ children }){
 
 export function HomeFace({ children }){
     return(
-        <div className={styles.homeFace}>
+        <div className={pageStyles.homeFace}>
             {children}
         </div>
     );
@@ -227,7 +228,7 @@ export function HomeFace({ children }){
 
 export function HomeBody({ children }){
     return(
-        <div className={styles.homeBody}>
+        <div className={pageStyles.homeBody}>
             {children}
         </div>
     );
@@ -235,7 +236,7 @@ export function HomeBody({ children }){
 
 export function HomeFoot({ children }){
     return(
-        <div className={styles.homeFoot}>
+        <div className={pageStyles.homeFoot}>
             {children}
         </div>
     );
@@ -246,7 +247,7 @@ export function HomeFoot({ children }){
 // about page wrappers          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export function AboutContainer({ children }){
     return(
-        <div className={styles.aboutContainer}>
+        <div className={pageStyles.aboutContainer}>
             {children}
         </div>
     );
@@ -254,7 +255,7 @@ export function AboutContainer({ children }){
 
 export function AboutHead({ children }){
     return(
-        <div className={styles.aboutHead}>
+        <div className={pageStyles.aboutHead}>
             {children}
         </div>
     );
@@ -262,7 +263,7 @@ export function AboutHead({ children }){
 
 export function AboutBody({ children }){
     return(
-        <div className={styles.aboutBody}>
+        <div className={pageStyles.aboutBody}>
             {children}
         </div>
     );
@@ -270,7 +271,7 @@ export function AboutBody({ children }){
 
 export function AboutFoot({ children }){
     return(
-        <div className={styles.aboutFoot}>
+        <div className={pageStyles.aboutFoot}>
             {children}
         </div>
     );
@@ -278,7 +279,7 @@ export function AboutFoot({ children }){
 
 export function AboutIconsBox({ children }){
     return(
-        <div className={styles.aboutIconsBox}>
+        <div className={pageStyles.aboutIconsBox}>
             {children}
         </div>
     );
@@ -288,7 +289,7 @@ export function AboutIconsBox({ children }){
 export function AboutIcons({ children }){
     return(
         <IconContext.Provider value={{size: 45}}>
-            <div className={styles.aboutIcons}>
+            <div className={pageStyles.aboutIcons}>
                 {children}
             </div>
         </IconContext.Provider>
@@ -300,7 +301,7 @@ export function AboutIcons({ children }){
 // preview page wrappers      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export function PreviewContainer({ children }){
     return(
-        <div className={styles.previewContainer}>
+        <div className={pageStyles.previewContainer}>
             {children}
         </div>
     );
@@ -308,7 +309,7 @@ export function PreviewContainer({ children }){
 
 export function PreviewHead({ children }){
     return(
-        <div className={styles.previewHead}>
+        <div className={pageStyles.previewHead}>
             {children}
         </div>
     );
@@ -316,7 +317,7 @@ export function PreviewHead({ children }){
 
 export function PreviewBody({ children }){
     return(
-        <div className={styles.previewBody}>
+        <div className={pageStyles.previewBody}>
             {children}
         </div>
     );
@@ -324,7 +325,7 @@ export function PreviewBody({ children }){
 
 export function PreviewGroup({ children }){
     return(
-        <div className={styles.previewGroup}>
+        <div className={pageStyles.previewGroup}>
             {children}
         </div>
     );
@@ -332,7 +333,7 @@ export function PreviewGroup({ children }){
 
 export function PreviewList({ children }){
     return(
-        <div className={styles.previewList}>
+        <div className={pageStyles.previewList}>
             {children}
         </div>
     );
@@ -341,7 +342,7 @@ export function PreviewList({ children }){
 // uses react-scrollbar-size to center previews properly (not all scrollbars take up space)
 export function Preview({ scrollShift, children }) {
     return(
-        <div className={styles.preview} style={{marginLeft: scrollShift}}>
+        <div className={pageStyles.preview} style={{marginLeft: scrollShift}}>
             {children}
         </div>
     );
@@ -352,7 +353,7 @@ export function Preview({ scrollShift, children }) {
 // project page wrappers    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export function ProjectContainer({ children }){
     return(
-        <div className ={styles.projectContainer}>
+        <div className ={pageStyles.projectContainer}>
             {children}
         </div>
     );
@@ -360,7 +361,7 @@ export function ProjectContainer({ children }){
 
 export function ProjectHead({ children }){
     return(
-        <div className ={styles.projectHead}>
+        <div className ={pageStyles.projectHead}>
             {children}
         </div>
     );
@@ -368,7 +369,7 @@ export function ProjectHead({ children }){
 
 export function ProjectBody({ children }){
     return(
-        <div className ={styles.projectBody}>
+        <div className ={pageStyles.projectBody}>
             {children}
         </div>
     );
@@ -376,7 +377,7 @@ export function ProjectBody({ children }){
 
 export function ProjectFoot({ children }){
     return(
-        <div className ={styles.projectFoot}>
+        <div className ={pageStyles.projectFoot}>
             {children}
         </div>
     );
