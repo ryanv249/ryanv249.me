@@ -208,7 +208,7 @@ export default function Layout({ children, page, onProjectPage }) {
         useEffect is looking for... something to change.  (not sure what exactly)       
 
         when the screen size changes, we generate an event listener that checks to see if the width is <= 501px     ***i think
-        if the size is now <= or > 501px it registers and calls setMenuVisible with the new value (need ! because of how e.matches works)
+        if the size is now <= or > 519px it registers and calls setMenuVisible with the new value (need ! because of how e.matches works)
         
         we then make sure to call a cleanup function to remove the listener if its not already gone. 
 
@@ -218,7 +218,7 @@ export default function Layout({ children, page, onProjectPage }) {
 
     useEffect(() => {
         window
-        .matchMedia("(min-width: 501px)")
+        .matchMedia("(min-width: 519px)")
         .addEventListener('change', e => setMenuVisible(!e.matches));
 
         return () => window.removeEventListener('change', e => setMenuVisible(!e.matches));
