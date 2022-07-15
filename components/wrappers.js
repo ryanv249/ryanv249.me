@@ -19,6 +19,39 @@ export function LinkContainer({ children }){
     );
 }
 
+/*
+    stylized link container (applies 'highlight' if wrapped link connects to current page)
+        type        - which class and highlight color to apply 
+        linkTo      - destination page 
+        currPage    - page being displayed 
+*/
+export function PageLink({ type, linkTo, currPage, children }){
+    var cName
+    var cStyle
+    switch (type){
+        case "menu":
+            cName = utilStyles.menuLink
+            cStyle = {backgroundColor: 'rgb(187,187,187)'}
+            break;
+
+        case "bar":
+            cName = utilStyles.barLink
+            cStyle = {backgroundColor: 'rgb(187,187,187)'}
+            break;
+
+        case "foot":
+            cName = utilStyles.footLink
+            cStyle = {backgroundColor: 'rgb(187,187,187)'}
+            break;
+    }
+
+    return(
+        <div className ={cName} style = {linkTo === currPage ? cStyle : {}}>
+            {children}
+        </div>
+    );
+}
+
 
 
 // navmenu wrappers     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -41,29 +74,38 @@ export function MenuButton({ children }){
     );
 }
 
-export function MenuContentBox({ children }){
+export function MenuPagesBox({ children }){
     return(
-        <div className ={utilStyles.menuContentBox}>
+        <div className ={utilStyles.menuPagesBox}>
             {children}
         </div>
     );
 }
 
-export function MenuContent({ children }){
+export function MenuPages({ children }){
     return(
-        <div className ={utilStyles.menuContent}>
+        <div className ={utilStyles.menuPages}>
             {children}
         </div>
     );
 }
 
-export function MenuLink({ children }){
+export function MenuContactBox({ children }){
     return(
-        <div className ={utilStyles.menuLink}>
+        <div className ={utilStyles.menuContactBox}>
             {children}
         </div>
     );
 }
+
+export function MenuContact({ children }){
+    return(
+        <div className ={utilStyles.menuContact}>
+            {children}
+        </div>
+    );
+}
+
 
 
 
@@ -87,18 +129,6 @@ export function BarPagesBox({ children }){
 export function BarPages({ children }){
     return(
         <div className ={utilStyles.barPages}>
-            {children}
-        </div>
-    );
-}
-
-// highlight link to current page   linkTo - destination page   currPage - page being displayed
-export function BarLink({ linkTo, currPage, children }){
-    return(
-        <div 
-            className ={utilStyles.barLink} 
-            style = {linkTo === currPage ? {backgroundColor: 'rgba(0,0,0,0.4)'} : {}}
-        >
             {children}
         </div>
     );
@@ -143,14 +173,6 @@ export function FootPagesBox({ children }){
 export function FootPages({ children }){
     return(
         <div className ={utilStyles.footPages}>
-            {children}
-        </div>
-    );
-}
-
-export function FootLink({ children }){
-    return(
-        <div className ={utilStyles.footLink}>
             {children}
         </div>
     );

@@ -4,16 +4,14 @@ import { useEffect, useState } from 'react';
 
 
 import { 
-    TextContainer, 
-    MenuContainer, MenuButton, MenuContentBox, MenuContent, MenuLink,
-    BarContainer, BarPagesBox,  BarPages, BarLink, BarContactBox, BarContact,
-    FootContainer, FootPagesBox, FootPages, FootLink, FootContactBox, FootContact
+    TextContainer, PageLink,
+    MenuContainer, MenuButton, MenuContactBox, MenuContact, MenuPagesBox, MenuPages,
+    BarContainer, BarPagesBox,  BarPages, BarContactBox, BarContact,
+    FootContainer, FootPagesBox, FootPages, FootContactBox, FootContact
 } from './wrappers';
 
 import { SiGithub, SiLinkedin } from 'react-icons/si';
 import { IoIosMail, IoMdMenu, IoIosClose } from 'react-icons/io'
-
-
 
 
 
@@ -56,38 +54,40 @@ function NavMenu ({currPage, open, setOpen}){
                         (<IoMdMenu onClick={() => setOpen(true)}/>)
                     }
                 </MenuButton>
+
+                <MenuContactBox>
+                    <MenuContact>
+                        <a href="mailto:ryanv249@bu.edu">Contact Me</a>
+                    </MenuContact>
+                </MenuContactBox>
                 
                 {/* 
-                    open also toggles display of page content
-                    note: link to current page styling applied here, unlike BarLink 
+                    open also toggles display of page content and footer links,
+                    but only while screen is small enough to not use NavBar
                  */}
                 { open && (
                     <>
-                        <MenuContentBox>
-                            <MenuContent>
-                                <MenuLink>
+                        <MenuPagesBox>
+                            <MenuPages>
+                                <PageLink type = "menu" linkTo = "Home" currPage = {currPage}>
                                     <Link href = "/">
-                                        <a style = {currPage === "Home" ? {color: 'cyan'} : {}}>Home</a>
+                                        <a style = {currPage === "Home" ? {color: 'black'} : {}}>Home</a>
                                     </Link>
-                                </MenuLink>
+                                </PageLink>
 
-                                <MenuLink>
+                                <PageLink type = "menu" linkTo = "About" currPage = {currPage}>
                                     <Link href = "/about">
-                                        <a style = {currPage === "About" ? {color: 'cyan'} : {}}>About</a>
+                                        <a style = {currPage === "About" ? {color: 'black'} : {}}>About</a>
                                     </Link>
-                                </MenuLink>
+                                </PageLink>
 
-                                <MenuLink>
-                                    <Link href = "/projects" >
-                                        <a style = {currPage === "Projects" ? {color: 'cyan'} : {}}>Projects</a>
+                                <PageLink type = "menu" linkTo = "Projects" currPage = {currPage}>
+                                    <Link href = "/projects">
+                                        <a style = {currPage === "Projects" ? {color: 'black'} : {}}>Projects</a>
                                     </Link>
-                                </MenuLink>
-
-                                <MenuLink>
-                                    <a href="mailto:ryanv249@bu.edu">Contact Me</a>
-                                </MenuLink>
-                            </MenuContent>
-                        </MenuContentBox>
+                                </PageLink>
+                            </MenuPages>
+                        </MenuPagesBox>
                     </>
                 )}
             </MenuContainer>
@@ -99,29 +99,26 @@ function NavBar ({ currPage }){
     return(
         <>
             <BarContainer>
-                {/* 
-                    page links 
-                    link to current page styling handled in wrappers
-                */}
+                {/* page links */}
                 <BarPagesBox>
                     <BarPages>
-                        <BarLink linkTo = "Home" currPage = {currPage} >
+                        <PageLink type = "bar" linkTo = "Home" currPage = {currPage} >
                             <Link href = "/">
-                                <a>Home</a>
+                                <a style = {currPage === "Home" ? {color: 'black'} : {}}>Home</a>
                             </Link>
-                        </BarLink>
+                        </PageLink>
 
-                        <BarLink linkTo = "About" currPage = {currPage} >
+                        <PageLink type = "bar" linkTo = "About" currPage = {currPage} >
                             <Link href = "/about">
-                                <a>About</a>
+                                <a style = {currPage === "About" ? {color: 'black'} : {}}>About</a>
                             </Link>
-                        </BarLink>
+                        </PageLink>
 
-                        <BarLink linkTo = "Projects" currPage = {currPage} >
+                        <PageLink type = "bar" linkTo = "Projects" currPage = {currPage} >
                             <Link href = "/projects">
-                                <a>Projects</a>
+                                <a style = {currPage === "Projects" ? {color: 'black'} : {}}>Projects</a>
                             </Link>
-                        </BarLink>
+                        </PageLink>
                     </BarPages>
                 </BarPagesBox>
 
@@ -136,33 +133,37 @@ function NavBar ({ currPage }){
     )
 }
 
-function Footer (){
+function Footer ({menuDisplayed, currPage}){
     return(
         <footer>
+            {/*
+                if NavMenu is visible and open, don't display page links
+                doing this because 2 links to every page is quite redundant
+              */}
             <FootContainer >
-                {/* page links */}
+            {!menuDisplayed && 
                 <FootPagesBox>
                     <FootPages>
-                        <FootLink>
+                        <PageLink type = "foot" linkTo = "Home" currPage = {currPage} >
                             <Link href = "/">
-                                <a>Home</a>
+                                <a style = {currPage === "Home" ? {color: 'black'} : {}}>Home</a>
                             </Link>
-                        </FootLink>
+                        </PageLink>
 
-                        <FootLink>
+                        <PageLink type = "foot" linkTo = "About" currPage = {currPage} >
                             <Link href = "/about">
-                                <a>About</a>
+                                <a style = {currPage === "About" ? {color: 'black'} : {}}>About</a>
                             </Link>
-                        </FootLink>
+                        </PageLink>
 
-                        <FootLink>
+                        <PageLink type = "foot" linkTo = "Projects" currPage = {currPage} >
                             <Link href = "/projects">
-                                <a>Projects</a>
+                                <a style = {currPage === "Projects" ? {color: 'black'} : {}}>Projects</a>
                             </Link>
-                        </FootLink>
+                        </PageLink>
                     </FootPages>
                 </FootPagesBox>
-
+            }
                 {/* external and email links*/}
                 <FootContactBox>
                         <FootContact>
@@ -229,7 +230,11 @@ export default function Layout({ children, page, onProjectPage }) {
 
             <nav>
                 {/* bar for large screens, menu for small-medium */}
-                <NavMenu  currPage = {page} open = {open} setOpen = {setOpen} />
+                <NavMenu 
+                    currPage = {page} 
+                    open = {open} 
+                    setOpen = {setOpen} 
+                />
                 <NavBar currPage = {page} />      
             </nav>
 
@@ -239,13 +244,17 @@ export default function Layout({ children, page, onProjectPage }) {
                 menu and bar display managed through CSS   (doing it here caused mismatch between server and client render)
             */}
 
-            { (!menuVisible || (menuVisible && open === false))  && 
+            { (!menuVisible || (menuVisible && (open === false)))  && 
                 (
                     <main>{children}</main>
                 )
             }
 
-            <Footer onProjectPage = {onProjectPage} />
+            <Footer 
+                menuDisplayed = {menuVisible && (open === true)}
+                onProjectPage = {onProjectPage}
+                currPage = {page} 
+            />
         </>
     );
 }
