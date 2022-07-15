@@ -27,11 +27,11 @@ export async function getStaticProps(){
 
     return{
         props: {
-            // even IDs are personal projects
+            // even IDs are solo projects
             // checking bit instead of using modulus because of internet nerds 
             // sort by ID, newest projects first
-            personal_previews: previews.filter(prev => ~prev.id & 1).sort((a,b) => b.id - a.id),
-            school_previews: previews.filter(prev => prev.id & 1).sort((a,b) => b.id - a.id),
+            solo_previews: previews.filter(prev => ~prev.id & 1).sort((a,b) => b.id - a.id),
+            group_previews: previews.filter(prev => prev.id & 1).sort((a,b) => b.id - a.id),
         },
         // make sure this is up-to-date every 60 seconds
         revalidate: 60,
@@ -39,7 +39,7 @@ export async function getStaticProps(){
 
 }
 
-export default function PreviewPage({school_previews, personal_previews}){   
+export default function PreviewPage({group_previews, solo_previews}){   
     // used to make sure previews are centered on all devices
     const { height, width } = useScrollbarSize();
     return(
@@ -61,15 +61,15 @@ export default function PreviewPage({school_previews, personal_previews}){
                 <PreviewBody>
                     <PreviewGroup>
                         <TextContainer>
-                            <h2>School Projects</h2> 
+                            <h2>Group Projects</h2> 
                         </TextContainer>
 
                         <PreviewList>
 
-                            {school_previews.map((prev) => (
+                            {group_previews.map((prev) => (
                                 <Preview key = {prev.name} scrollShift = {width}>
                                     <LinkContainer>
-                                        <Link href={"/projects/school/" + prev.name}>
+                                        <Link href={"/projects/group/" + prev.name}>
                                             <a>{prev.name}</a>
                                         </Link>
                                     </LinkContainer>
@@ -85,14 +85,14 @@ export default function PreviewPage({school_previews, personal_previews}){
 
                     <PreviewGroup>
                         <TextContainer>
-                            <h2>Personal Projects</h2>
+                            <h2>Solo Projects</h2>
                         </TextContainer>
 
                         <PreviewList>
-                            {personal_previews.map((prev) => (
+                            {solo_previews.map((prev) => (
                                 <Preview key = {prev.name} scrollShift = {width}>
                                     <LinkContainer>
-                                        <Link href={"/projects/personal/" + prev.name}>
+                                        <Link href={"/projects/solo/" + prev.name}>
                                             <a>{prev.name}</a>
                                         </Link>
                                     </LinkContainer>
