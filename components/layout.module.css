@@ -8,9 +8,10 @@
         1 line between definitions if parent/child 
         0 lines between definitions if :hover or if otherwise very related 
 
-        class list:
-            NavBar -> NavMenu -> Footer
+    class list:
+        NavBar -> NavMenu -> Footer
 
+        
     generic styles     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     separate for organization
 */
