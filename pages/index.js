@@ -11,14 +11,12 @@ export default function HomePage() {
             <HomeContainer>
                 <HomeHead>
                     <HomeFace>
-                        <div>
-                            <Image
-                                src = "/images/the_man_himself.jpg"
-                                alt = "Ryan Velez"
-                                layout='fill'
-                                priority= {true}
-                            />
-                        </div>
+                        <Image
+                            src = "/images/the_man_himself.jpg"
+                            alt = "Ryan Velez"
+                            layout='fill'
+                            priority= {true}
+                        />
                     </HomeFace>
 
                     <TextContainer>
