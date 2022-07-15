@@ -56,9 +56,9 @@
 .homeHead h3{
     /* background-color: rgb(229, 91, 91); */
     color: rgb(99, 99, 99);
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin: 0;
-    font-weight: 400;
+    font-weight: 100;
 }
 
 
@@ -73,10 +73,11 @@
 
 .homeBody p{
     /* background-color: rgb(132, 178, 65); */
+    color: rgb(99, 99, 99);
     font-size: 1.2rem;
     max-width: 30rem;
-    margin: 0 1.3rem 1.3rem 1.3rem;
-    font-weight: 100;
+    margin: 0 1rem 1rem 1rem;
+    font-weight: 400;
 }
 
 .homeBody a{
@@ -106,17 +107,18 @@
 
 .homeFoot h2{
     /* background-color: rgb(82, 102, 38); */
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin: 0;
-    font-weight: 500;
+    font-weight: 100;
 }
 
 .homeFoot p{
     /* background-color: rgb(105, 36, 36); */
+    color: rgb(99, 99, 99);
     font-size: 1.2rem;
     max-width: 30rem;
     margin: 0 1rem;
-    font-weight: 100;
+    font-weight: 400;
 }
 
 .homeFoot a{
@@ -150,7 +152,7 @@
     }
 
     .homeHead h3{
-        font-size: 1.7rem;
+        font-size: 1.8rem;
     }
 
     .homeBody p, .homeFoot p{
@@ -158,7 +160,7 @@
     }
 
     .homeFoot h2{
-        font-size: 2.6rem;
+        font-size: 3rem;
     }
 }
 
