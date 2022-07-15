@@ -117,7 +117,7 @@
     width: 170px;
     text-align: center;
     border: 5px solid black;
-    padding: 0.3rem 0 0.4rem 0;
+    padding: 0.3rem 0;
 }
 
 .barLink a{
@@ -239,6 +239,7 @@
     margin: 2rem 0 1rem 2rem;
     border-radius: 10px;
     cursor: pointer;
+    justify-self: flex-end;
 }
 
 
@@ -251,10 +252,10 @@
 .menuContact{
     /* background-color: red; */
     background-color: rgb(187,187,187);
-    margin: 1.75rem 2rem 1rem 0rem;
+    margin: 1.8rem 2rem 1rem 0rem;
     border: 5px solid black;
     border-radius: 10px;
-    padding: 0.3rem 0 0.4rem 0;
+    padding: 0.3rem 0;
     width: 170px;
     text-align: center;
 }
