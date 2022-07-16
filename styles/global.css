@@ -99,12 +99,20 @@ img {
 }
 
 /* 
-    because .image-gallery-content.fullscreen only appears when in fullscreen,
-    can use this to display whole image list w/o scrolling ONLY in fullscreen
+    image-gallery-content.fullscreen only appears when in fullscreen
+
+    can use this to apply 'fullscreen only styles'
+        display whole thumbnail list.. 1 less thing to scroll 
+        apply black background to big image, make it being in fullscreen ""obvious""
+    
 */
 @media screen and (min-width: 0px) {
     .image-gallery-content.fullscreen .image-gallery-thumbnails-wrapper{
         height:fit-content !important;
+    }
+
+    .image-gallery-content.fullscreen .image-gallery-slides{
+        background-color: black !important;
     }
 }
 

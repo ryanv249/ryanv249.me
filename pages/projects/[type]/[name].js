@@ -67,7 +67,7 @@ export default function ProjectPage({project}){
             inFullScreen
             ? 
                 [
-                    setSwipeDifficulty(1000),
+                    setSwipeDifficulty(10000),
                     document.body.style.overflow = 'hidden' 
                 ]
             : 
