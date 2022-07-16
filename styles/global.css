@@ -88,6 +88,13 @@ img {
     gap: 0.5rem;
 }
 
+/*
+    mobile devices can't see image list when fullscreen w/o scroll
+ */
+.image-gallery-content.fullscreen{
+    overflow-y: auto;
+}
+
 .image-gallery-swipe{
     /* background-color: red; */
     justify-content: center;
@@ -99,20 +106,37 @@ img {
 }
 
 /* 
-    have parent fit child, and adjust margin on parent according to static container 
-    need to responsively change margin and button size over time, but this works on all screens above ~850px
+    since parent is fitting child to have border, buttons are static 
+        previous approach with margins didnt work because buttons positioned using top/left/right/bottom
+
+    shift left/right buttons visibly offscreen but add padding to actual button so content isnt blocked 
 */
 .image-gallery-icon{
     /* background-color: lawngreen; */
+    /* outline: 1px solid lawngreen; */
     padding: 0 !important;
-    margin: -1rem -15% 0.5rem -15% !important;
 }
 
 .image-gallery-svg {
     /* background-color: red; */
-    color: rgb(99,99,99);
-    width: 50px !important;
+    /* outline: 1px solid red; */
+    width: 45px !important;
     height: fit-content !important;
+}
+
+.image-gallery-left-nav{
+    left: -20px;
+    padding-right: 25px !important;
+}
+
+.image-gallery-right-nav{
+    right: -20px;
+    padding-left: 25px !important;
+}
+
+.image-gallery-fullscreen-button{
+    bottom: 10px;
+    right: 10px;
 }
 
 .image-gallery-slides{
@@ -192,19 +216,11 @@ img {
     need to reduce image sizes and parent height which resizes the entire gallery accordingly
         'parent' is the entire lower half of gallery, so need to adjust page margin (see project class in pages.module.css)
 
-    need to adjust button positioning, size, and color (for when button overlaps image)
+    need to adjust button positioning, padding, and size
 
 */
 
 @media screen and (max-width: 850px) {
-    .image-gallery-icon{
-        margin: -0.5rem -10% 1rem -10% !important; 
-    }
-    
-    .image-gallery-svg{
-        width: 40px !important;
-    }
-
     .image-gallery-thumbnails-wrapper {
         height: 210px !important;
     }
@@ -214,13 +230,18 @@ img {
     }
 }
 @media screen and (max-width: 720px) {
-    .image-gallery-icon{
-        margin: 0rem 1.5% 1.25rem 1.5% !important; 
+    .image-gallery-svg{
+        width: 40px !important;
     }
 
-    .image-gallery-svg{
-        width: 35px !important;
-        color: white;
+    .image-gallery-left-nav{
+        left: -15px;
+        padding-right: 20px !important;
+    }
+    
+    .image-gallery-right-nav{
+        right: -15px;
+        padding-left: 20px !important;
     }
 
     .image-gallery-thumbnails-wrapper {
@@ -232,12 +253,18 @@ img {
     }
 }
 @media screen and (max-width: 560px) {
-    .image-gallery-icon{
-        margin: 0.5rem 2.5% 1.5rem 2.5% !important; 
+    .image-gallery-svg{
+        width: 35px !important;
     }
 
-    .image-gallery-svg{
-        width: 25px !important;
+    .image-gallery-left-nav{
+        left: -5px;
+        padding-right: 15px !important;
+    }
+    
+    .image-gallery-right-nav{
+        right: -5px;
+        padding-left: 15px !important;
     }
 
     .image-gallery-thumbnails-wrapper {
@@ -249,21 +276,24 @@ img {
     }
 }
 @media screen and (max-width: 429px) {
-    .image-gallery-icon{
-        margin: 0.5rem 4% 1.25rem 4% !important; 
+    .image-gallery-svg{
+        width: 30px !important;
     }
 
-    .image-gallery-svg{
-        width: 20px !important;
+    .image-gallery-left-nav{
+        left: 0;
+        padding-right: 10px !important;
     }
+    
+    .image-gallery-right-nav{
+        right: 0;
+        padding-left: 10px !important;
+    }
+
 }
 @media screen and (max-width: 319px) {
-    .image-gallery-icon{
-        margin: 0.5rem 4% 1rem 4% !important; 
-    }
-
     .image-gallery-svg{
-        width: 20px !important;
+        width: 25px !important;
     }
 }
 
