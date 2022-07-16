@@ -55,26 +55,17 @@ export async function getServerSideProps({res, params}){
 export default function ProjectPage({project}){
     const { height, width } = useScrollbarSize();
 
-    // make fullscreen swipe harder on mobile
-    // no effect on computer (uses mouse)
-    const [ inFullScreen, setInFullScreen ] = useState(false);
-    const [ swipeDifficulty, setSwipeDifficulty] = useState(30);
-
     // on mobile, disable page scrolling while in fullscreen 
-    // also, make swiping more difficult (to make zoom easier)
+    // no effect on computer (thanks scrollbarsize)
+    const [ inFullScreen, setInFullScreen ] = useState(false);
+
     useEffect(() => {
         if(width === 0){
             inFullScreen
             ? 
-                [
-                    setSwipeDifficulty(10000),
-                    document.body.style.overflow = 'hidden' 
-                ]
+                document.body.style.overflow = 'hidden' 
             : 
-                [
-                    setSwipeDifficulty(30),
-                    document.body.style.overflow = null 
-                ]
+                document.body.style.overflow = null 
         }
 
     });
@@ -129,7 +120,6 @@ export default function ProjectPage({project}){
                             showPlayButton={false}
                             // don't display nav buttons on mobile 
                             showNav={width > 0}
-                            swipeThreshold = {swipeDifficulty}
                             onScreenChange = {() => {setInFullScreen(!inFullScreen)}}
                             // on mobile, don't use browser fullscreen
                             useBrowserFullscreen = {width > 0}
