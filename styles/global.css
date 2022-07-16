@@ -99,6 +99,16 @@ img {
 }
 
 /* 
+    because .image-gallery-content.fullscreen only appears when in fullscreen,
+    can use this to display whole image list w/o scrolling ONLY in fullscreen
+*/
+@media screen and (min-width: 0px) {
+    .image-gallery-content.fullscreen .image-gallery-thumbnails-wrapper{
+        height:fit-content !important;
+    }
+}
+
+/* 
     since parent is fitting child to have border, buttons are static 
         previous approach with margins didnt work because buttons positioned using top/left/right/bottom
 
@@ -136,7 +146,7 @@ img {
     border-radius: 10px;
     border: 5px solid rgb(0, 0, 0) !important;
     padding: 0 3px;
-    height: 310px !important;
+    height: 320px !important;
     align-self: center;
 }
 
@@ -232,7 +242,7 @@ img {
     }
 
     .image-gallery-thumbnails-wrapper {
-        height: 160px !important;
+        height: 170px !important;
     }
 
     .image-gallery-thumbnail {

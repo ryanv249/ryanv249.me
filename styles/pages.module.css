@@ -637,7 +637,7 @@
 */
 .projectFoot{
     /* background-color: rgb(32, 194, 172); */
-    margin-bottom: 310px;
+    margin-bottom: 320px;
 }
 
 
@@ -701,7 +701,7 @@
 /* small-medium overrides */
 @media screen and (max-width: 560px) {
     .projectFoot{
-        margin-bottom: 160px;
+        margin-bottom: 170px;
     }
 }
 
