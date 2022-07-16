@@ -12,7 +12,7 @@ import useScrollbarSize from 'react-scrollbar-size';
 // https://github.com/shawnmcknight/react-scrollbar-size
 
 import { BsArrowLeft } from 'react-icons/bs'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 /*
     since notion urls to files expire after 1 hour, I cant use static paths/props 
@@ -53,12 +53,24 @@ export async function getServerSideProps({res, params}){
 }
 
 export default function ProjectPage({project}){
-    // don't display nav buttons on mobile 
     const { height, width } = useScrollbarSize();
 
-    // disable fullscreen swipe / thumbnail display on mobile
-    // [0] = no swipe (default false)  [1] = show thumbnails (default true)
-    const [ inMobileFull, setInMobileFull ] = useState([false, true]);
+    // disable fullscreen swipe on mobile
+    // no effect on computer (uses mouse)
+    const [ canSwipe, setCanSwipe ] = useState(true);
+
+    // on mobile, disable page scrolling while in fullscreen 
+    // need this because mobile fullscreen is using css and imperfect
+    useEffect(() => {
+        if(width === 0){
+            canSwipe === false 
+            ? 
+                document.body.style.overflow = 'hidden' 
+            : 
+                document.body.style.overflow = null
+        }
+
+    });
 
     return(
         <Layout page = {project.name}>
@@ -108,10 +120,10 @@ export default function ProjectPage({project}){
                         <ImageGallery
                             items={project.images}
                             showPlayButton={false}
+                            // don't display nav buttons on mobile 
                             showNav={(width === 0) === false}
-                            disableSwipe = {inMobileFull[0]}
-                            showThumbnails = {inMobileFull[1]}
-                            onScreenChange = {() => {setInMobileFull([!inMobileFull[0], inMobileFull[1]])}}
+                            disableSwipe = {!canSwipe}
+                            onScreenChange = {() => {setCanSwipe(!canSwipe)}}
                         />
                     </div>
                 </ProjectFoot>
