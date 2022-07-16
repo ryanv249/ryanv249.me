@@ -8,6 +8,8 @@ import {
 import { getDatabase } from '../../../notion';
 import ImageGallery from 'react-image-gallery';
 // https://github.com/xiaolin/react-image-gallery
+import useScrollbarSize from 'react-scrollbar-size';
+// https://github.com/shawnmcknight/react-scrollbar-size
 
 import { BsArrowLeft } from 'react-icons/bs'
 
@@ -50,6 +52,8 @@ export async function getServerSideProps({res, params}){
 }
 
 export default function ProjectPage({project}){
+    // don't display nav buttons on mobile 
+    const { height, width } = useScrollbarSize();
     return(
         <Layout page = {project.name}>
             <ProjectContainer>
@@ -98,6 +102,7 @@ export default function ProjectPage({project}){
                         <ImageGallery
                             items={project.images}
                             showPlayButton={false}
+                            showNav={(width === 0) === false}
                         />
                     </div>
                 </ProjectFoot>
