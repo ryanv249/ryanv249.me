@@ -124,6 +124,7 @@ export default function ProjectPage({project}){
                             showNav={(width === 0) === false}
                             disableSwipe = {!canSwipe}
                             onScreenChange = {() => {setCanSwipe(!canSwipe)}}
+                            useBrowserFullscreen = {(width === 0)}
                         />
                     </div>
                 </ProjectFoot>
