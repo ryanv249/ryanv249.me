@@ -111,7 +111,7 @@ export default function ProjectPage({project}){
                             showNav={(width === 0) === false}
                             disableSwipe = {inMobileFull[0]}
                             showThumbnails = {inMobileFull[1]}
-                            onScreenChange = {() => {setInMobileFull([!inMobileFull[0], !inMobileFull[1]])}}
+                            onScreenChange = {() => {setInMobileFull([!inMobileFull[0], inMobileFull[1]])}}
                         />
                     </div>
                 </ProjectFoot>
