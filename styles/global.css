@@ -96,15 +96,6 @@ img {
     overflow-y: auto;
 }
 
-.image-gallery-slide-wrapper{
-    background-color: blue;
-    /* align-self: center; */
-}
-
-.image-gallery-swipe{
-    background-color: red;
-    /* justify-content: center; */
-}
 /* 
     since parent is fitting child to have border, buttons are static 
         previous approach with margins didnt work because buttons positioned using top/left/right/bottom

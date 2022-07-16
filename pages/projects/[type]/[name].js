@@ -6,12 +6,13 @@ import {
     ProjectContainer, ProjectHead, ProjectBody, ProjectFoot} from '../../../components/wrappers';
 
 import { getDatabase } from '../../../notion';
-import ImageGallery from 'react-image-gallery';
+import ImageGallery, {onScreenChange} from 'react-image-gallery';
 // https://github.com/xiaolin/react-image-gallery
 import useScrollbarSize from 'react-scrollbar-size';
 // https://github.com/shawnmcknight/react-scrollbar-size
 
 import { BsArrowLeft } from 'react-icons/bs'
+import { useState } from 'react';
 
 /*
     since notion urls to files expire after 1 hour, I cant use static paths/props 
@@ -54,6 +55,11 @@ export async function getServerSideProps({res, params}){
 export default function ProjectPage({project}){
     // don't display nav buttons on mobile 
     const { height, width } = useScrollbarSize();
+
+    // disable fullscreen swipe / thumbnail display on mobile
+    // [0] = no swipe (default false)  [1] = show thumbnails (default true)
+    const [ inMobileFull, setInMobileFull ] = useState([false, true]);
+
     return(
         <Layout page = {project.name}>
             <ProjectContainer>
@@ -103,6 +109,9 @@ export default function ProjectPage({project}){
                             items={project.images}
                             showPlayButton={false}
                             showNav={(width === 0) === false}
+                            disableSwipe = {inMobileFull[0]}
+                            showThumbnails = {inMobileFull[1]}
+                            onScreenChange = {() => {setInMobileFull([!inMobileFull[0], !inMobileFull[1]])}}
                         />
                     </div>
                 </ProjectFoot>
