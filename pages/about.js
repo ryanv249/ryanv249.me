@@ -42,7 +42,7 @@ export default function AboutPage(){
 
                 <AboutFoot>
                     <TextContainer>
-                        <h1>Languages/technologies I&apos;ve used </h1>
+                        <h1>Languages/Tech I&apos;ve used </h1>
                     </TextContainer>
 
                     {/* this is an ugly solution to wrapping these, but it works. */}

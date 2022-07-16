@@ -190,6 +190,7 @@
     font-size: 4rem;
     text-align: center;
     font-weight: 100;
+    line-height: 1.2;
 }
 
 
@@ -245,9 +246,10 @@
 .aboutFoot h1{
     /* background-color: rgb(179, 113, 63); */
     margin: 0rem 4rem;
-    font-size: 2.4rem;
+    font-size: 3rem;
     text-align: center;
     font-weight: 100;
+    line-height: 1.2;
 }
 
 
@@ -300,7 +302,7 @@
     }
 
     .aboutFoot h1{
-        font-size: 1.9rem;
+        font-size: 2.5rem;
     }
 
     .aboutHead p, .aboutBody p{
@@ -323,15 +325,6 @@
         gap: 0.5rem 1rem;
       }
 }
-@media screen and (max-width: 649px) {
-    .aboutFoot h1{
-        font-size: 1.8rem;
-    }
-
-    .aboutIcons {
-      gap: 0.5rem;
-    }
-}
 @media screen and (max-width: 519px) {
     .aboutHead p{
         margin: 2rem 2.5rem 0 2.5rem;
@@ -347,7 +340,7 @@
 }
 @media screen and (max-width: 349px) {
     .aboutFoot h1{
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     .aboutIcons {
@@ -387,7 +380,7 @@
 
 .previewHead h1{
     /* background-color: blueviolet; */
-    font-size: 4rem;
+    font-size: 4.25rem;
     line-height: 1.2;
     margin: 0;
     font-weight: 100;
@@ -398,7 +391,7 @@
     color: rgb(99, 99, 99);
     margin: 0.5rem 1rem 0.5rem 1rem;
     font-size: 1.1rem;
-    width: 45rem;
+    width: 35rem;
     font-weight: 400;
 }
 
@@ -495,6 +488,10 @@
     .preview{
         width: 80%;
     }
+
+    .preview p{
+        font-size: 0.95rem;
+    }
 }
 @media screen and (max-width: 899px) {
     .previewContainer{
@@ -502,7 +499,6 @@
     }
 
     .previewHead p{
-        font-size: 0.9rem;
         width: 25rem;
     }
 
@@ -524,6 +520,10 @@
     }
 }
 @media screen and (max-width: 519px) {
+    .previewHead p{
+        font-size: 1rem;
+    }
+
     .previewBody{
         gap: 1rem;
     }
@@ -541,7 +541,7 @@
     }
 
     .preview p{
-        font-size: 0.75rem;
+        font-size: 0.85rem;
     }
 }
 @media screen and (max-width: 399px) {

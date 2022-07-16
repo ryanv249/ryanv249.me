@@ -54,7 +54,7 @@ export default function PreviewPage({group_previews, solo_previews}){
                     <TextContainer>
                         <p>
                             These are the various projects which I&apos;ve worked on.
-                            For more information, click it&apos;s name!
+                            For more information on one, click its name!
                         </p>
                     </TextContainer>
                 </PreviewHead>
