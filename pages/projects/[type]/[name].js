@@ -121,10 +121,11 @@ export default function ProjectPage({project}){
                             items={project.images}
                             showPlayButton={false}
                             // don't display nav buttons on mobile 
-                            showNav={(width === 0) === false}
+                            showNav={width > 0}
                             disableSwipe = {!canSwipe}
                             onScreenChange = {() => {setCanSwipe(!canSwipe)}}
-                            useBrowserFullscreen = {(width === 0)}
+                            // on mobile, don't use browser fullscreen
+                            useBrowserFullscreen = {width > 0}
                         />
                     </div>
                 </ProjectFoot>
