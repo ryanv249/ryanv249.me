@@ -42,6 +42,7 @@ export async function getStaticProps(){
 export default function PreviewPage({group_previews, solo_previews}){   
     // used to make sure previews are centered on all devices
     const { height, width } = useScrollbarSize();
+    
     return(
         <Layout page = "Projects">
             <PreviewContainer>
@@ -65,7 +66,6 @@ export default function PreviewPage({group_previews, solo_previews}){
                         </TextContainer>
 
                         <PreviewList>
-
                             {group_previews.map((prev) => (
                                 <Preview key = {prev.name} scrollShift = {width}>
                                     <LinkContainer>
@@ -79,8 +79,7 @@ export default function PreviewPage({group_previews, solo_previews}){
                                     </TextContainer>
                                 </Preview>
                             ))}
-                            
-                            </PreviewList>
+                        </PreviewList>
                     </PreviewGroup>
 
                     <PreviewGroup>
@@ -102,7 +101,7 @@ export default function PreviewPage({group_previews, solo_previews}){
                                     </TextContainer>
                                 </Preview>
                             ))}
-                            </PreviewList>
+                        </PreviewList>
                     </PreviewGroup>
                 </PreviewBody>
             </PreviewContainer>

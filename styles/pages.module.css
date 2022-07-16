@@ -168,7 +168,7 @@
 
 
 /* 
-    about styles       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    About styles       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     aboutIcon divs are the tech icon containers 
 */
@@ -179,7 +179,6 @@
     gap: 1.5rem;
     margin: 2rem 0rem;
 }
-
 
 /* .aboutHead{
     background-color: rgb(17, 249, 171);
@@ -192,6 +191,7 @@
     text-align: center;
     font-weight: 100;
 }
+
 
 .aboutHead p{
     /* background-color: rgb(164, 82, 241); */
@@ -210,16 +210,16 @@
 
 .aboutBody p{
     /* background-color: rgb(45, 138, 93); */
-    /* background-color: rgba(0, 0, 0,0.03); */
     border-radius: 10px;
     color: rgb(99, 99, 99);
     font-size: 1.2rem;
-    max-width: 35rem;
+    width: 35rem;
     max-height: 190px;
     margin: 1rem 2rem 1rem 2rem;
     font-weight: 400;
     overflow: auto;
 }
+
 
 .aboutBody a{
     /* background-color: rgb(119, 107, 117); */
@@ -245,23 +245,11 @@
 .aboutFoot h1{
     /* background-color: rgb(179, 113, 63); */
     margin: 0rem 4rem;
-    /* max-width: 35rem; */
     font-size: 2.4rem;
     text-align: center;
     font-weight: 100;
 }
 
-/* @media screen and (max-width: 400px) {
-    .aboutFoot h1{
-        font-size: 1.5rem;
-    }
-}
-
-@media screen and (max-width: 300px) {
-    .aboutFoot h1{
-        font-size: 1.3rem;
-    }
-} */
 
 .aboutIconsBox{
     /* background-color: rgb(251, 0, 255); */
@@ -279,10 +267,8 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
-    padding: 5px 0px 5px 0px;
+    padding: 5px 0px;
 }
-
-
 
 .aboutIcons div{
     /* background-color: rgb(35, 132, 132); */
@@ -292,9 +278,7 @@
     height: 55px;
     padding: 5px;
     margin: 15px;
-    /* outline: 2px black solid; */
 }
-
 
 
 /* 
@@ -302,9 +286,11 @@
     
     initial definition is for largest screens
 
-    text adjustments / grid size 
+    medium/smaller screens require various font-size, margin, padding, and gap decreases 
+    on smaller mobile screens, the icon grid becomes vertical.
 
-
+    around when the bio paragraph (aboutBody p) will overflow due to screen size, apply an outline 
+        not 100% correct on screen resize, but helps to know to scroll on mobile
     
 */
 
@@ -337,7 +323,6 @@
         gap: 0.5rem 1rem;
       }
 }
-
 @media screen and (max-width: 649px) {
     .aboutFoot h1{
         font-size: 1.8rem;
@@ -347,15 +332,6 @@
       gap: 0.5rem;
     }
 }
-
-@media screen and (max-width: 579px) {
-    .aboutBody p{
-        outline: 2px solid rgb(99, 99, 99);
-        padding: 0 0 0 5px;
-    }
-
-}
-
 @media screen and (max-width: 519px) {
     .aboutHead p{
         margin: 2rem 2.5rem 0 2.5rem;
@@ -366,10 +342,9 @@
     }
 
     .aboutIcons {
-      gap: 0;
+        gap: 0;
     }
 }
-
 @media screen and (max-width: 349px) {
     .aboutFoot h1{
         font-size: 1.5rem;
@@ -381,179 +356,202 @@
     }
 }
 
+@media screen and (max-width: 579px) {
+    .aboutBody p{
+        outline: 2px solid rgb(99, 99, 99);
+        padding: 0 0 0 5px;
+    }
+}
+
 
 
 
 
 /* 
-    preview styles        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Preview styles        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    each project type is in a separate group
-    everything in body bunched together because all direct children
+    each project type is a separate group
+    unlike other page containers, previewContainer has a margin of 0 (initially)
 */
 .previewContainer{
-    background-color: brown;
+    /* background-color: brown; */
     display: flex;
     flex-direction: column;
     text-align: center;
-    /* gap: 1rem; */
-    margin: 2rem 0rem;
+    margin: 0;
 }
 
-.previewHead{
+/* .previewHead{
     background-color: orange;
-}
+} */
 
 .previewHead h1{
-    background-color: blueviolet;
-    font-size: 3.3rem;
-    margin: 0rem;
+    /* background-color: blueviolet; */
+    font-size: 4rem;
+    line-height: 1.2;
+    margin: 0;
+    font-weight: 100;
 }
 
 .previewHead p{
-    background-color: seagreen;
-    font-size: 1.05rem;
-    max-width: 45rem;
-    margin: 1.5rem 2rem 1rem 2rem;
+    /* background-color: seagreen; */
+    color: rgb(99, 99, 99);
+    margin: 0.5rem 1rem 0.5rem 1rem;
+    font-size: 1.1rem;
+    width: 45rem;
+    font-weight: 400;
 }
 
 
 .previewBody{
-    background-color: rgb(179, 119, 119);
-    display: grid;
-    gap: 3rem 0rem;
+    /* background-color: rgb(179, 119, 119); */
+    display: flex;
     justify-content: center;
-}
-
-/* x-large grid */
-@media screen and (min-width: 1350px) {
-    .previewBody {
-        display: flex;
-        justify-content: space-between;
-        margin: 1rem 2rem;
-        align-self: center;
-    }
-
-    .previewGroup{
-        width: 600px;
-        margin: 0rem 1.5rem;
-    }
-
-    .previewList{
-        max-height: 300px !important;
-    }
-}
-
-/* medium-large grid */
-@media screen and (min-width: 1030px) and (max-width: 1349.99px) {
-    .previewBody {
-        display: flex;
-        justify-content: space-between;
-        align-self: center;
-    }
-
-    .previewGroup{
-        width: 450px;
-        margin: 0rem 1.5rem;
-    }
-
-    .previewList{
-        max-height: 300px !important;
-    }
+    gap: 3rem;
 }
 
 .previewGroup{
-    background-color: rgb(64, 64, 64);
-    border: 3px black solid;
-    max-width: 600px;
+    /* background-color: rgb(64, 64, 64); */
+    /* border: 3px black solid; */
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 300px;
 }
-
-/* small-medium grid overrides */
-@media screen and (max-width: 599px) {
-    .previewBody{
-        gap: 2rem 0rem !important;
-    }
-
-    .previewGroup{
-        margin: 0rem 3.25rem 0rem 3.25rem !important;
-    }
-
-    .preview {
-        width: 75% !important;
-    }
-}
-
-/* mobile grid overrides */
-@media screen and (max-width: 399px) {
-    .previewGroup{
-        margin: 0rem 3rem 0rem 3rem !important;
-    }
-
-    .previewGroup h2{
-        font-size: 1.3rem !important;
-    }
-
-    .preview a{
-        font-size: 1rem !important;
-    }
-    
-    .preview p {
-        font-size: 0.9rem !important;
-    }
-    
-}
-
-/* bruh-sized grid overrides */
-@media screen and (max-width: 299px) {
-    .previewGroup{
-        margin: 0rem 2.75rem 0rem 2.75rem !important;
-    }
-
-    .preview a{
-        font-size: 0.9rem !important;
-    }
-    
-    .preview p {
-        font-size: 0.75rem !important;
-    }
-    
-}
-
 
 .previewGroup h2{
-    background-color: rgb(216, 150, 221);
-    margin: 0.5rem 0rem;
+    /* background-color: rgb(216, 150, 221); */
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin: 0 0 0.5rem 0;
     border-bottom: 3px black solid;
 }
 
+
 .previewList{
-    background-color: rgb(142, 144, 142);
+    /* background-color: rgb(142, 144, 142); */
+    background-color: rgb(187, 187, 187);
+    outline: 2px solid rgb(99, 99, 99);
     display: flex;
     flex-direction: column;
-    max-height: 225px;
     gap: 0.25rem;
-    overflow-y: auto;
+    height: 100%;
+    overflow-y: scroll;
     align-items: center;
 }
 
 .preview{
-    background-color: rgb(196, 205, 27);
-    width: 60%;
-    border-radius: 25px;
+    /* background-color: rgb(196, 205, 27); */
+    background-color: rgb(99, 99, 99);
+    border: 5px solid black;
+    width: 75%;
+    border-radius: 30px;
     margin: 0.75rem 0rem 0.75rem 0.75rem;
 }
 
-
 .preview a{
-    background-color: rgb(38, 19, 182);
-    font-size: 1.4rem;
-    margin: 0.5rem;
+    /* background-color: rgb(38, 19, 182); */
+    color: white;
+    font-size: 1.6rem;
+    margin: 0.5rem 0.5rem 0 0.5rem;
+    transition: color 0.15s ease;
+}
+.preview a:hover{
+    color: black;
+    transition: color 0.15s ease;
 }
 
+
 .preview p {
-    background-color: rgb(34, 185, 29);
-    font-size: 1rem;
-    margin: 0.5rem;
+    /* background-color: rgb(34, 185, 29); */
+    background-color: rgb(187, 187, 187);
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin: 0.5rem 0.25rem 0.5rem 0.25rem;
+    padding: 0.5rem;
+}
+
+
+/* 
+    Preview responsive definitions    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
+    initial definition is for largest screens
+
+    various decreases to width, gap, and margin. 
+    for mid-size screens and smaller, use a vertical list. also add the usual margin of 2rem to <main> here
+    a couple changes in font-size are required as well, and mobile screens need further decreases.
+    
+*/
+@media screen and (max-width: 1099px) {
+    .previewBody{
+        gap: 2rem;
+    }
+
+    .previewGroup{
+        width: 400px;
+    }
+
+    .preview{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 899px) {
+    .previewContainer{
+        margin: 2rem 0;
+    }
+
+    .previewHead p{
+        font-size: 0.9rem;
+        width: 25rem;
+    }
+
+    .previewBody{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .previewGroup{
+        height: 250px;
+    }
+
+    .preview a{
+        font-size: 1.4rem;
+    }
+
+    .preview p{
+        font-size: 0.9rem;
+    }
+}
+@media screen and (max-width: 519px) {
+    .previewBody{
+        gap: 1rem;
+    }
+
+    .previewGroup{
+        width: 300px;
+    }
+
+    .preview{
+        width: 90%;
+    }
+
+    .preview a{
+        font-size: 1.2rem;
+    }
+
+    .preview p{
+        font-size: 0.75rem;
+    }
+}
+@media screen and (max-width: 399px) {
+    .previewGroup{
+        width: 250px;
+    }
+
+    .preview{
+        width: 90%;
+    }
 }
 
 
