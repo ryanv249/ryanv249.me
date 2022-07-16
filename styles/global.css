@@ -86,6 +86,7 @@ img {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    align-items: center;
 }
 
 /*
@@ -95,16 +96,15 @@ img {
     overflow-y: auto;
 }
 
-.image-gallery-swipe{
-    /* background-color: red; */
-    justify-content: center;
-}
-
 .image-gallery-slide-wrapper{
-    /* background-color: blue; */
-    align-self: center;
+    background-color: blue;
+    /* align-self: center; */
 }
 
+.image-gallery-swipe{
+    background-color: red;
+    /* justify-content: center; */
+}
 /* 
     since parent is fitting child to have border, buttons are static 
         previous approach with margins didnt work because buttons positioned using top/left/right/bottom
@@ -124,16 +124,6 @@ img {
     height: fit-content !important;
 }
 
-.image-gallery-left-nav{
-    /* left: -20px; */
-    padding-right: 25px !important;
-}
-
-.image-gallery-right-nav{
-    /* right: -20px; */
-    padding-left: 25px !important;
-}
-
 .image-gallery-fullscreen-button{
     bottom: 10px !important;
     right: 10px !important;
@@ -145,6 +135,7 @@ img {
     padding: 5px;
     border: 5px solid rgb(0, 0, 0);
     border-radius: 10px;
+    /* width: fit-content !important; */
 }
 
 .image-gallery-thumbnails-wrapper{
@@ -234,16 +225,6 @@ img {
         width: 40px !important;
     }
 
-    .image-gallery-left-nav{
-        /* left: -15px; */
-        padding-right: 20px !important;
-    }
-    
-    .image-gallery-right-nav{
-        /* right: -15px; */
-        padding-left: 20px !important;
-    }
-
     .image-gallery-thumbnails-wrapper {
         height: 180px !important;
     }
@@ -257,16 +238,6 @@ img {
         width: 35px !important;
     }
 
-    .image-gallery-left-nav{
-        /* left: -5px; */
-        padding-right: 15px !important;
-    }
-    
-    .image-gallery-right-nav{
-        /* right: -5px; */
-        padding-left: 15px !important;
-    }
-
     .image-gallery-thumbnails-wrapper {
         height: 160px !important;
     }
@@ -278,16 +249,6 @@ img {
 @media screen and (max-width: 429px) {
     .image-gallery-svg{
         width: 30px !important;
-    }
-
-    .image-gallery-left-nav{
-        left: 0;
-        padding-right: 10px !important;
-    }
-    
-    .image-gallery-right-nav{
-        right: 0;
-        padding-left: 10px !important;
     }
 
 }
