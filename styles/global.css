@@ -94,6 +94,8 @@ img {
  */
 .image-gallery-content.fullscreen{
     overflow-y: auto;
+    background-color: black;
+    gap: 2rem;
 }
 
 /* 
