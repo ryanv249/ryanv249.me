@@ -215,8 +215,8 @@ img {
 /* 
     initial overrides are for the largest screens, these overrides are for smaller and smaller screen sizes
 
-    need to reduce image sizes and parent height which resizes the entire gallery accordingly
-        'parent' is the entire lower half of gallery, so need to adjust page margin (see project class in pages.module.css)
+    need to reduce thumbnail sizes and parent height which resizes the thumbnail list accordingly
+        this is the entire lower half of gallery, so need to adjust page margin (see project class in pages.module.css)
 
     need to adjust button positioning, padding, and size
 

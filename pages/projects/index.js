@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 import Layout from '../../components/layout';
 import { 
-    TextContainer,
-    PreviewContainer, PreviewHead, PreviewBody, PreviewList, PreviewGroup, Preview, LinkContainer 
+    FlexContainer, 
+    PreviewContainer, PreviewHead, PreviewBody, PreviewList, PreviewGroup, Preview,
 } from '../../components/wrappers';
 
 import { getDatabase } from '../../notion';
@@ -47,58 +47,58 @@ export default function PreviewPage({group_previews, solo_previews}){
         <Layout page = "Projects">
             <PreviewContainer>
                 <PreviewHead>
-                    <TextContainer>
+                    <FlexContainer>
                         <h1>My Work</h1>
-                    </TextContainer>
+                    </FlexContainer>
 
-                    <TextContainer>
+                    <FlexContainer>
                         <p>
                             These are the various projects which I&apos;ve worked on.
                             For more information on one, click its name!
                         </p>
-                    </TextContainer>
+                    </FlexContainer>
                 </PreviewHead>
 
                 <PreviewBody>
                     <PreviewGroup>
-                        <TextContainer>
+                        <FlexContainer>
                             <h2>Group Projects</h2> 
-                        </TextContainer>
+                        </FlexContainer>
 
                         <PreviewList>
                             {group_previews.map((prev) => (
                                 <Preview key = {prev.name} scrollShift = {width}>
-                                    <LinkContainer>
+                                    <FlexContainer>
                                         <Link href={"/projects/group/" + prev.name}>
                                             <a>{prev.name}</a>
                                         </Link>
-                                    </LinkContainer>
+                                    </FlexContainer>
 
-                                    <TextContainer>
+                                    <FlexContainer>
                                     <p>{prev.altDesc}</p> 
-                                    </TextContainer>
+                                    </FlexContainer>
                                 </Preview>
                             ))}
                         </PreviewList>
                     </PreviewGroup>
 
                     <PreviewGroup>
-                        <TextContainer>
+                        <FlexContainer>
                             <h2>Solo Projects</h2>
-                        </TextContainer>
+                        </FlexContainer>
 
                         <PreviewList>
                             {solo_previews.map((prev) => (
                                 <Preview key = {prev.name} scrollShift = {width}>
-                                    <LinkContainer>
+                                    <FlexContainer>
                                         <Link href={"/projects/solo/" + prev.name}>
                                             <a>{prev.name}</a>
                                         </Link>
-                                    </LinkContainer>
+                                    </FlexContainer>
 
-                                    <TextContainer>
+                                    <FlexContainer>
                                         <p>{prev.altDesc}</p>
-                                    </TextContainer>
+                                    </FlexContainer>
                                 </Preview>
                             ))}
                         </PreviewList>

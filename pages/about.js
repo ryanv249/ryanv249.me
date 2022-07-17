@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import Layout from '../components/layout';
-import { TextContainer, LinkContainer,
+import { FlexContainer, 
     AboutContainer, AboutHead, AboutBody, AboutFoot, AboutIconsBox, AboutIcons
 } from '../components/wrappers';
 
@@ -12,38 +12,38 @@ export default function AboutPage(){
         <Layout page = "About">
             <AboutContainer>
                 <AboutHead>
-                    <TextContainer>
+                    <FlexContainer>
                         <h1>Focused & Passionate</h1>
-                    </TextContainer>
+                    </FlexContainer>
                     
-                    <TextContainer>
+                    <FlexContainer>
                         <p>
                             I&apos;m a senior studying Computer Science at Boston University.
                         </p>
-                    </TextContainer>
+                    </FlexContainer>
                 </AboutHead>
 
                 <AboutBody>
-                    <TextContainer>
+                    <FlexContainer>
                         <p>
                             I am an avid gamer, proud cat person, and am happily the weirdest child. 
                             My brother and sister are both successful in their own way, and now it&apos;s my turn. 
                             
                             My time at BU has taught me that the only way to fail is to give up; even if I need to ask for help, I finish what I start.
                         </p>
-                    </TextContainer>
+                    </FlexContainer>
 
-                    <LinkContainer>
+                    <FlexContainer>
                         <Link href = "/projects">
                             <a>See my work</a>
                         </Link>
-                    </LinkContainer>
+                    </FlexContainer>
                 </AboutBody>
 
                 <AboutFoot>
-                    <TextContainer>
+                    <FlexContainer>
                         <h1>Languages/Tech I&apos;ve used </h1>
-                    </TextContainer>
+                    </FlexContainer>
 
                     {/* this is an ugly solution to wrapping these, but it works. */}
                     <AboutIconsBox>

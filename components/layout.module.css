@@ -15,8 +15,13 @@
     generic styles     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     separate for organization
 */
-.textContainer, .linkContainer{
+.flexContainer{
     display: flex;
+    justify-content: center;
+}
+
+.gridContainer{
+    display: grid;
     justify-content: center;
 }
 

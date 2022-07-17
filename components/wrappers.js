@@ -4,17 +4,9 @@ import layoutStyles from './layout.module.css';
 import { IconContext } from 'react-icons'
 
 // generic wrappers to reduce repeated lines   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~     
-export function TextContainer({ children }){
+export function FlexContainer({ children }){
     return(
-        <div className ={layoutStyles.textContainer}>
-            {children}
-        </div>
-    );
-}
-
-export function LinkContainer({ children }){
-    return(
-        <div className ={layoutStyles.linkContainer}>
+        <div className ={layoutStyles.flexContainer}>
             {children}
         </div>
     );
@@ -364,6 +356,17 @@ export function ProjectHead({ children }){
         <div className ={pageStyles.projectHead}>
             {children}
         </div>
+    );
+}
+
+// need to define size for back-button icon here
+export function ProjectButton({ children }){
+    return(
+        <IconContext.Provider value={{size: 55}}>
+            <div className ={pageStyles.projectButton}>
+                {children}
+            </div>
+        </IconContext.Provider>
     );
 }
 

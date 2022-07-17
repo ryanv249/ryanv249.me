@@ -2,11 +2,11 @@ import Link from 'next/link';
 
 import Layout from '../../../components/layout';
 import {
-    TextContainer, LinkContainer, 
-    ProjectContainer, ProjectHead, ProjectBody, ProjectFoot} from '../../../components/wrappers';
+    FlexContainer,  
+    ProjectContainer, ProjectHead, ProjectButton, ProjectBody, ProjectFoot} from '../../../components/wrappers';
 
 import { getDatabase } from '../../../notion';
-import ImageGallery, {onScreenChange} from 'react-image-gallery';
+import ImageGallery from 'react-image-gallery';
 // https://github.com/xiaolin/react-image-gallery
 import useScrollbarSize from 'react-scrollbar-size';
 // https://github.com/shawnmcknight/react-scrollbar-size
@@ -74,43 +74,43 @@ export default function ProjectPage({project}){
         <Layout page = {project.name}>
             <ProjectContainer>
                 <ProjectHead>
-                    <LinkContainer>
+                    <ProjectButton>
                         <Link href = "/projects">
                             <a>
                                 <BsArrowLeft />
                             </a>
                         </Link>
-                    </LinkContainer>
+                    </ProjectButton>
                     
-                    <TextContainer>
+                    <FlexContainer>
                         <h1>{project.name}</h1>
-                    </TextContainer>
+                    </FlexContainer>
                 </ProjectHead>
 
                 <ProjectBody>
-                    <TextContainer>
+                    <FlexContainer>
                         <p>
                             {project.desc} 
                         </p>
-                    </TextContainer>
+                    </FlexContainer>
 
-                    <TextContainer>
+                    <FlexContainer>
                         <h2>
-                            TECHNOLOGIES UTILIZED:
+                            TECHNOLOGIES UTILIZED
                         </h2>
-                    </TextContainer>
+                    </FlexContainer>
 
-                    <TextContainer>
+                    <FlexContainer>
                         <h3>
                             {project.tech}
                         </h3>
-                    </TextContainer>
+                    </FlexContainer>
 
-                    <LinkContainer>
+                    <FlexContainer>
                         <a href={project.link} target="_blank" rel="noopener noreferrer">
-                            Go to project repo
+                            View Project Repo
                         </a>
-                    </LinkContainer>
+                    </FlexContainer>
                 </ProjectBody>
 
                 <ProjectFoot>

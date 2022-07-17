@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 
 import { 
-    TextContainer, PageLink,
+    FlexContainer, PageLink,
     MenuContainer, MenuButton, MenuContactBox, MenuContact, MenuPagesBox, MenuPages,
     BarContainer, BarPagesBox,  BarPages, BarContactBox, BarContact,
     FootContainer, FootPagesBox, FootPages, FootContactBox, FootContact
@@ -186,11 +186,11 @@ function Footer ({menuDisplayed, currPage}){
                         </FootContact>
                 </FootContactBox>
 
-                <TextContainer>
+                <FlexContainer>
                     <p>
                         © 2022 Ryan Velez
                     </p>
-                </TextContainer>
+                </FlexContainer>
             </FootContainer>
         </footer>
     )

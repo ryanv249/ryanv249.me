@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import Layout  from '../components/layout';
-import { TextContainer, LinkContainer, HomeContainer, HomeHead, HomeFace, HomeBody, HomeFoot } from '../components/wrappers';
+import { FlexContainer, HomeContainer, HomeHead, HomeFace, HomeBody, HomeFoot } from '../components/wrappers';
 
 
 export default function HomePage() {
@@ -19,44 +19,44 @@ export default function HomePage() {
                         />
                     </HomeFace>
 
-                    <TextContainer>
+                    <FlexContainer>
                         <h1>Ryan Velez</h1>
-                    </TextContainer>
+                    </FlexContainer>
                     
-                    <TextContainer>
+                    <FlexContainer>
                         <h3>Working on things!</h3>
-                    </TextContainer>
+                    </FlexContainer>
                 </HomeHead>
 
                 <HomeBody>
-                    <TextContainer>
+                    <FlexContainer>
                         <p>
                             I&apos;m a soon-to-be graduate of Boston University, full of energy and the drive to succeed.
                         </p>
-                    </TextContainer>
+                    </FlexContainer>
 
-                    <LinkContainer>    
+                    <FlexContainer>    
                         <Link href = "/about">
                             <a>More about me</a>
                         </Link>
-                    </LinkContainer>
+                    </FlexContainer>
                 </HomeBody>
                         
                 <HomeFoot>
-                    <TextContainer>
+                    <FlexContainer>
                         <h2>Get in touch</h2>
-                    </TextContainer>
+                    </FlexContainer>
                     
-                    <TextContainer>
+                    <FlexContainer>
                         <p>
                             From job offers to feedback on my website and anything else in-between, my inbox is always open!
                             Feel free to say anything. 
                         </p>
-                    </TextContainer>
+                    </FlexContainer>
                     
-                    <LinkContainer>
+                    <FlexContainer>
                         <a href="mailto:ryanv249@bu.edu">Contact Me</a>
-                    </LinkContainer>
+                    </FlexContainer>
                 </HomeFoot>
             </HomeContainer>
         </Layout>
