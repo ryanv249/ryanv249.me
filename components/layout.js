@@ -37,8 +37,7 @@ function Header({ pageTitle }) {
                 <meta property="og:description" content="I studied computer science at Boston University. This is my online portfolio." />
                 <meta proprety="og:url" content="https://ryanvelez.vercel.app" />
                 <meta property="og:type" content="website" />
-                {/* add my face here too! */}
-                <meta property="og:image" content="" />
+                <meta property="og:image" content="https://ryanvelez.vercel.app/images/header.png" />
                 
             </Head>
         </>

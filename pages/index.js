@@ -12,7 +12,8 @@ export default function HomePage() {
                 <HomeHead>
                     <HomeFace>
                         <Image
-                            src = "/images/the_man_himself.jpg"
+                        // I need to get a new 'nice' picture lol
+                            src = "/images/face.png"
                             alt = "Ryan Velez"
                             layout='fill'
                             priority= {true}
