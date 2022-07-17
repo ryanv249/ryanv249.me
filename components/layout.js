@@ -179,7 +179,7 @@ function Footer ({menuDisplayed, currPage}){
                                 <IoIosMail />
                             </a>
                             
-                            <a href={"https://www.linkedin.com/in/ryan-velez-054b0b207/"} target="_blank" rel="noopener noreferrer">
+                            <a href={"https://www.linkedin.com/in/ryanvelez249/"} target="_blank" rel="noopener noreferrer">
                                 <SiLinkedin/>
                             </a>
                         </FootContact>
