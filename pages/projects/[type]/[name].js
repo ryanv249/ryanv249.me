@@ -46,8 +46,6 @@ export async function getServerSideProps({res, params}){
             (item) => {return ({original: item.file.url, thumbnail: item.file.url})}
         ),
         tech: rawProject.properties.techList.rich_text[0].plain_text,
-
-        debug: rawProject
     }
 
     return{
@@ -57,8 +55,6 @@ export async function getServerSideProps({res, params}){
 
 export default function ProjectPage({project}){
     const { height, width } = useScrollbarSize();
-    
-    console.log(project.debug)
 
     // on mobile, disable page scrolling while in fullscreen 
     // no effect on computer (thanks scrollbarsize)
@@ -77,7 +73,6 @@ export default function ProjectPage({project}){
 
     // if this project is displayed on a webpage, display the link 
     let hasDisplay = project.display !== null
-    console.log(hasDisplay)
           
     return(
         <Layout page = {project.name}>
