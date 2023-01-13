@@ -40,7 +40,8 @@ export async function getServerSideProps({res, params}){
     const cleanProject = {
         name: params.name,
         desc: rawProject.properties.fullDesc.rich_text[0].plain_text,
-        link: rawProject.properties.link.url,
+        git: rawProject.properties.git.url,
+        display: rawProject.properties.display.url,
         images: rawProject.properties.imageList.files.map(
             (item) => {return ({original: item.file.url, thumbnail: item.file.url})}
         ),
@@ -70,6 +71,9 @@ export default function ProjectPage({project}){
 
     });
 
+    // if this project is displayed on a webpage, display the link 
+    let hasDisplay = project.display !== ""
+          
     return(
         <Layout page = {project.name}>
             <ProjectContainer>
@@ -107,10 +111,18 @@ export default function ProjectPage({project}){
                     </FlexContainer>
 
                     <FlexContainer>
-                        <a href={project.link} target="_blank" rel="noopener noreferrer">
+                        <a href={project.git} target="_blank" rel="noopener noreferrer">
                             View Project Repo
                         </a>
                     </FlexContainer>
+
+                    {hasDisplay && 
+                        <FlexContainer>
+                            <a href={project.display} target="_blank" rel="noopener noreferrer">
+                                Load Project
+                            </a>
+                        </FlexContainer>
+                    }
                 </ProjectBody>
 
                 <ProjectFoot>
