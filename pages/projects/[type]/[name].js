@@ -76,7 +76,8 @@ export default function ProjectPage({project}){
     });
 
     // if this project is displayed on a webpage, display the link 
-    let hasDisplay = project.display !== ""
+    let hasDisplay = project.display !== null
+    console.log(hasDisplay)
           
     return(
         <Layout page = {project.name}>
