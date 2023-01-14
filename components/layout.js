@@ -15,7 +15,8 @@ import { IoIosMail, IoMdMenu, IoIosClose } from 'react-icons/io'
 
 
 
-function Header({ pageTitle }) {
+function Header({ pageTitle, pageDesc, preventIndex }) {
+    // for project display pages, want to prevent indexing if possible
     return (
         <>
             <Head>
@@ -26,15 +27,18 @@ function Header({ pageTitle }) {
                 <link rel="manifest" href="/site.webmanifest" />
                 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
 
+                {preventIndex && <meta name="robots" content="noindex"></meta>}
+
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta name="msapplication-TileColor" content="#b91d47" />
                 <meta name="theme-color" content="#cecece" />
                 <meta name="author" content="Ryan Velez" />
-                <meta name="title" content="Ryan Velez" />
-                <meta name="description" content="I studied computer science at Boston University. This is my online portfolio." />                <meta property="og:type" content="website" />
+                <meta name="title" content={pageTitle} />
+                <meta name="description" content={pageDesc} />                
                 
-                <meta property="og:title" content="Ryan Velez Portfolio" />
-                <meta property="og:description" content="I studied computer science at Boston University. This is my online portfolio." />
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content={pageTitle} />
+                <meta property="og:description" content={pageDesc} />
                 <meta proprety="og:url" content="https://ryanvelez.vercel.app" />
                 <meta property="og:type" content="website" />
                 <meta property="og:image" content="https://ryanvelez.vercel.app/images/header.png" />
@@ -196,7 +200,7 @@ function Footer ({menuDisplayed, currPage}){
 }
 
 
-export default function Layout({ children, page, onProjectPage }) {
+export default function Layout({ children, page }) {
     // true if menu is open
     // starts false because never open on page load
     const [open, setOpen] = useState(false);
@@ -228,9 +232,37 @@ export default function Layout({ children, page, onProjectPage }) {
         return () => window.removeEventListener('change', e => setMenuVisible(!e.matches));
     }, []);
 
+    // only need page descriptions for main 3. slugs and project displays dont get indexed
+    let desc, noIndex;
+    switch (page) {
+        case "Home":
+            desc = "home desc placeholder"
+            noIndex = false;
+            break;
+
+        case "About":
+            desc = "about desc placeholder"
+            noIndex = false;
+            break;
+
+        case "Projects":
+            desc = "projects desc placeholder"
+            noIndex = false;
+            break;
+    
+        default:
+            desc = ""
+            noIndex = true;
+            break;
+    }
+
     return (
         <>
-            <Header pageTitle={page + " - Ryan Velez"}/>
+            <Header 
+                pageTitle={"Ryan Velez - " + page}
+                pageDesc={desc}
+                preventIndex={noIndex}
+            />
 
             <nav>
                 {/* bar for large screens, menu for small-medium */}
@@ -256,7 +288,6 @@ export default function Layout({ children, page, onProjectPage }) {
 
             <Footer 
                 menuDisplayed = {menuVisible && (open === true)}
-                onProjectPage = {onProjectPage}
                 currPage = {page} 
             />
         </>
