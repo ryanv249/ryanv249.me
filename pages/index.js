@@ -7,7 +7,7 @@ import { FlexContainer, HomeContainer, HomeHead, HomeFace, HomeBody, HomeFoot } 
 
 export default function HomePage() {
     return (
-        <Layout page = "Home">
+        <Layout pageName = "Home">
             <HomeContainer>
                 <HomeHead>
                     <HomeFace>

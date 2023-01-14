@@ -34,11 +34,18 @@ export async function getServerSideProps({res, params}){
     const data = await getDatabase()
 
     // select the project that this page is for
-    const rawProject = data.filter(page => page.properties.name.title[0].plain_text === params.name)[0]
+    /* 
+       notion has url and normal 'versions' of name.  (e.g., url has - while normal has ' ')
+       url version used to route, so we need to pick correct data based on it (params.name contains url version)
+       normal version used in all displays. (e.g., project previews, page title)
+       it's params.name because the slug is [name].js
+    */
+    const rawProject = data.filter(page => page.properties.urlName.rich_text[0].plain_text === params.name)[0]
     
     // convert data from notion into easier format
     const cleanProject = {
-        name: params.name,
+        normalName: rawProject.properties.name.title[0].plain_text,
+        urlName: params.name,
         desc: rawProject.properties.fullDesc.rich_text[0].plain_text,
         git: rawProject.properties.git.url,
         display: rawProject.properties.display.url,
@@ -75,7 +82,7 @@ export default function ProjectPage({project}){
     let hasLink = project.display !== null
           
     return(
-        <Layout page = {project.name}>
+        <Layout pageName = {project.normalName}>
             <ProjectContainer>
                 <ProjectHead>
                     <ProjectButton>
@@ -87,7 +94,7 @@ export default function ProjectPage({project}){
                     </ProjectButton>
                     
                     <FlexContainer>
-                        <h1>{project.name}</h1>
+                        <h1>{project.normalName}</h1>
                     </FlexContainer>
                 </ProjectHead>
 

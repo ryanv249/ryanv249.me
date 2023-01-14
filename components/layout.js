@@ -200,7 +200,7 @@ function Footer ({menuDisplayed, currPage}){
 }
 
 
-export default function Layout({ children, page }) {
+export default function Layout({ children, pageName }) {
     // true if menu is open
     // starts false because never open on page load
     const [open, setOpen] = useState(false);
@@ -234,7 +234,9 @@ export default function Layout({ children, page }) {
 
     // only need page descriptions for main 3. slugs and project displays dont get indexed
     let desc, noIndex;
-    switch (page) {
+    switch (pageName) {
+
+        // do this and then generate game file, get screenshots, update notion, then finally worry about making pretty!
         case "Home":
             desc = "home desc placeholder"
             noIndex = false;
@@ -259,7 +261,7 @@ export default function Layout({ children, page }) {
     return (
         <>
             <Header 
-                pageTitle={"Ryan Velez - " + page}
+                pageTitle={"Ryan Velez: " + pageName}
                 pageDesc={desc}
                 preventIndex={noIndex}
             />
@@ -267,11 +269,11 @@ export default function Layout({ children, page }) {
             <nav>
                 {/* bar for large screens, menu for small-medium */}
                 <NavMenu 
-                    currPage = {page} 
+                    currPage = {pageName} 
                     open = {open} 
                     setOpen = {setOpen} 
                 />
-                <NavBar currPage = {page} />      
+                <NavBar currPage = {pageName} />      
             </nav>
 
             {/* 
@@ -288,7 +290,7 @@ export default function Layout({ children, page }) {
 
             <Footer 
                 menuDisplayed = {menuVisible && (open === true)}
-                currPage = {page} 
+                currPage = {pageName} 
             />
         </>
     );

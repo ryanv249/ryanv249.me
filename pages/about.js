@@ -9,7 +9,7 @@ import { SiC, SiPython, SiOcaml, SiReact, SiGithub, SiGitlab, SiJupyter, SiNextd
 
 export default function AboutPage(){
     return(
-        <Layout page = "About">
+        <Layout pageName = "About">
             <AboutContainer>
                 <AboutHead>
                     <FlexContainer>

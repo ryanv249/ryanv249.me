@@ -16,9 +16,11 @@ export async function getStaticProps(){
     const data = await getDatabase();
 
     // build the preview object array
+    // see projects/[type]/[name].js for info on normalName vs urlName
     const previews = (data.map((page) => {return({
                 id: page.properties.id.number,
-                name: page.properties.name.title[0].plain_text,
+                normalName: page.properties.name.title[0].plain_text,
+                urlName: page.properties.urlName.rich_text[0].plain_text,
                 altDesc: page.properties.altDesc.rich_text[0].plain_text,
                 pageId: page.id
             }
@@ -44,7 +46,7 @@ export default function PreviewPage({group_previews, solo_previews}){
     const { height, width } = useScrollbarSize();
     
     return(
-        <Layout page = "Projects">
+        <Layout pageName = "Projects">
             <PreviewContainer>
                 <PreviewHead>
                     <FlexContainer>
@@ -67,15 +69,15 @@ export default function PreviewPage({group_previews, solo_previews}){
 
                         <PreviewList>
                             {group_previews.map((prev) => (
-                                <Preview key = {prev.name} scrollShift = {width}>
+                                <Preview key = {prev.normalName} scrollShift = {width}>
                                     <FlexContainer>
-                                        <Link href={"/projects/group/" + prev.name}>
-                                            <a>{prev.name}</a>
+                                        <Link href={"/projects/group/" + prev.urlName}>
+                                            <a>{prev.normalName}</a>
                                         </Link>
                                     </FlexContainer>
 
                                     <FlexContainer>
-                                    <p>{prev.altDesc}</p> 
+                                        <p>{prev.altDesc}</p> 
                                     </FlexContainer>
                                 </Preview>
                             ))}
@@ -89,10 +91,10 @@ export default function PreviewPage({group_previews, solo_previews}){
 
                         <PreviewList>
                             {solo_previews.map((prev) => (
-                                <Preview key = {prev.name} scrollShift = {width}>
+                                <Preview key = {prev.normalName} scrollShift = {width}>
                                     <FlexContainer>
-                                        <Link href={"/projects/solo/" + prev.name}>
-                                            <a>{prev.name}</a>
+                                        <Link href={"/projects/solo/" + prev.urlName}>
+                                            <a>{prev.normalName}</a>
                                         </Link>
                                     </FlexContainer>
 
