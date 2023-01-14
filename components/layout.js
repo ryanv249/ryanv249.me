@@ -235,20 +235,18 @@ export default function Layout({ children, pageName }) {
     // only need page descriptions for main 3. slugs and project displays dont get indexed
     let desc, noIndex;
     switch (pageName) {
-
-        // do this and then generate game file, get screenshots, update notion, then finally worry about making pretty!
         case "Home":
-            desc = "home desc placeholder"
+            desc = "I am a soon-to-be graduate studying Computer Science at Boston University. This is my online portfolio!"
             noIndex = false;
             break;
 
         case "About":
-            desc = "about desc placeholder"
+            desc = "My years at BU taught me that CS is a collaborative effort. While I always try my hardest to succeed, I am not afraid of asking for help."
             noIndex = false;
             break;
 
         case "Projects":
-            desc = "projects desc placeholder"
+            desc = "These are the projects that I have worked on! Each project has its own details page featuring screenshots along with a live website link if applicable."
             noIndex = false;
             break;
     

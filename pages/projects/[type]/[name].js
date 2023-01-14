@@ -48,7 +48,7 @@ export async function getServerSideProps({res, params}){
         urlName: params.name,
         desc: rawProject.properties.fullDesc.rich_text[0].plain_text,
         git: rawProject.properties.git.url,
-        display: rawProject.properties.display.url,
+        showcase: rawProject.properties.showcase.url,
         images: rawProject.properties.imageList.files.map(
             (item) => {return ({original: item.file.url, thumbnail: item.file.url})}
         ),
@@ -79,7 +79,7 @@ export default function ProjectPage({project}){
     });
 
     // if this project has a live webpage, display the link 
-    let hasLink = project.display !== null
+    let hasLink = project.showcase !== null
           
     return(
         <Layout pageName = {project.normalName}>
@@ -119,14 +119,14 @@ export default function ProjectPage({project}){
 
                     <FlexContainer>
                         <a href={project.git} target="_blank" rel="noopener noreferrer">
-                            View Project Repo
+                            View Git Repo
                         </a>
                     </FlexContainer>
 
                     {hasLink && 
                         <FlexContainer>
-                            <a href={project.display} target="_blank" rel="noopener noreferrer">
-                                Load Project
+                            <a href={project.showcase} target="_blank" rel="noopener noreferrer">
+                                View Project
                             </a>
                         </FlexContainer>
                     }
