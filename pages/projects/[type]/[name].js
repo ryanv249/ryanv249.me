@@ -34,14 +34,21 @@ export async function getServerSideProps({res, params}){
     const data = await getDatabase()
 
     // select the project that this page is for
-    const rawProject = data.filter(page => page.properties.name.title[0].plain_text === params.name)[0]
+    /* 
+       notion has url and normal 'versions' of name.  (e.g., url has - while normal has ' ')
+       url version used to route, so we need to pick correct data based on it (params.name contains url version)
+       normal version used in all displays. (e.g., project previews, page title)
+       it's params.name because the slug is [name].js
+    */
+    const rawProject = data.filter(page => page.properties.urlName.rich_text[0].plain_text === params.name)[0]
     
     // convert data from notion into easier format
     const cleanProject = {
-        name: params.name,
+        normalName: rawProject.properties.name.title[0].plain_text,
+        urlName: params.name,
         desc: rawProject.properties.fullDesc.rich_text[0].plain_text,
         git: rawProject.properties.git.url,
-        display: rawProject.properties.display.url,
+        showcase: rawProject.properties.showcase.url,
         images: rawProject.properties.imageList.files.map(
             (item) => {return ({original: item.file.url, thumbnail: item.file.url})}
         ),
@@ -71,11 +78,11 @@ export default function ProjectPage({project}){
 
     });
 
-    // if this project is displayed on a webpage, display the link 
-    let hasDisplay = project.display !== null
+    // if this project has a live webpage, display the link 
+    let hasLink = project.showcase !== null
           
     return(
-        <Layout page = {project.name}>
+        <Layout pageName = {project.normalName}>
             <ProjectContainer>
                 <ProjectHead>
                     <ProjectButton>
@@ -87,7 +94,7 @@ export default function ProjectPage({project}){
                     </ProjectButton>
                     
                     <FlexContainer>
-                        <h1>{project.name}</h1>
+                        <h1>{project.normalName}</h1>
                     </FlexContainer>
                 </ProjectHead>
 
@@ -112,14 +119,14 @@ export default function ProjectPage({project}){
 
                     <FlexContainer>
                         <a href={project.git} target="_blank" rel="noopener noreferrer">
-                            View Project Repo
+                            View Git Repo
                         </a>
                     </FlexContainer>
 
-                    {hasDisplay && 
+                    {hasLink && 
                         <FlexContainer>
-                            <a href={project.display} target="_blank" rel="noopener noreferrer">
-                                Load Project
+                            <a href={project.showcase} target="_blank" rel="noopener noreferrer">
+                                View Project
                             </a>
                         </FlexContainer>
                     }
