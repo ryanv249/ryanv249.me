@@ -65,7 +65,7 @@ function NavMenu ({currPage, open, setOpen}){
 
                 <MenuContactBox>
                     <MenuContact>
-                        <a href="mailto:ryanv249@bu.edu">Contact Me</a>
+                        <a href="mailto:ryanvelez249@gmail.com">Contact Me</a>
                     </MenuContact>
                 </MenuContactBox>
                 
@@ -133,7 +133,7 @@ function NavBar ({ currPage }){
                 {/* email link */}
                 <BarContactBox>
                     <BarContact>
-                        <a href="mailto:ryanv249@bu.edu">Contact Me</a>
+                        <a href="mailto:ryanvelez249@gmail.com">Contact Me</a>
                     </BarContact>
                 </BarContactBox>
             </BarContainer>
@@ -179,7 +179,7 @@ function Footer ({menuDisplayed, currPage}){
                                 <SiGithub/>
                             </a>
 
-                            <a href="mailto:ryanv249@bu.edu">
+                            <a href="mailto:ryanvelez249@gmail.com">
                                 <IoIosMail />
                             </a>
                             
