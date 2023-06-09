@@ -56,7 +56,7 @@ export default function HomePage() {
                     </FlexContainer>
                     
                     <FlexContainer>
-                        <a href="mailto:ryanv249@bu.edu">Contact Me</a>
+                        <a href="mailto:ryanvelez249@gmail.com">Contact Me</a>
                     </FlexContainer>
                 </HomeFoot>
             </HomeContainer>
