@@ -12,10 +12,9 @@ export default function HomePage() {
                 <HomeHead>
                     <HomeFace>
                         <Image
-                        // I need to get a new 'nice' picture lol
-                            src = "/images/face.png"
+                            src = "/images/face.jpg"
                             alt = "Ryan Velez"
-                            layout='fill'
+                            fill =  {true}
                             priority= {true}
                         />
                     </HomeFace>
@@ -32,13 +31,13 @@ export default function HomePage() {
                 <HomeBody>
                     <FlexContainer>
                         <p>
-                            I&apos;m a soon-to-be graduate of Boston University, full of energy and the drive to succeed.
+                            I&apos;m a recent graduate of Boston University, full of energy and the drive to succeed.
                         </p>
                     </FlexContainer>
 
                     <FlexContainer>    
                         <Link href = "/about">
-                            <a>More about me</a>
+                            More about me
                         </Link>
                     </FlexContainer>
                 </HomeBody>

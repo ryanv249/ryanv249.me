@@ -72,7 +72,7 @@ export default function PreviewPage({group_previews, solo_previews}){
                                 <Preview key = {prev.normalName} scrollShift = {width}>
                                     <FlexContainer>
                                         <Link href={"/projects/group/" + prev.urlName}>
-                                            <a>{prev.normalName}</a>
+                                            {prev.normalName}
                                         </Link>
                                     </FlexContainer>
 
@@ -94,7 +94,7 @@ export default function PreviewPage({group_previews, solo_previews}){
                                 <Preview key = {prev.normalName} scrollShift = {width}>
                                     <FlexContainer>
                                         <Link href={"/projects/solo/" + prev.urlName}>
-                                            <a>{prev.normalName}</a>
+                                            {prev.normalName}
                                         </Link>
                                     </FlexContainer>
 
