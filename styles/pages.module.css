@@ -35,15 +35,13 @@
 .homeFace{
     /* background-color: rgb(33, 38, 181); */
     position: relative;
-    height: calc(1301px * 0.15);
-    width: calc(1077px * 0.14);
-    border-radius: 100px;
+    height: calc(2445px  * 0.1);
+    width: calc(2445px * 0.1);
 }
 
 /* have to apply rounding directly to img, not parent div*/
 .homeFace img{
-    border-radius: 100px;
-    
+    border-radius: 150px;
 }
 
 .homeHead h1{

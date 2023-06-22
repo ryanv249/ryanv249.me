@@ -78,20 +78,20 @@ function NavMenu ({currPage, open, setOpen}){
                         <MenuPagesBox>
                             <MenuPages>
                                 <PageLink type = "menu" linkTo = "Home" currPage = {currPage}>
-                                    <Link href = "/">
-                                        <a style = {currPage === "Home" ? {color: 'black'} : {}}>Home</a>
+                                    <Link href = "/" style = {currPage === "Home" ? {color: 'black'} : {}}>
+                                        Home
                                     </Link>
                                 </PageLink>
 
                                 <PageLink type = "menu" linkTo = "About" currPage = {currPage}>
-                                    <Link href = "/about">
-                                        <a style = {currPage === "About" ? {color: 'black'} : {}}>About</a>
+                                    <Link href = "/about" style = {currPage === "About" ? {color: 'black'} : {}}>
+                                        About
                                     </Link>
                                 </PageLink>
 
                                 <PageLink type = "menu" linkTo = "Projects" currPage = {currPage}>
-                                    <Link href = "/projects">
-                                        <a style = {currPage === "Projects" ? {color: 'black'} : {}}>Projects</a>
+                                    <Link href = "/projects" style = {currPage === "Projects" ? {color: 'black'} : {}}>
+                                        Projects
                                     </Link>
                                 </PageLink>
                             </MenuPages>
@@ -111,20 +111,20 @@ function NavBar ({ currPage }){
                 <BarPagesBox>
                     <BarPages>
                         <PageLink type = "bar" linkTo = "Home" currPage = {currPage} >
-                            <Link href = "/">
-                                <a style = {currPage === "Home" ? {color: 'black'} : {}}>Home</a>
+                            <Link href = "/" style = {currPage === "Home" ? {color: 'black'} : {}}>
+                                Home
                             </Link>
                         </PageLink>
 
                         <PageLink type = "bar" linkTo = "About" currPage = {currPage} >
-                            <Link href = "/about">
-                                <a style = {currPage === "About" ? {color: 'black'} : {}}>About</a>
+                            <Link href = "/about" style = {currPage === "About" ? {color: 'black'} : {}}>
+                                About
                             </Link>
                         </PageLink>
 
                         <PageLink type = "bar" linkTo = "Projects" currPage = {currPage} >
-                            <Link href = "/projects">
-                                <a style = {currPage === "Projects" ? {color: 'black'} : {}}>Projects</a>
+                            <Link href = "/projects" style = {currPage === "Projects" ? {color: 'black'} : {}}>
+                                Projects
                             </Link>
                         </PageLink>
                     </BarPages>
@@ -153,20 +153,20 @@ function Footer ({menuDisplayed, currPage}){
                 <FootPagesBox>
                     <FootPages>
                         <PageLink type = "foot" linkTo = "Home" currPage = {currPage} >
-                            <Link href = "/">
-                                <a style = {currPage === "Home" ? {color: 'black'} : {}}>Home</a>
+                            <Link href = "/" style = {currPage === "Home" ? {color: 'black'} : {}}>
+                                Home
                             </Link>
                         </PageLink>
 
                         <PageLink type = "foot" linkTo = "About" currPage = {currPage} >
-                            <Link href = "/about">
-                                <a style = {currPage === "About" ? {color: 'black'} : {}}>About</a>
+                            <Link href = "/about" style = {currPage === "About" ? {color: 'black'} : {}}>
+                                About
                             </Link>
                         </PageLink>
 
                         <PageLink type = "foot" linkTo = "Projects" currPage = {currPage} >
-                            <Link href = "/projects">
-                                <a style = {currPage === "Projects" ? {color: 'black'} : {}}>Projects</a>
+                            <Link href = "/projects" style = {currPage === "Projects" ? {color: 'black'} : {}}>
+                                Projects
                             </Link>
                         </PageLink>
                     </FootPages>
@@ -236,7 +236,7 @@ export default function Layout({ children, pageName }) {
     let desc, noIndex;
     switch (pageName) {
         case "Home":
-            desc = "I am a soon-to-be graduate studying Computer Science at Boston University. This is my online portfolio!"
+            desc = "I graduated from Boston University with a BA in Computer Science. This is my online portfolio!"
             noIndex = false;
             break;
 

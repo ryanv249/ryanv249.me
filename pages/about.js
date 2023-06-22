@@ -17,8 +17,8 @@ export default function AboutPage(){
                     </FlexContainer>
                     
                     <FlexContainer>
-                        <p>
-                            I&apos;m a senior studying Computer Science at Boston University.
+                        <p style={{textAlign:'center'}}>
+                            I am a Computer Science graduate of Boston University.
                         </p>
                     </FlexContainer>
                 </AboutHead>
@@ -27,15 +27,14 @@ export default function AboutPage(){
                     <FlexContainer>
                         <p>
                             I am an avid gamer, proud cat person, and am happily the weirdest child. 
-                            My brother and sister are both successful in their own way, and now it&apos;s my turn. 
-                            
-                            My time at BU has taught me that the only way to fail is to give up; even if I need to ask for help, I finish what I start.
+                            My brother and sister are both successful in their own way, and now it&apos;s my turn! 
+                            My time at BU proved to me that the only way to fail is to give up. So even if I need to ask for help, I always finish what I start.
                         </p>
                     </FlexContainer>
 
                     <FlexContainer>
                         <Link href = "/projects">
-                            <a>See my work</a>
+                            See my work
                         </Link>
                     </FlexContainer>
                 </AboutBody>

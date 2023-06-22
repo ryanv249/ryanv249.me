@@ -87,9 +87,7 @@ export default function ProjectPage({project}){
                 <ProjectHead>
                     <ProjectButton>
                         <Link href = "/projects">
-                            <a>
-                                <BsArrowLeft />
-                            </a>
+                            <BsArrowLeft />
                         </Link>
                     </ProjectButton>
                     
